@@ -98,6 +98,7 @@ function computeVerdict(player) {
     'Bulgaria. First League':0.72,'Hungary. NB I':0.70,
     'Lithuania. A Lyga':0.68,'Slovenia. Prva Liga':0.75,
     'Croatia. SuperSport HNL':0.77,
+    
   }[player.league] ?? 0.75;
   if (meetsMin===total && avgRisk<30 && leagueScale>=0.85) return "STRONG BUY";
   if (meetsMin>=Math.ceil(total*0.67) && avgRisk<50) return "BUY";
