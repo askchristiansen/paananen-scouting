@@ -321,7 +321,7 @@ export default function App(){
                     <div>
                       <div style={{fontWeight:800,color:"#f9fafb",fontSize:15,marginBottom:2}}>
                         {player.flag??""} {player.fullName}
-                        {player.hasDetailedDashboard&&<span style={{marginLeft:6,fontSize:9,background:"#1d4ed8",color:"#bfdbfe",padding:"1px 5px",borderRadius:99}}>DASH</span>}
+                        <span style={{marginLeft:6,fontSize:9,background:"#1d4ed8",color:"#bfdbfe",padding:"1px 5px",borderRadius:99}}>DASH</span>
                       </div>
                       <div style={{fontSize:12,color:"#6b7280"}}>{player.club} · {player.league.split('. ')[1] ?? player.league}</div>
                     </div>
@@ -403,7 +403,7 @@ export default function App(){
                         <td style={{padding:"10px 14px",whiteSpace:"nowrap"}}>
                           <span style={{marginRight:5}}>{player.flag??""}</span>
                           <span style={{fontWeight:700,color:"#f9fafb"}}>{player.fullName}</span>
-                          {player.hasDetailedDashboard&&<span style={{marginLeft:5,fontSize:9,background:"#1d4ed8",color:"#bfdbfe",padding:"1px 5px",borderRadius:99}}>DASH</span>}
+                          <span style={{marginLeft:5,fontSize:9,background:"#1d4ed8",color:"#bfdbfe",padding:"1px 5px",borderRadius:99}}>DASH</span>
                         </td>
                         <td style={{padding:"10px 14px",color:"#9ca3af",whiteSpace:"nowrap"}}>{player.club}</td>
                         <td style={{padding:"10px 14px"}}>
