@@ -237,7 +237,7 @@ export const players = [
   {
     id:"ejdum", name:"M. Ejdum", fullName:"Max Ejdum",
     age:21, nationality:"Denmark", flag:"🇩🇰",
-    posGroup:"WING", position:"RW",
+    posGroup:"CM", position:"CM / RW",
     club:"Odense BK", league:"Denmark. Superliga",
     marketValue:"€1.7M", contract:"2028", hasDetailedDashboard:false,
     bio:"Dansk høyrekant i Superliga med svært høy pasningsnøyaktighet (84.8%) for posisjonen — uvanlig kombinasjon med kantspill. Scorer moderat (0.28/90) men bidrar jevnt i assister. Dribble% 60% er solid. Viborg er i nedre del av Superliga — moderat lagkvalitet. Teknisk pålitelig profil med begrenset eksplosivitet.",

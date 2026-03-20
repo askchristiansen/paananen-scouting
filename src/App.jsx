@@ -129,10 +129,12 @@ export default function App(){
 
   // Fixed header cols (always shown)
   const fixedCols = [
-    {l:"Spiller", k:"name"},
-    {l:"Klubb",   k:null},
-    {l:"Pos",     k:null},
-    {l:"Min",     k:"minutes"},
+    {l:"Spiller",    k:"name"},
+    {l:"Klubb",      k:null},
+    {l:"Pos",        k:null},
+    {l:"Min",        k:"minutes"},
+    {l:"Markedsverdi", k:null},
+    {l:"Kontrakt",   k:null},
   ];
 
   return (
@@ -308,6 +310,14 @@ export default function App(){
                       <td style={{padding:"11px 14px",color:"#6b7280"}}>
                         {player.stats.minutes?.toLocaleString()??"—"}
                       </td>
+                      {/* Market value */}
+                      <td style={{padding:"11px 14px",color:"#f9fafb",fontWeight:600,whiteSpace:"nowrap"}}>
+                        {player.marketValue ?? "—"}
+                      </td>
+                      {/* Contract */}
+                      <td style={{padding:"11px 14px",color:"#6b7280",whiteSpace:"nowrap"}}>
+                        {player.contract ? `t.o.m. ${player.contract}` : "—"}
+                      </td>
 
                       {/* Position-specific stat cols */}
                       {cols.map(({k,isPct}) => {
@@ -383,6 +393,42 @@ export default function App(){
             color:"#f9fafb",borderRadius:8,padding:"8px 16px",cursor:"pointer",fontSize:13,zIndex:1001,
           }}>← Tilbake</button>
           <div style={{maxWidth:900,margin:"0 auto"}}>
+            {(sel.id==="paananen"||sel.id==="diarra"||sel.id==="kilen") && (() => {
+              // Import verdict logic inline for DASH players
+              const bench = benchmarks[sel.posGroup]
+              const metrics = posMetrics[sel.posGroup]
+              if (!bench || !metrics) return null
+              const thresholds = {
+                CF:   { keys:['goals','xG','duelWin'],      mins:[0.40, 0.30, 48] },
+                WING: { keys:['goals','dribbleSucc','progRuns'], mins:[0.30, 55, 3.5] },
+              }[sel.posGroup] ?? { keys:[], mins:[] }
+              const meetsMin = thresholds.keys.filter((k,i)=>(sel.stats[k]??0)>=thresholds.mins[i]).length
+              const scale = {
+                'Norway. Eliteserien':1.0,'Finland. Veikkausliiga':0.78,
+                'Norway. 1. divisjon':0.82
+              }[sel.league] ?? 0.80
+              const riskCats = metrics.risiko.map(k=>{
+                const pv=sel.stats[k]??0,bv=bench.stats[k]??0
+                const diff=bv>0?((pv-bv)/bv)*100:0
+                return Math.min(90,Math.round(Math.abs(diff)))
+              })
+              const avgRisk = riskCats.reduce((s,v)=>s+v,0)/riskCats.length
+              let verdict,vbg,vc
+              if(meetsMin>=thresholds.keys.length&&avgRisk<30&&scale>=0.85){verdict='🟢 STRONG BUY';vbg='#166534';vc='#dcfce7'}
+              else if(meetsMin>=Math.ceil(thresholds.keys.length*0.67)&&avgRisk<50){verdict='🟡 BUY';vbg='#15803d';vc='#f0fdf4'}
+              else if(meetsMin>=Math.ceil(thresholds.keys.length*0.50)&&avgRisk<65){verdict='🟠 MONITOR';vbg='#b45309';vc='#fffbeb'}
+              else{verdict='🔴 PASS';vbg='#b91c1c';vc='#fef2f2'}
+              return (
+                <div style={{display:'flex',gap:12,alignItems:'center',marginBottom:16,padding:'10px 16px',background:'#1f2937',borderRadius:8}}>
+                  <span style={{fontSize:13,fontWeight:800,letterSpacing:'0.08em',padding:'4px 14px',borderRadius:4,background:vbg,color:vc}}>
+                    {verdict}
+                  </span>
+                  <span style={{fontSize:12,color:'#9ca3af'}}>
+                    {sel.fullName} · {sel.marketValue??''} · Kontrakt t.o.m. {sel.contract??'—'}
+                  </span>
+                </div>
+              )
+            })()}
             {sel.id==="paananen" ? <PaananenDashboard/> :
              sel.id==="diarra"   ? <DiarraDashboard/>   :
              sel.id==="kilen"    ? <KilenDashboard/>    :

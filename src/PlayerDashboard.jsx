@@ -854,6 +854,16 @@ export default function PlayerDashboard({ player }) {
         <span style={{ fontSize:12, color:'#888' }}>
           {player.nationality} · {player.age ?? '—'} år · Benchmark: {bench.fullName}
         </span>
+        {player.marketValue && (
+          <span style={{ fontSize:12, background:'#f0f0ee', padding:'3px 10px', borderRadius:4, color:'#1a1a1a', fontWeight:600 }}>
+            {player.marketValue}
+          </span>
+        )}
+        {player.contract && (
+          <span style={{ fontSize:12, color:'#888' }}>
+            Kontrakt til {player.contract}
+          </span>
+        )}
         <span style={{ fontSize:12, color:'#999', fontStyle:'italic', marginLeft:'auto' }}>
           Klikk Risikovurdering for full begrunnelse
         </span>
