@@ -444,6 +444,45 @@ export const players = [
       duelWin:51.8, aerialWin:46.7, interceptions:3.44, recoveriesOpp:2.26,
       touchesPenArea:0.77, progRuns:0.96, shotAssists:0.61, minutes:3767, matches:42 },
   },
+  // ── New additions ────────────────────────────────────────────────────────────
+  {
+    id:"braude", name:"O. Braude", fullName:"Oliver Braude",
+    age:21, nationality:"Norway", flag:"🇳🇴",
+    posGroup:"BACK", position:"RB",
+    club:"SC Heerenveen", league:"Netherlands. Eredivisie",
+    marketValue:"€4.5M", contract:"2027", hasDetailedDashboard:false,
+    bio:"21-årig norsk høyreback i Eredivisie — en av de mest spennende back-profiler i Skandinavia. Spiller regulært i et av Hollands sterkeste miljøer, noe som gjenspeiles i statistikken. Duelwin 53.1% og aerialwin 52.3% er begge over Haugen-benchmark. Int/90 på 3.92 er solid for en back. ProgRuns 1.07 er under benchmark — forventes å øke i et system med tydelig overlapp-instruks. Markedsverdi €5.3M er høy for porteføljen men reflekterer ligakvaliteten. Kontrakt t.o.m. 2027.",
+    stats:{ goals:0.032, assists:0.126, xG:0.053, shots:0.537, shotsOT:0.158,
+      passAcc:78.0, longPassAcc:41.5, dribbleSucc:70.6, dribbles:1.07,
+      duelWin:53.1, aerialWin:52.3, interceptions:3.92, recoveriesOpp:2.5,
+      touchesPenArea:1.49, progRuns:1.07, shotAssists:0.44, minutes:2848, matches:30 },
+  },
+  {
+    id:"yapi", name:"D. Yapi", fullName:"Darren Yapi",
+    age:21, nationality:"USA", flag:"🇺🇸",
+    posGroup:"WING", position:"LWF",
+    club:"Colorado Rapids", league:"United States. MLS",
+    marketValue:"€2.5M", contract:"2026", hasDetailedDashboard:false,
+    bio:"21-årig amerikansk-ivorisk venstrekant med høyt scoringsvolum i MLS (0.26 G/90 over 70 kamper). God dribblestatistikk (3.14/90) men lavere suksessrate (50%). Duelwin 34.9% er lavt — bekymringsfullt for en kants evne til å vinne 1v1. MLS er en svak liga (koeff. ~0.65) som krever betydelig skalering. Mye data fra 97 kamper gir statistisk robusthet. Interessant profil men høy ligatranslasjonsrisiko.",
+    stats:{ goals:0.262, assists:0.095, xG:0.215, shots:1.213, shotsOT:0.618,
+      passAcc:74.2, longPassAcc:20.0, dribbleSucc:50.0, dribbles:3.14,
+      duelWin:34.9, aerialWin:35.7, interceptions:1.59, recoveriesOpp:1.97,
+      touchesPenArea:2.47, progRuns:1.12, shotAssists:0.59, minutes:3784, matches:70 },
+  },
+
+  {
+    id:"dobson", name:"W. Dobson", fullName:"Will Dobson",
+    age:18, nationality:"Australia", flag:"🇦🇺",
+    posGroup:"CM", position:"CM",
+    club:"Newcastle Jets", league:"Australia. A-League",
+    marketValue:"€350k", contract:"2026", hasDetailedDashboard:false,
+    bio:"18-årig australsk sentral midtbanespiller — ekstraordinært ung for A-League-nivå. Scorer og assisterer jevnt (0.19 G/90, 0.10 A/90) med god progresjon (1.76/90). ShotAss 1.00/90 er over Askildsen-benchmark. Pasning 76.1% og duelwin 42% er under benchmark — forventes å vokse med alder. A-League er svak liga (koeff. ~0.65) som krever stor nedjustering. Kontrakt utløper 2026 — lav inngangsterskel. HIGH POTENTIAL-profil med stor usikkerhet på grunn av alder og ligakvalitet.",
+    stats:{ goals:0.191, assists:0.095, xG:0.273, shots:1.858, shotsOT:0.81,
+      passAcc:76.1, longPassAcc:25.0, dribbleSucc:47.3, dribbles:4.34,
+      duelWin:42.0, aerialWin:30.8, interceptions:2.05, recoveriesOpp:2.29,
+      touchesPenArea:3.38, progRuns:1.76, shotAssists:1.0, minutes:1889, matches:29 },
+  },
+
 ];
 
 // ─── STAT CONFIG (all possible stats with labels/units) ───────────────────────
