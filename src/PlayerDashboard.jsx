@@ -307,19 +307,38 @@ function getVerdict(player, bench, posGrp) {
   const riskCats = getRiskCategories(player, bench, posGrp)
   const avgRisk = riskCats.reduce((sum, r) => sum + r.score, 0) / riskCats.length
 
-  // Posisjonsspesifikke terskler
+  // Aldersbonus: tekniske posisjoner (CF/WING/CM) 15%, fysiske (CB/BACK) 8% for ≤21 år
+  const age = player.age ?? 25
+  const isPhysical = posGrp === 'CB' || posGrp === 'BACK'
+  const ageFactor = age <= 21 ? (isPhysical ? 0.92 : 0.85) : age <= 22 ? 0.92 : 1.0
+
+  // CF duelWin skaleres med ligakoeff (duell% er kulturavhengig)
+  const rawScaled = k => (k === 'duelWin' && posGrp === 'CF')
+    ? (s[k] ?? 0) / scale
+    : (s[k] ?? 0)
+
   const thresholds = {
-    CF:   { buyKeys:['goals','xG','duelWin'],   buyMin:[0.40, 0.30, 48] },
-    WING: { buyKeys:['goals','dribbleSucc','progRuns'], buyMin:[0.30, 55, 3.5] },
-    CM:   { buyKeys:['passAcc','interceptions','duelWin'], buyMin:[78, 3.0, 46] },
-    CB:   { buyKeys:['duelWin','aerialWin','interceptions'], buyMin:[60, 58, 4.0] },
-    BACK: { buyKeys:['duelWin','passAcc','progRuns'], buyMin:[50, 76, 1.0] },
+    CF:   { buyKeys:['goals','xG','duelWin'],            buyMin:[0.40, 0.30, 48] },
+    WING: { buyKeys:['goals','dribbleSucc','progRuns'],   buyMin:[0.30, 55, 3.5] },
+    CM:   { buyKeys:['passAcc','interceptions','duelWin'],buyMin:[78, 3.0, 46] },
+    CB:   { buyKeys:['duelWin','aerialWin','interceptions'],buyMin:[60, 58, 4.0] },
+    BACK: { buyKeys:['duelWin','passAcc','progRuns'],     buyMin:[50, 76, 1.0] },
   }[posGrp] ?? { buyKeys:[], buyMin:[] }
 
-  const meetsMin = thresholds.buyKeys.filter((k,i) => (s[k]??0) >= thresholds.buyMin[i]).length
+  const meetsMin = thresholds.buyKeys.filter((k,i) => {
+    const thresh = thresholds.buyMin[i] * ageFactor
+    // WING: goals OR shotAssists>=1.0 teller som angrepsoutput
+    if (posGrp === 'WING' && k === 'goals') {
+      return (s['goals']??0) >= thresh || (s['shotAssists']??0) >= 1.0 * ageFactor
+    }
+    return rawScaled(k) >= thresh
+  }).length
   const totalMin = thresholds.buyKeys.length
 
-  if (meetsMin === totalMin && avgRisk < 30 && scale >= 0.85) {
+  // Risikotak justeres for alder
+  const riskCeiling = age <= 21 ? [38, 58, 72] : [30, 50, 65]
+
+  if (meetsMin === totalMin && avgRisk < riskCeiling[0] && scale >= 0.85) {
     return {
       verdict: 'STRONG BUY',
       color: '#166534',
@@ -328,7 +347,7 @@ function getVerdict(player, bench, posGrp) {
       reasoning: `Møter alle posisjonsspesifikke terskler, lav samlet risiko (${Math.round(avgRisk)}/100) og sterk liga-overførbarhet (${scale.toFixed(2)}). Anbefales prioritert.`
     }
   }
-  if (meetsMin >= Math.ceil(totalMin * 0.67) && avgRisk < 50) {
+  if (meetsMin >= Math.ceil(totalMin * 0.67) && avgRisk < riskCeiling[1]) {
     return {
       verdict: 'BUY',
       color: '#14532d',
@@ -337,7 +356,7 @@ function getVerdict(player, bench, posGrp) {
       reasoning: `Møter ${meetsMin}/${totalMin} nøkkelterskler. Moderat risiko (${Math.round(avgRisk)}/100). Anbefales med forbehold om tilpasningsperiode.`
     }
   }
-  if (meetsMin >= Math.ceil(totalMin * 0.50) && avgRisk < 65) {
+  if (meetsMin >= Math.ceil(totalMin * 0.50) && avgRisk < riskCeiling[2]) {
     return {
       verdict: 'MONITOR',
       color: '#92400e',
