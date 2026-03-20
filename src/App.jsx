@@ -74,36 +74,58 @@ function computeVerdict(player) {
   const bench = benchmarks[posGrp];
   const metrics = posMetrics?.[posGrp];
   if (!bench || !metrics) return "MONITOR";
-  const thresholds = {
-    CF:   { keys:['goals','xG','duelWin'],           mins:[0.40,0.30,48] },
-    WING: { keys:['goals','dribbleSucc','progRuns'],  mins:[0.30,55,3.5] },
-    CM:   { keys:['passAcc','interceptions','duelWin'],mins:[78,3.0,46] },
-    CB:   { keys:['duelWin','aerialWin','interceptions'],mins:[60,58,4.0] },
-    BACK: { keys:['duelWin','passAcc','progRuns'],    mins:[50,76,1.0] },
-  }[posGrp] ?? { keys:[], mins:[] };
-  const meetsMin = thresholds.keys.filter((k,i)=>(player.stats[k]??0)>=thresholds.mins[i]).length;
-  const total = thresholds.keys.length;
-  const riskScores = metrics.risiko.map(k=>{
-    const pv=player.stats[k]??0, bv=bench.stats[k]??0;
-    const diff=bv>0?((pv-bv)/bv)*100:0;
-    return Math.min(90,Math.round(Math.abs(diff)));
-  });
-  const avgRisk = riskScores.length ? riskScores.reduce((s,v)=>s+v,0)/riskScores.length : 50;
+
   const leagueScale = {
     'Norway. Eliteserien':1.00,'Norway. 1. divisjon':0.82,
     'Sweden. Allsvenskan':0.95,'Sweden. Superettan':0.80,
     'Denmark. Superliga':0.90,'Denmark. 1st Division':0.80,
     'England. League One':0.85,'Scotland. Premiership':0.88,
     'Finland. Veikkausliiga':0.78,'Netherlands. Eerste Divisie':0.82,
-    'Netherlands. Eredivisie':1.05,
     'Bulgaria. First League':0.72,'Hungary. NB I':0.70,
     'Lithuania. A Lyga':0.68,'Slovenia. Prva Liga':0.75,
     'Croatia. SuperSport HNL':0.77,
-    'United States. MLS':0.65,'Australia. A-League':0.65,
   }[player.league] ?? 0.75;
-  if (meetsMin===total && avgRisk<30 && leagueScale>=0.85) return "STRONG BUY";
-  if (meetsMin>=Math.ceil(total*0.67) && avgRisk<50) return "BUY";
-  if (meetsMin>=Math.ceil(total*0.50) && avgRisk<65) return "MONITOR";
+
+  // Age bonus: ≤21 → 15% threshold reduction, 22 → 8%, else 0%
+  const age = player.age ?? 25;
+  const ageFactor = age <= 21 ? 0.85 : age <= 22 ? 0.92 : 1.0;
+
+  // Scale player stats up by league coefficient before comparing thresholds
+  const scaled = k => (player.stats[k] ?? 0) / leagueScale;
+
+  const thresholds = {
+    CF:   { keys:['goals','xG','duelWin'],            mins:[0.40,0.30,48] },
+    WING: { keys:['goals','dribbleSucc','progRuns'],   mins:[0.30,55,3.5] },
+    CM:   { keys:['passAcc','interceptions','duelWin'],mins:[78,3.0,46] },
+    CB:   { keys:['duelWin','aerialWin','interceptions'],mins:[60,58,4.0] },
+    BACK: { keys:['duelWin','passAcc','progRuns'],     mins:[50,76,1.0] },
+  }[posGrp] ?? { keys:[], mins:[] };
+
+  // Apply both league scaling (on stats) and age factor (on thresholds)
+  // WING: creative profile — goals OR shotAssists>=1.0 counts as attacking output
+  const meetsMin = thresholds.keys.filter((k,i) => {
+    const thresh = thresholds.mins[i] * ageFactor;
+    if (posGrp === 'WING' && k === 'goals') {
+      return scaled('goals') >= thresh || scaled('shotAssists') >= 1.0 * ageFactor;
+    }
+    return scaled(k) >= thresh;
+  }).length;
+  const total = thresholds.keys.length;
+
+  // Risk vs benchmark: use league-scaled stats
+  const riskScores = metrics.risiko.map(k => {
+    const pv = scaled(k), bv = bench.stats[k] ?? 0;
+    const diff = bv > 0 ? ((pv - bv) / bv) * 100 : 0;
+    return Math.min(90, Math.round(Math.abs(diff)));
+  });
+  const avgRisk = riskScores.length ? riskScores.reduce((s,v)=>s+v,0)/riskScores.length : 50;
+
+  // Age softens risk ceiling slightly for young players
+  const riskCeiling = age <= 21 ? [38, 58, 72] : [30, 50, 65];
+
+  if (meetsMin===total && avgRisk<riskCeiling[0] && leagueScale>=0.85) return "STRONG BUY";
+  if (meetsMin>=Math.ceil(total*0.67) && avgRisk<riskCeiling[1]) return "BUY";
+  if (meetsMin>=Math.ceil(total*0.50) && avgRisk<riskCeiling[2]) return "MONITOR";
   return "PASS";
 }
 
@@ -503,30 +525,6 @@ export default function App(){
           </div>
         );
       })()}
-
-      {/* ── FOOTER ── */}
-      <div style={{
-        borderTop:"1px solid #1f2937",
-        padding:"16px 20px",
-        marginTop:8,
-      }}>
-        <div style={{maxWidth:1100,margin:"0 auto",display:"flex",flexWrap:"wrap",gap:12,alignItems:"center",justifyContent:"space-between"}}>
-          <div style={{fontSize:11,color:"#4b5563"}}>
-            <span style={{color:"#6b7280"}}>Datakilde:</span>{" "}
-            <span style={{color:"#9ca3af"}}>Wyscout · Transfermarkt</span>
-            <span style={{color:"#374151",margin:"0 8px"}}>·</span>
-            <span style={{color:"#6b7280"}}>Periode:</span>{" "}
-            <span style={{color:"#9ca3af"}}>Sesong 2025 (Skandinavia/Finland) · Sesong 2025/26 (øvrige ligaer)</span>
-            <span style={{color:"#374151",margin:"0 8px"}}>·</span>
-            <span style={{color:"#6b7280"}}>Sist oppdatert:</span>{" "}
-            <span style={{color:"#9ca3af"}}>Mars 2026</span>
-          </div>
-          <div style={{fontSize:11,color:"#374151"}}>
-            Alle stats per 90 min · Spillere sammenlignes mot utvalgte Viking FK-spillere i tilsvarende posisjon · Projeksjoner er estimater basert på ligakontekst og systemanalyse
-          </div>
-        </div>
-      </div>
-
     </div>
   );
 }
