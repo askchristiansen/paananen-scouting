@@ -5,6 +5,7 @@ import PlayerDashboard from "./PlayerDashboard";
 import PaananenDashboard from "./PaananenDashboard";
 import DiarraDashboard from "./DiarraDashboard";
 import KilenDashboard from "./KilenDashboard";
+import MethodPage from "./MethodPage";
 
 const RC = { better:"#22c55e", similar:"#eab308", weaker:"#ef4444" };
 const RL = { better:"↑ Bedre", similar:"~ På nivå", weaker:"↓ Svakere" };
@@ -74,64 +75,36 @@ function computeVerdict(player) {
   const bench = benchmarks[posGrp];
   const metrics = posMetrics?.[posGrp];
   if (!bench || !metrics) return "MONITOR";
-
+  const thresholds = {
+    CF:   { keys:['goals','xG','duelWin'],           mins:[0.40,0.30,48] },
+    WING: { keys:['goals','dribbleSucc','progRuns'],  mins:[0.30,55,3.5] },
+    CM:   { keys:['passAcc','interceptions','duelWin'],mins:[78,3.0,46] },
+    CB:   { keys:['duelWin','aerialWin','interceptions'],mins:[60,58,4.0] },
+    BACK: { keys:['duelWin','passAcc','progRuns'],    mins:[50,76,1.0] },
+  }[posGrp] ?? { keys:[], mins:[] };
+  const meetsMin = thresholds.keys.filter((k,i)=>(player.stats[k]??0)>=thresholds.mins[i]).length;
+  const total = thresholds.keys.length;
+  const riskScores = metrics.risiko.map(k=>{
+    const pv=player.stats[k]??0, bv=bench.stats[k]??0;
+    const diff=bv>0?((pv-bv)/bv)*100:0;
+    return Math.min(90,Math.round(Math.abs(diff)));
+  });
+  const avgRisk = riskScores.length ? riskScores.reduce((s,v)=>s+v,0)/riskScores.length : 50;
   const leagueScale = {
     'Norway. Eliteserien':1.00,'Norway. 1. divisjon':0.82,
     'Sweden. Allsvenskan':0.95,'Sweden. Superettan':0.80,
     'Denmark. Superliga':0.90,'Denmark. 1st Division':0.80,
     'England. League One':0.85,'Scotland. Premiership':0.88,
     'Finland. Veikkausliiga':0.78,'Netherlands. Eerste Divisie':0.82,
+    'Netherlands. Eredivisie':1.05,
     'Bulgaria. First League':0.72,'Hungary. NB I':0.70,
     'Lithuania. A Lyga':0.68,'Slovenia. Prva Liga':0.75,
     'Croatia. SuperSport HNL':0.77,
+    'United States. MLS':0.65,'Australia. A-League':0.65,
   }[player.league] ?? 0.75;
-
-  // Age bonus: tekniske posisjoner får full bonus, fysiske (CB/BACK) får halv
-  // ≤21: CF/WING/CM → 15%, CB/BACK → 8% | 22: alle → 8% | eldre: ingen
-  const age = player.age ?? 25;
-  const isPhysical = posGrp === 'CB' || posGrp === 'BACK';
-  const ageFactor = age <= 21 ? (isPhysical ? 0.92 : 0.85) : age <= 22 ? 0.92 : 1.0;
-
-  // Raw stats — ingen ligaskalering på terskler
-  // Unntak: CF duelWin skaleres med ligakoeff (duell% er kulturavhengig)
-  const raw = k => player.stats[k] ?? 0;
-  const rawScaled = k => (k === 'duelWin' && posGrp === 'CF')
-    ? (player.stats[k] ?? 0) / leagueScale
-    : (player.stats[k] ?? 0);
-
-  const thresholds = {
-    CF:   { keys:['goals','xG','duelWin'],            mins:[0.40,0.30,48] },
-    WING: { keys:['goals','dribbleSucc','progRuns'],   mins:[0.30,55,3.5] },
-    CM:   { keys:['passAcc','interceptions','duelWin'],mins:[78,3.0,46] },
-    CB:   { keys:['duelWin','aerialWin','interceptions'],mins:[60,58,4.0] },
-    BACK: { keys:['duelWin','passAcc','progRuns'],     mins:[50,76,1.0] },
-  }[posGrp] ?? { keys:[], mins:[] };
-
-  // Aldersbonus + CF duelWin-skalering
-  // WING: creative profile — goals OR shotAssists>=1.0 teller som angrepsoutput
-  const meetsMin = thresholds.keys.filter((k,i) => {
-    const thresh = thresholds.mins[i] * ageFactor;
-    if (posGrp === 'WING' && k === 'goals') {
-      return raw('goals') >= thresh || raw('shotAssists') >= 1.0 * ageFactor;
-    }
-    return rawScaled(k) >= thresh;
-  }).length;
-  const total = thresholds.keys.length;
-
-  // Risikovurdering: sammenlign mot benchmark, juster for ligakvalitet
-  const riskScores = metrics.risiko.map(k => {
-    const pv = raw(k) / leagueScale, bv = bench.stats[k] ?? 0;
-    const diff = bv > 0 ? ((pv - bv) / bv) * 100 : 0;
-    return Math.min(90, Math.round(Math.abs(diff)));
-  });
-  const avgRisk = riskScores.length ? riskScores.reduce((s,v)=>s+v,0)/riskScores.length : 50;
-
-  // Aldersbonus gir romsligere risikotak
-  const riskCeiling = age <= 21 ? [38, 58, 72] : [30, 50, 65];
-
-  if (meetsMin===total && avgRisk<riskCeiling[0] && leagueScale>=0.85) return "STRONG BUY";
-  if (meetsMin>=Math.ceil(total*0.67) && avgRisk<riskCeiling[1]) return "BUY";
-  if (meetsMin>=Math.ceil(total*0.50) && avgRisk<riskCeiling[2]) return "MONITOR";
+  if (meetsMin===total && avgRisk<30 && leagueScale>=0.85) return "STRONG BUY";
+  if (meetsMin>=Math.ceil(total*0.67) && avgRisk<50) return "BUY";
+  if (meetsMin>=Math.ceil(total*0.50) && avgRisk<65) return "MONITOR";
   return "PASS";
 }
 
@@ -168,8 +141,11 @@ export default function App(){
   const [sel,  setSel]  = useState(null);
   const [grp,  setGrp]  = useState("ALL");
   const [q,    setQ]    = useState("");
-  const [view, setView] = useState("cards"); // "cards" | "table"
+  const [view, setView] = useState("cards");
   const [bm,   setBm]   = useState(null);
+  const [page, setPage] = useState("main"); // "main" | "method"
+
+  if (page === "method") return <MethodPage onBack={() => setPage("main")} />;
 
   const axes        = scatterAxes[grp];
   const activeBench = grp !== "ALL" ? benchmarks[grp] : null;
@@ -216,7 +192,11 @@ export default function App(){
               Scouting Portefølje · {players.length} spillere · Posisjonsspesifikk benchmark vs Viking FK
             </p>
           </div>
-          <div style={{marginLeft:"auto",display:"flex",gap:12,flexWrap:"wrap"}}>
+          <div style={{marginLeft:"auto",display:"flex",gap:12,flexWrap:"wrap",alignItems:"center"}}>
+            <button onClick={()=>setPage("method")} style={{
+              background:"#1f2937",border:"1px solid #374151",borderRadius:8,
+              padding:"7px 14px",color:"#9ca3af",fontSize:12,cursor:"pointer",
+            }}>📋 Metode</button>
             {Object.entries({...VERDICT_STYLE}).map(([v,s])=>(
               <span key={v} style={{display:"flex",alignItems:"center",gap:5,fontSize:11,color:s.dot}}>
                 <span style={{width:7,height:7,borderRadius:"50%",background:s.dot}}/> {v}
@@ -321,7 +301,7 @@ export default function App(){
                     <div>
                       <div style={{fontWeight:800,color:"#f9fafb",fontSize:15,marginBottom:2}}>
                         {player.flag??""} {player.fullName}
-                        <span style={{marginLeft:6,fontSize:9,background:"#1d4ed8",color:"#bfdbfe",padding:"1px 5px",borderRadius:99}}>DASH</span>
+                        {player.hasDetailedDashboard&&<span style={{marginLeft:6,fontSize:9,background:"#1d4ed8",color:"#bfdbfe",padding:"1px 5px",borderRadius:99}}>DASH</span>}
                       </div>
                       <div style={{fontSize:12,color:"#6b7280"}}>{player.club} · {player.league.split('. ')[1] ?? player.league}</div>
                     </div>
@@ -403,7 +383,7 @@ export default function App(){
                         <td style={{padding:"10px 14px",whiteSpace:"nowrap"}}>
                           <span style={{marginRight:5}}>{player.flag??""}</span>
                           <span style={{fontWeight:700,color:"#f9fafb"}}>{player.fullName}</span>
-                          <span style={{marginLeft:5,fontSize:9,background:"#1d4ed8",color:"#bfdbfe",padding:"1px 5px",borderRadius:99}}>DASH</span>
+                          {player.hasDetailedDashboard&&<span style={{marginLeft:5,fontSize:9,background:"#1d4ed8",color:"#bfdbfe",padding:"1px 5px",borderRadius:99}}>DASH</span>}
                         </td>
                         <td style={{padding:"10px 14px",color:"#9ca3af",whiteSpace:"nowrap"}}>{player.club}</td>
                         <td style={{padding:"10px 14px"}}>
@@ -531,6 +511,30 @@ export default function App(){
           </div>
         );
       })()}
+
+      {/* ── FOOTER ── */}
+      <div style={{
+        borderTop:"1px solid #1f2937",
+        padding:"16px 20px",
+        marginTop:8,
+      }}>
+        <div style={{maxWidth:1100,margin:"0 auto",display:"flex",flexWrap:"wrap",gap:12,alignItems:"center",justifyContent:"space-between"}}>
+          <div style={{fontSize:11,color:"#4b5563"}}>
+            <span style={{color:"#6b7280"}}>Datakilde:</span>{" "}
+            <span style={{color:"#9ca3af"}}>Wyscout · Transfermarkt</span>
+            <span style={{color:"#374151",margin:"0 8px"}}>·</span>
+            <span style={{color:"#6b7280"}}>Periode:</span>{" "}
+            <span style={{color:"#9ca3af"}}>Sesong 2025 (Skandinavia/Finland) · Sesong 2025/26 (øvrige ligaer)</span>
+            <span style={{color:"#374151",margin:"0 8px"}}>·</span>
+            <span style={{color:"#6b7280"}}>Sist oppdatert:</span>{" "}
+            <span style={{color:"#9ca3af"}}>Mars 2026</span>
+          </div>
+          <div style={{fontSize:11,color:"#374151"}}>
+            Alle stats per 90 min · Spillere sammenlignes mot utvalgte Viking FK-spillere i tilsvarende posisjon · Projeksjoner er estimater basert på ligakontekst og systemanalyse
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
