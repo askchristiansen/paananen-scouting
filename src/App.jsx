@@ -5,19 +5,108 @@ import PlayerDashboard from "./PlayerDashboard";
 import PaananenDashboard from "./PaananenDashboard";
 import DiarraDashboard from "./DiarraDashboard";
 import KilenDashboard from "./KilenDashboard";
+import MethodPage from "./MethodPage";
 
 const RC = { better:"#22c55e", similar:"#eab308", weaker:"#ef4444" };
 const RL = { better:"↑ Bedre", similar:"~ På nivå", weaker:"↓ Svakere" };
-
-// Scatter axes per position group
-const scatterAxes = {
-  ALL:  { xKey:"passAcc",  yKey:"duelWin",       xLabel:"Pass%",        yLabel:"Duell%" },
-  CF:   { xKey:"goals",    yKey:"xG",            xLabel:"Goals/90",     yLabel:"xG/90" },
-  WING: { xKey:"progRuns", yKey:"dribbleSucc",   xLabel:"ProgRuns/90",  yLabel:"Dribble%" },
-  CM:   { xKey:"passAcc",  yKey:"interceptions", xLabel:"Pass%",        yLabel:"Int/90" },
-  CB:   { xKey:"passAcc",  yKey:"duelWin",       xLabel:"Pass%",        yLabel:"Duell%" },
-  BACK: { xKey:"passAcc",  yKey:"duelWin",       xLabel:"Pass%",        yLabel:"Duell%" },
+const VERDICT_ORDER = { "STRONG BUY":0, "BUY":1, "MONITOR":2, "PASS":3 };
+const VERDICT_STYLE = {
+  "STRONG BUY": { bg:"#166534", text:"#dcfce7", dot:"#22c55e" },
+  "BUY":        { bg:"#15803d", text:"#f0fdf4", dot:"#4ade80" },
+  "MONITOR":    { bg:"#92400e", text:"#fffbeb", dot:"#fbbf24" },
+  "PASS":       { bg:"#7f1d1d", text:"#fef2f2", dot:"#f87171" },
 };
+
+// ── Position-specific table columns ──────────────────────────────────────────
+const tableCols = {
+  CF:   [
+    {l:"G/90",       k:"goals",          isPct:false},
+    {l:"xG/90",      k:"xG",             isPct:false},
+    {l:"SoT/90",     k:"shotsOT",        isPct:false},
+    {l:"Touch felt", k:"touchesPenArea", isPct:false},
+    {l:"Duell%",     k:"duelWin",        isPct:true },
+    {l:"Luft%",      k:"aerialWin",      isPct:true },
+  ],
+  WING: [
+    {l:"G/90",       k:"goals",          isPct:false},
+    {l:"A/90",       k:"assists",        isPct:false},
+    {l:"Dribble%",   k:"dribbleSucc",    isPct:true },
+    {l:"ProgRuns",   k:"progRuns",       isPct:false},
+    {l:"ShotAss/90", k:"shotAssists",    isPct:false},
+    {l:"Touch felt", k:"touchesPenArea", isPct:false},
+  ],
+  CM:   [
+    {l:"Pass%",      k:"passAcc",        isPct:true },
+    {l:"Int/90",     k:"interceptions",  isPct:false},
+    {l:"Duell%",     k:"duelWin",        isPct:true },
+    {l:"ProgRuns",   k:"progRuns",       isPct:false},
+    {l:"ShotAss/90", k:"shotAssists",    isPct:false},
+    {l:"Rec.opp/90", k:"recoveriesOpp",  isPct:false},
+  ],
+  CB:   [
+    {l:"Duell%",     k:"duelWin",        isPct:true },
+    {l:"Luft%",      k:"aerialWin",      isPct:true },
+    {l:"Int/90",     k:"interceptions",  isPct:false},
+    {l:"Pass%",      k:"passAcc",        isPct:true },
+    {l:"LongPass%",  k:"longPassAcc",    isPct:true },
+    {l:"ProgRuns",   k:"progRuns",       isPct:false},
+  ],
+  BACK: [
+    {l:"Duell%",     k:"duelWin",        isPct:true },
+    {l:"Pass%",      k:"passAcc",        isPct:true },
+    {l:"ProgRuns",   k:"progRuns",       isPct:false},
+    {l:"ShotAss/90", k:"shotAssists",    isPct:false},
+    {l:"Int/90",     k:"interceptions",  isPct:false},
+    {l:"Luft%",      k:"aerialWin",      isPct:true },
+  ],
+};
+
+const scatterAxes = {
+  CF:   {xKey:"goals",    yKey:"xG",           xLabel:"Goals/90",    yLabel:"xG/90"},
+  WING: {xKey:"progRuns", yKey:"dribbleSucc",  xLabel:"ProgRuns/90", yLabel:"Dribble%"},
+  CM:   {xKey:"passAcc",  yKey:"interceptions",xLabel:"Pass%",       yLabel:"Int/90"},
+  CB:   {xKey:"passAcc",  yKey:"duelWin",      xLabel:"Pass%",       yLabel:"Duell%"},
+  BACK: {xKey:"progRuns", yKey:"duelWin",      xLabel:"ProgRuns/90", yLabel:"Duell%"},
+};
+
+// Compute verdict for any player
+function computeVerdict(player) {
+  const posGrp = player.posGroup;
+  const bench = benchmarks[posGrp];
+  const metrics = posMetrics?.[posGrp];
+  if (!bench || !metrics) return "MONITOR";
+  const thresholds = {
+    CF:   { keys:['goals','xG','duelWin'],           mins:[0.40,0.30,48] },
+    WING: { keys:['goals','dribbleSucc','progRuns'],  mins:[0.30,55,3.5] },
+    CM:   { keys:['passAcc','interceptions','duelWin'],mins:[78,3.0,46] },
+    CB:   { keys:['duelWin','aerialWin','interceptions'],mins:[60,58,4.0] },
+    BACK: { keys:['duelWin','passAcc','progRuns'],    mins:[50,76,1.0] },
+  }[posGrp] ?? { keys:[], mins:[] };
+  const meetsMin = thresholds.keys.filter((k,i)=>(player.stats[k]??0)>=thresholds.mins[i]).length;
+  const total = thresholds.keys.length;
+  const riskScores = metrics.risiko.map(k=>{
+    const pv=player.stats[k]??0, bv=bench.stats[k]??0;
+    const diff=bv>0?((pv-bv)/bv)*100:0;
+    return Math.min(90,Math.round(Math.abs(diff)));
+  });
+  const avgRisk = riskScores.length ? riskScores.reduce((s,v)=>s+v,0)/riskScores.length : 50;
+  const leagueScale = {
+    'Norway. Eliteserien':1.00,'Norway. 1. divisjon':0.82,
+    'Sweden. Allsvenskan':0.95,'Sweden. Superettan':0.80,
+    'Denmark. Superliga':0.90,'Denmark. 1st Division':0.80,
+    'England. League One':0.85,'Scotland. Premiership':0.88,
+    'Finland. Veikkausliiga':0.78,'Netherlands. Eerste Divisie':0.82,
+    'Netherlands. Eredivisie':1.05,
+    'Bulgaria. First League':0.72,'Hungary. NB I':0.70,
+    'Lithuania. A Lyga':0.68,'Slovenia. Prva Liga':0.75,
+    'Croatia. SuperSport HNL':0.77,
+    'United States. MLS':0.65,'Australia. A-League':0.65,
+  }[player.league] ?? 0.75;
+  if (meetsMin===total && avgRisk<30 && leagueScale>=0.85) return "STRONG BUY";
+  if (meetsMin>=Math.ceil(total*0.67) && avgRisk<50) return "BUY";
+  if (meetsMin>=Math.ceil(total*0.50) && avgRisk<65) return "MONITOR";
+  return "PASS";
+}
 
 function Dot({cx,cy,payload}){
   if(!cx||!cy)return null;
@@ -39,38 +128,28 @@ function STip({active,payload,xKey,yKey,xLabel,yLabel}){
   );
 }
 
-// Position-specific table columns
-const tableCols = {
-  CF:   [{l:"G/90",k:"goals"},{l:"xG/90",k:"xG"},{l:"SoT/90",k:"shotsOT"},{l:"Touch felt",k:"touchesPenArea"},{l:"Duell%",k:"duelWin"},{l:"Luft%",k:"aerialWin"}],
-  WING: [{l:"G/90",k:"goals"},{l:"A/90",k:"assists"},{l:"Dribble%",k:"dribbleSucc"},{l:"ProgRuns",k:"progRuns"},{l:"ShotAss",k:"shotAssists"},{l:"Touch felt",k:"touchesPenArea"}],
-  CM:   [{l:"Pass%",k:"passAcc"},{l:"Int/90",k:"interceptions"},{l:"Duell%",k:"duelWin"},{l:"ProgRuns",k:"progRuns"},{l:"ShotAss",k:"shotAssists"},{l:"Rec.opp",k:"recoveriesOpp"}],
-  CB:   [{l:"Duell%",k:"duelWin"},{l:"Luft%",k:"aerialWin"},{l:"Int/90",k:"interceptions"},{l:"Pass%",k:"passAcc"},{l:"LongPass%",k:"longPassAcc"},{l:"ProgRuns",k:"progRuns"}],
-  BACK: [{l:"Duell%",k:"duelWin"},{l:"Pass%",k:"passAcc"},{l:"ProgRuns",k:"progRuns"},{l:"ShotAss",k:"shotAssists"},{l:"Int/90",k:"interceptions"},{l:"Luft%",k:"aerialWin"}],
-  ALL:  [{l:"G/90",k:"goals"},{l:"Pass%",k:"passAcc"},{l:"Duell%",k:"duelWin"},{l:"Luft%",k:"aerialWin"},{l:"Int/90",k:"interceptions"},{l:"ProgRuns",k:"progRuns"}],
-};
-
-// Which cols to colour (position-relevant only)
-const coloredCols = {
-  CF:   ["goals","xG","duelWin","touchesPenArea"],
-  WING: ["goals","assists","dribbleSucc","progRuns"],
-  CM:   ["passAcc","interceptions","duelWin","progRuns"],
-  CB:   ["duelWin","aerialWin","interceptions","passAcc"],
-  BACK: ["duelWin","passAcc","progRuns","interceptions"],
-  ALL:  [],
-};
+const posGroups = [
+  {id:"ALL",  label:"Alle"},
+  {id:"CF",   label:"CF / Spiss"},
+  {id:"WING", label:"Wing / Kant"},
+  {id:"CM",   label:"CM / AMF"},
+  {id:"CB",   label:"CB"},
+  {id:"BACK", label:"Back / WB"},
+];
 
 export default function App(){
-  const [sel,setSel]   = useState(null);
-  const [grp,setGrp]   = useState("ALL");
-  const [q,setQ]       = useState("");
-  const [sk,setSk]     = useState("name");
-  const [sd,setSd]     = useState(1);
-  const [bm,setBm]     = useState(null);
+  const [sel,  setSel]  = useState(null);
+  const [grp,  setGrp]  = useState("ALL");
+  const [q,    setQ]    = useState("");
+  const [view, setView] = useState("cards");
+  const [bm,   setBm]   = useState(null);
+  const [page, setPage] = useState("main"); // "main" | "method"
 
-  const axes = scatterAxes[grp] ?? scatterAxes.ALL;
+  if (page === "method") return <MethodPage onBack={() => setPage("main")} />;
+
+  const axes        = scatterAxes[grp];
   const activeBench = grp !== "ALL" ? benchmarks[grp] : null;
-  const cols = tableCols[grp] ?? tableCols.ALL;
-  const colored = coloredCols[grp] ?? [];
+  const cols        = grp !== "ALL" ? (tableCols[grp] ?? []) : [];
 
   const filtered = useMemo(() =>
     players.filter(p => {
@@ -81,239 +160,381 @@ export default function App(){
       return mg && ms;
     }), [grp, q]);
 
-  const sorted = useMemo(() =>
+  // Sort by verdict for card view
+  const sortedCards = useMemo(() =>
     [...filtered].sort((a,b) => {
-      const av = sk === "name" ? a.fullName : (a.stats[sk] ?? 0);
-      const bv = sk === "name" ? b.fullName : (b.stats[sk] ?? 0);
-      if (typeof av === "string") return sd * av.localeCompare(bv);
-      return sd * (av - bv);
-    }), [filtered, sk, sd]);
+      const va = VERDICT_ORDER[computeVerdict(a)] ?? 3;
+      const vb = VERDICT_ORDER[computeVerdict(b)] ?? 3;
+      return va - vb;
+    }), [filtered]);
 
-  function ts(k){ if(sk===k) setSd(d=>-d); else { setSk(k); setSd(-1); } }
+  const sortedTable = useMemo(() =>
+    [...filtered].sort((a,b) => {
+      const va = VERDICT_ORDER[computeVerdict(a)] ?? 3;
+      const vb = VERDICT_ORDER[computeVerdict(b)] ?? 3;
+      return va - vb;
+    }), [filtered]);
 
-  const groups = [
-    { id:"ALL",  label:"Alle" },
-    { id:"CF",   label:"CF / Spiss" },
-    { id:"WING", label:"Wing / Kant" },
-    { id:"CM",   label:"CM / AMF" },
-    { id:"CB",   label:"CB" },
-    { id:"BACK", label:"Back / WB" },
-  ];
+  const POS_COLORS = {CF:"#4ade80",WING:"#60a5fa",CM:"#c084fc",CB:"#fbbf24",BACK:"#f87171"};
+  const POS_BG     = {CF:"#1a3a1a",WING:"#1a2a3a",CM:"#2a1a3a",CB:"#3a2a1a",BACK:"#3a1a2a"};
 
   return (
     <div style={{minHeight:"100vh",background:"#0a0f1a",color:"#f9fafb",fontFamily:"system-ui,sans-serif"}}>
-      {/* Header */}
-      <div style={{borderBottom:"1px solid #1f2937",padding:"20px 32px",display:"flex",alignItems:"center",gap:16}}>
-        <div>
-          <h1 style={{margin:0,fontSize:22,fontWeight:900}}>⚡ Viking FK — Scouting Platform</h1>
-          <p style={{margin:0,fontSize:13,color:"#6b7280"}}>{players.length} spillere · Posisjonsspesifikk benchmark</p>
-        </div>
-        <div style={{marginLeft:"auto",display:"flex",gap:16}}>
-          {Object.entries(RL).map(([r,l])=>(
-            <span key={r} style={{display:"flex",alignItems:"center",gap:5,fontSize:12,color:RC[r]}}>
-              <span style={{width:8,height:8,borderRadius:"50%",background:RC[r]}}/> {l}
-            </span>
-          ))}
-        </div>
-      </div>
 
-      <div style={{padding:"24px 32px"}}>
-        {/* Filters */}
-        <div style={{display:"flex",gap:8,flexWrap:"wrap",marginBottom:20,alignItems:"center"}}>
-          {groups.map(g=>(
-            <button key={g.id} onClick={()=>setGrp(g.id)} style={{
-              background:grp===g.id?"#1d4ed8":"#1f2937",
-              color:grp===g.id?"#fff":"#9ca3af",
-              border:"none",borderRadius:8,padding:"6px 16px",
-              fontSize:13,cursor:"pointer",fontWeight:grp===g.id?700:400
-            }}>{g.label}</button>
-          ))}
-          <input placeholder="🔍 Søk spiller / klubb..." value={q}
-            onChange={e=>setQ(e.target.value)}
-            style={{marginLeft:"auto",background:"#1f2937",border:"1px solid #374151",
-              borderRadius:8,padding:"6px 14px",color:"#f9fafb",fontSize:13,outline:"none",minWidth:200}}/>
-        </div>
-
-        {/* Scatter */}
-        <div style={{background:"#111827",borderRadius:14,padding:"20px 20px 10px",marginBottom:24,border:"1px solid #1f2937"}}>
-          <div style={{fontSize:13,color:"#6b7280",marginBottom:12,fontWeight:600}}>
-            {axes.xLabel} vs {axes.yLabel}
-            {activeBench && <span style={{color:"#4b5563",fontWeight:400}}> · Stiplede linjer = {activeBench.name}</span>}
+      {/* ── HEADER ── */}
+      <div style={{borderBottom:"1px solid #1f2937",padding:"16px 20px"}}>
+        <div style={{maxWidth:1100,margin:"0 auto",display:"flex",alignItems:"center",gap:12,flexWrap:"wrap"}}>
+          <div>
+            <h1 style={{margin:0,fontSize:20,fontWeight:900,letterSpacing:"-0.02em"}}>
+              Ask Christiansen
+            </h1>
+            <p style={{margin:0,fontSize:12,color:"#6b7280",marginTop:1}}>
+              Scouting Portefølje · {players.length} spillere · Posisjonsspesifikk benchmark vs Viking FK
+            </p>
           </div>
-          <ResponsiveContainer width="100%" height={240}>
-            <ScatterChart margin={{top:10,right:20,bottom:20,left:0}}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#1f2937"/>
-              <XAxis type="number" dataKey={d=>d.stats[axes.xKey]??0}
-                tick={{fill:"#6b7280",fontSize:11}}
-                label={{value:axes.xLabel,position:"insideBottom",offset:-10,fill:"#4b5563",fontSize:11}}/>
-              <YAxis type="number" dataKey={d=>d.stats[axes.yKey]??0}
-                tick={{fill:"#6b7280",fontSize:11}}
-                label={{value:axes.yLabel,angle:-90,position:"insideLeft",fill:"#4b5563",fontSize:11}}/>
-              {activeBench && <>
-                <ReferenceLine x={activeBench.stats[axes.xKey]} stroke="#374151" strokeDasharray="4 3" strokeWidth={1.5}/>
-                <ReferenceLine y={activeBench.stats[axes.yKey]} stroke="#374151" strokeDasharray="4 3" strokeWidth={1.5}/>
-              </>}
-              <Tooltip content={<STip xKey={axes.xKey} yKey={axes.yKey} xLabel={axes.xLabel} yLabel={axes.yLabel}/>}/>
-              <Scatter data={filtered} shape={<Dot/>} onClick={d=>setSel(d)} style={{cursor:"pointer"}}/>
-            </ScatterChart>
-          </ResponsiveContainer>
-        </div>
-
-        {/* Table */}
-        <div style={{background:"#111827",borderRadius:14,border:"1px solid #1f2937",overflow:"hidden"}}>
-          <div style={{padding:"12px 20px",borderBottom:"1px solid #1f2937",fontSize:13,color:"#6b7280"}}>
-            {sorted.length} spillere · {grp === "ALL" ? "Alle posisjoner" : posGroupLabels[grp]}
-            {activeBench && <span style={{color:"#4b5563"}}> · Benchmark: {activeBench.fullName}</span>}
-          </div>
-          <div style={{overflowX:"auto"}}>
-            <table style={{width:"100%",borderCollapse:"collapse",fontSize:13}}>
-              <thead>
-                <tr style={{borderBottom:"1px solid #1f2937"}}>
-                  {[{l:"Spiller",k:"name"},{l:"Klubb",k:null},{l:"Pos",k:null},{l:"Min",k:"minutes"},
-                    ...cols,
-                    {l:"Vs. Viking",k:null}
-                  ].map(({l,k})=>(
-                    <th key={l} onClick={()=>k&&ts(k)} style={{
-                      padding:"10px 14px",textAlign:"left",color:"#6b7280",fontWeight:600,
-                      cursor:k?"pointer":"default",userSelect:"none",whiteSpace:"nowrap",
-                      background:sk===k?"#1a2332":"transparent"
-                    }}>{l}{sk===k?(sd===1?" ↑":" ↓"):""}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {sorted.map(player=>{
-                  const bench = benchmarks[player.posGroup];
-                  const rating = getOverallRating(player);
-                  const rel = coloredCols[player.posGroup] ?? [];
-                  return (
-                    <tr key={player.id} onClick={()=>setSel(player)}
-                      style={{borderBottom:"1px solid #1a2332",cursor:"pointer"}}
-                      onMouseEnter={e=>e.currentTarget.style.background="#1a2332"}
-                      onMouseLeave={e=>e.currentTarget.style.background="transparent"}>
-                      <td style={{padding:"11px 14px",whiteSpace:"nowrap"}}>
-                        <span style={{marginRight:6}}>{player.flag??""}</span>
-                        <span style={{fontWeight:700,color:"#f9fafb"}}>{player.fullName}</span>
-                        {player.hasDetailedDashboard&&(
-                          <span style={{marginLeft:6,fontSize:10,background:"#1d4ed8",color:"#bfdbfe",padding:"1px 6px",borderRadius:99}}>DASH</span>
-                        )}
-                        {player.isBenchmark&&(
-                          <span style={{marginLeft:6,fontSize:10,background:"#7c3aed",color:"#ddd6fe",padding:"1px 6px",borderRadius:99}}>VFK</span>
-                        )}
-                      </td>
-                      <td style={{padding:"11px 14px",color:"#9ca3af"}}>{player.club}</td>
-                      <td style={{padding:"11px 14px"}}>
-                        <span style={{background:"#1f2937",color:"#9ca3af",fontSize:11,padding:"2px 7px",borderRadius:4}}>
-                          {posGroupLabels[player.posGroup]}
-                        </span>
-                      </td>
-                      <td style={{padding:"11px 14px",color:"#6b7280"}}>{player.stats.minutes?.toLocaleString()??""}</td>
-                      {cols.map(({k})=>{
-                        const pv = player.stats[k]??0;
-                        const bv = bench?.stats[k]??null;
-                        const isPct = ["passAcc","duelWin","aerialWin","longPassAcc","dribbleSucc"].includes(k);
-                        let color = "#6b7280";
-                        if(bench && bv!==null && rel.includes(k)){
-                          color = RC[compareVsBenchmark(pv,bv)];
-                        }
-                        return (
-                          <td key={k} style={{padding:"11px 14px",color,fontWeight:rel.includes(k)?600:400}}>
-                            {isPct ? pv.toFixed(1)+"%" : pv.toFixed(2)}
-                          </td>
-                        );
-                      })}
-                      <td style={{padding:"11px 14px"}}>
-                        {rating?(
-                          <span style={{display:"inline-flex",alignItems:"center",gap:4,color:RC[rating],fontSize:12,fontWeight:700}}>
-                            <span style={{width:7,height:7,borderRadius:"50%",background:RC[rating]}}/>
-                            {RL[rating]}
-                          </span>
-                        ):<span style={{color:"#374151"}}>—</span>}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        {/* Benchmark cards */}
-        <div style={{marginTop:24}}>
-          <div style={{fontSize:12,color:"#4b5563",marginBottom:10,fontWeight:600,textTransform:"uppercase",letterSpacing:1}}>
-            Viking FK — Benchmarks (klikk for detaljer)
-          </div>
-          <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
-            {Object.entries(benchmarks).map(([key,b])=>(
-              <div key={key} onClick={()=>setBm(key)}
-                style={{background:"#111827",border:"1px solid #1f2937",borderRadius:10,
-                  padding:"12px 16px",minWidth:160,cursor:"pointer"}}
-                onMouseEnter={e=>e.currentTarget.style.borderColor="#374151"}
-                onMouseLeave={e=>e.currentTarget.style.borderColor="#1f2937"}>
-                <div style={{fontSize:10,color:"#6b7280",fontWeight:700,marginBottom:3,textTransform:"uppercase"}}>{posGroupLabels[key]??key}</div>
-                <div style={{fontWeight:800,color:"#f9fafb",marginBottom:1}}>{b.fullName}</div>
-                <div style={{fontSize:12,color:"#6b7280"}}>{b.position} · {b.club}</div>
-              </div>
+          <div style={{marginLeft:"auto",display:"flex",gap:12,flexWrap:"wrap",alignItems:"center"}}>
+            <button onClick={()=>setPage("method")} style={{
+              background:"#1f2937",border:"1px solid #374151",borderRadius:8,
+              padding:"7px 14px",color:"#9ca3af",fontSize:12,cursor:"pointer",
+            }}>📋 Metode</button>
+            {Object.entries({...VERDICT_STYLE}).map(([v,s])=>(
+              <span key={v} style={{display:"flex",alignItems:"center",gap:5,fontSize:11,color:s.dot}}>
+                <span style={{width:7,height:7,borderRadius:"50%",background:s.dot}}/> {v}
+              </span>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Player dashboard */}
-      {sel&&(
-        <div style={{position:"fixed",inset:0,background:"#f8f8f6",overflowY:"auto",zIndex:1000,padding:"48px 32px 48px"}}>
-          <button onClick={()=>setSel(null)} style={{position:"fixed",top:16,left:16,background:"#1f2937",border:"none",
-            color:"#f9fafb",borderRadius:8,padding:"8px 16px",cursor:"pointer",fontSize:13,zIndex:1001}}>
-            ← Tilbake
-          </button>
-          <div style={{maxWidth:900,margin:"0 auto"}}>
+      <div style={{maxWidth:1100,margin:"0 auto",padding:"16px 16px"}}>
+
+        {/* ── FILTERS + SEARCH + VIEW TOGGLE ── */}
+        <div style={{display:"flex",gap:8,flexWrap:"wrap",marginBottom:16,alignItems:"center"}}>
+          {posGroups.map(g=>(
+            <button key={g.id} onClick={()=>setGrp(g.id)} style={{
+              background:grp===g.id?"#1d4ed8":"#1f2937",
+              color:grp===g.id?"#fff":"#9ca3af",
+              border:"none",borderRadius:8,padding:"8px 14px",
+              fontSize:13,cursor:"pointer",fontWeight:grp===g.id?700:400,
+              minHeight:40,
+            }}>{g.label}</button>
+          ))}
+          <input placeholder="🔍 Søk..." value={q} onChange={e=>setQ(e.target.value)}
+            style={{background:"#1f2937",border:"1px solid #374151",borderRadius:8,
+              padding:"8px 14px",color:"#f9fafb",fontSize:13,outline:"none",
+              minWidth:140,flex:1,maxWidth:220,minHeight:40}}/>
+          <div style={{display:"flex",gap:4,marginLeft:"auto"}}>
+            {["cards","table"].map(v=>(
+              <button key={v} onClick={()=>setView(v)} style={{
+                background:view===v?"#374151":"transparent",
+                border:"1px solid #374151",borderRadius:6,
+                padding:"6px 12px",color:view===v?"#f9fafb":"#6b7280",
+                fontSize:12,cursor:"pointer",
+              }}>{v==="cards"?"⊞ Kort":"≡ Tabell"}</button>
+            ))}
+          </div>
+        </div>
+
+        {/* ── CONTEXT BAR (position selected) ── */}
+        {grp !== "ALL" && (
+          <div style={{
+            background:"#111827",border:"1px solid #1f2937",borderRadius:8,
+            padding:"8px 14px",marginBottom:14,
+            display:"flex",alignItems:"center",gap:10,fontSize:12,flexWrap:"wrap",
+          }}>
+            <span style={{color:"#6b7280"}}>Benchmark:</span>
+            <span style={{color:"#22c55e",fontWeight:700}}>{activeBench?.fullName}</span>
+            <span style={{color:"#4b5563"}}>·</span>
+            <span style={{color:"#4b5563"}}>{cols.map(c=>c.l).join(" · ")}</span>
+          </div>
+        )}
+
+        {/* ── SCATTER (only when position selected) ── */}
+        {grp !== "ALL" && axes && (
+          <div style={{background:"#111827",borderRadius:12,padding:"16px 16px 8px",marginBottom:16,border:"1px solid #1f2937"}}>
+            <div style={{fontSize:12,color:"#6b7280",marginBottom:10,fontWeight:600}}>
+              {axes.xLabel} vs {axes.yLabel}
+              {activeBench && <span style={{color:"#4b5563",fontWeight:400}}> · Stiplede linjer = {activeBench.name}</span>}
+            </div>
+            <ResponsiveContainer width="100%" height={200}>
+              <ScatterChart margin={{top:8,right:16,bottom:16,left:0}}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#1f2937"/>
+                <XAxis type="number" dataKey={d=>d.stats[axes.xKey]??0}
+                  tick={{fill:"#6b7280",fontSize:10}}
+                  label={{value:axes.xLabel,position:"insideBottom",offset:-10,fill:"#4b5563",fontSize:10}}/>
+                <YAxis type="number" dataKey={d=>d.stats[axes.yKey]??0}
+                  tick={{fill:"#6b7280",fontSize:10}}
+                  label={{value:axes.yLabel,angle:-90,position:"insideLeft",fill:"#4b5563",fontSize:10}}/>
+                <ReferenceLine x={activeBench?.stats[axes.xKey]} stroke="#374151" strokeDasharray="4 3" strokeWidth={1.5}/>
+                <ReferenceLine y={activeBench?.stats[axes.yKey]} stroke="#374151" strokeDasharray="4 3" strokeWidth={1.5}/>
+                <Tooltip content={<STip xKey={axes.xKey} yKey={axes.yKey} xLabel={axes.xLabel} yLabel={axes.yLabel}/>}/>
+                <Scatter data={filtered} shape={<Dot/>} onClick={d=>setSel(d)} style={{cursor:"pointer"}}/>
+              </ScatterChart>
+            </ResponsiveContainer>
+          </div>
+        )}
+
+        {/* ── CARD VIEW ── */}
+        {view === "cards" && (
+          <div style={{
+            display:"grid",
+            gridTemplateColumns:"repeat(auto-fill, minmax(300px, 1fr))",
+            gap:10,
+          }}>
+            {sortedCards.map(player => {
+              const verdict = computeVerdict(player);
+              const vs = VERDICT_STYLE[verdict];
+              const bench = benchmarks[player.posGroup];
+              const rating = getOverallRating(player);
+              const topStats = (tableCols[player.posGroup] ?? []).slice(0,3);
+              return (
+                <div key={player.id} onClick={()=>setSel(player)}
+                  style={{
+                    background:"#111827",border:"1px solid #1f2937",
+                    borderRadius:12,padding:"14px 16px",cursor:"pointer",
+                    transition:"all .15s",borderTop:`3px solid ${vs.dot}`,
+                  }}
+                  onMouseEnter={e=>e.currentTarget.style.borderColor=vs.dot}
+                  onMouseLeave={e=>{e.currentTarget.style.borderTopColor=vs.dot;e.currentTarget.style.borderRightColor="#1f2937";e.currentTarget.style.borderBottomColor="#1f2937";e.currentTarget.style.borderLeftColor="#1f2937"}}>
+                  {/* Card header */}
+                  <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
+                    <div>
+                      <div style={{fontWeight:800,color:"#f9fafb",fontSize:15,marginBottom:2}}>
+                        {player.flag??""} {player.fullName}
+                        {player.hasDetailedDashboard&&<span style={{marginLeft:6,fontSize:9,background:"#1d4ed8",color:"#bfdbfe",padding:"1px 5px",borderRadius:99}}>DASH</span>}
+                      </div>
+                      <div style={{fontSize:12,color:"#6b7280"}}>{player.club} · {player.league.split('. ')[1] ?? player.league}</div>
+                    </div>
+                    <span style={{
+                      fontSize:10,fontWeight:800,letterSpacing:"0.06em",
+                      padding:"3px 8px",borderRadius:4,
+                      background:vs.bg,color:vs.text,whiteSpace:"nowrap",flexShrink:0,
+                    }}>{verdict}</span>
+                  </div>
+
+                  {/* Pos + age + value row */}
+                  <div style={{display:"flex",gap:6,marginBottom:10,flexWrap:"wrap"}}>
+                    <span style={{fontSize:10,fontWeight:700,padding:"2px 7px",borderRadius:3,
+                      background:POS_BG[player.posGroup]??"#1f2937",
+                      color:POS_COLORS[player.posGroup]??"#9ca3af"}}>
+                      {posGroupLabels[player.posGroup]}
+                    </span>
+                    <span style={{fontSize:11,color:"#6b7280"}}>{player.age} år</span>
+                    {player.marketValue&&<span style={{fontSize:11,color:"#f9fafb",fontWeight:600}}>{player.marketValue}</span>}
+                    {player.contract&&<span style={{fontSize:11,color:"#4b5563"}}>t.o.m. {player.contract}</span>}
+                  </div>
+
+                  {/* Top 3 stats for position */}
+                  {topStats.length > 0 && bench && (
+                    <div style={{display:"flex",gap:6}}>
+                      {topStats.map(({l,k,isPct})=>{
+                        const pv = player.stats[k]??0;
+                        const bv = bench.stats[k]??0;
+                        const r  = compareVsBenchmark(pv, bv);
+                        return (
+                          <div key={k} style={{flex:1,background:"#1a2332",borderRadius:6,padding:"6px 8px",textAlign:"center"}}>
+                            <div style={{fontSize:9,color:"#4b5563",marginBottom:2}}>{l}</div>
+                            <div style={{fontSize:13,fontWeight:700,color:RC[r]??"#f9fafb"}}>
+                              {isPct ? pv.toFixed(1)+"%" : pv.toFixed(2)}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        {/* ── TABLE VIEW ── */}
+        {view === "table" && (
+          <div style={{background:"#111827",borderRadius:12,border:"1px solid #1f2937",overflow:"hidden"}}>
+            <div style={{padding:"10px 16px",borderBottom:"1px solid #1f2937",fontSize:12,color:"#6b7280"}}>
+              {sortedTable.length} spillere · sortert etter vurdering
+              {grp==="ALL"&&<span style={{marginLeft:8,color:"#4b5563",fontStyle:"italic"}}>Velg posisjon for posisjonsspesifikke kolonner</span>}
+            </div>
+            <div style={{overflowX:"auto",WebkitOverflowScrolling:"touch"}}>
+              <table style={{width:"100%",borderCollapse:"collapse",fontSize:13,minWidth:600}}>
+                <thead>
+                  <tr style={{borderBottom:"1px solid #1f2937"}}>
+                    <th style={{padding:"9px 14px",textAlign:"left",color:"#6b7280",fontWeight:600,whiteSpace:"nowrap"}}>Spiller</th>
+                    <th style={{padding:"9px 14px",textAlign:"left",color:"#6b7280",fontWeight:600,whiteSpace:"nowrap"}}>Klubb</th>
+                    <th style={{padding:"9px 14px",textAlign:"left",color:"#6b7280",fontWeight:600}}>Pos</th>
+                    <th style={{padding:"9px 14px",textAlign:"left",color:"#6b7280",fontWeight:600}}>Verdi</th>
+                    <th style={{padding:"9px 14px",textAlign:"left",color:"#6b7280",fontWeight:600}}>Kontrakt</th>
+                    {cols.map(({l})=>(
+                      <th key={l} style={{padding:"9px 14px",textAlign:"left",color:"#22c55e",fontWeight:700,whiteSpace:"nowrap"}}>{l}</th>
+                    ))}
+                    <th style={{padding:"9px 14px",textAlign:"left",color:"#6b7280",fontWeight:600,whiteSpace:"nowrap"}}>Vurdering</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sortedTable.map(player => {
+                    const bench  = benchmarks[player.posGroup];
+                    const verdict = computeVerdict(player);
+                    const vs = VERDICT_STYLE[verdict];
+                    return (
+                      <tr key={player.id} onClick={()=>setSel(player)}
+                        style={{borderBottom:"1px solid #1a2332",cursor:"pointer"}}
+                        onMouseEnter={e=>e.currentTarget.style.background="#1a2332"}
+                        onMouseLeave={e=>e.currentTarget.style.background="transparent"}>
+                        <td style={{padding:"10px 14px",whiteSpace:"nowrap"}}>
+                          <span style={{marginRight:5}}>{player.flag??""}</span>
+                          <span style={{fontWeight:700,color:"#f9fafb"}}>{player.fullName}</span>
+                          {player.hasDetailedDashboard&&<span style={{marginLeft:5,fontSize:9,background:"#1d4ed8",color:"#bfdbfe",padding:"1px 5px",borderRadius:99}}>DASH</span>}
+                        </td>
+                        <td style={{padding:"10px 14px",color:"#9ca3af",whiteSpace:"nowrap"}}>{player.club}</td>
+                        <td style={{padding:"10px 14px"}}>
+                          <span style={{fontSize:10,fontWeight:700,padding:"2px 7px",borderRadius:3,
+                            background:POS_BG[player.posGroup]??"#1f2937",
+                            color:POS_COLORS[player.posGroup]??"#9ca3af"}}>
+                            {posGroupLabels[player.posGroup]}
+                          </span>
+                        </td>
+                        <td style={{padding:"10px 14px",color:"#f9fafb",fontWeight:600,whiteSpace:"nowrap"}}>{player.marketValue??"—"}</td>
+                        <td style={{padding:"10px 14px",color:"#6b7280",whiteSpace:"nowrap"}}>{player.contract?`t.o.m. ${player.contract}`:"—"}</td>
+                        {cols.map(({k,isPct}) => {
+                          const pv = player.stats[k]??0;
+                          const bv = bench?.stats[k]??null;
+                          let color = "#6b7280";
+                          if(bench && bv!==null && player.posGroup===grp) color=RC[compareVsBenchmark(pv,bv)];
+                          return <td key={k} style={{padding:"10px 14px",color,fontWeight:player.posGroup===grp?600:400}}>
+                            {isPct?pv.toFixed(1)+"%":pv.toFixed(2)}
+                          </td>;
+                        })}
+                        <td style={{padding:"10px 14px"}}>
+                          <span style={{fontSize:11,fontWeight:800,padding:"3px 8px",borderRadius:4,
+                            background:vs.bg,color:vs.text,whiteSpace:"nowrap"}}>
+                            {verdict}
+                          </span>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
+        {/* ── BENCHMARK CARDS ── */}
+        <div style={{marginTop:20}}>
+          <div style={{fontSize:11,color:"#4b5563",marginBottom:8,fontWeight:600,textTransform:"uppercase",letterSpacing:1}}>
+            Viking FK — Benchmarks
+          </div>
+          <div style={{display:"flex",gap:8,flexWrap:"wrap"}}>
+            {Object.entries(benchmarks).map(([key,b])=>(
+              <div key={key} onClick={()=>setBm(key)}
+                style={{
+                  background:grp===key?"#1a2d1a":"#111827",
+                  border:`1px solid ${grp===key?"#22c55e":"#1f2937"}`,
+                  borderRadius:8,padding:"10px 14px",cursor:"pointer",minWidth:140,
+                }}
+                onMouseEnter={e=>e.currentTarget.style.borderColor="#374151"}
+                onMouseLeave={e=>e.currentTarget.style.borderColor=grp===key?"#22c55e":"#1f2937"}>
+                <div style={{fontSize:9,color:"#6b7280",fontWeight:700,marginBottom:2,textTransform:"uppercase"}}>{posGroupLabels[key]??key}</div>
+                <div style={{fontWeight:800,color:"#f9fafb",fontSize:13,marginBottom:1}}>{b.fullName}</div>
+                <div style={{fontSize:11,color:"#6b7280"}}>{b.position} · {b.club}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
+      {/* ── PLAYER DASHBOARD MODAL ── */}
+      {sel && (
+        <div style={{position:"fixed",inset:0,background:"#f8f8f6",overflowY:"auto",zIndex:1000,
+          padding:"56px 16px 48px"}}>
+          <button onClick={()=>setSel(null)} style={{
+            position:"fixed",top:12,left:12,background:"#1f2937",border:"none",
+            color:"#f9fafb",borderRadius:8,padding:"10px 16px",cursor:"pointer",fontSize:13,zIndex:1001,
+          }}>← Tilbake</button>
+          <div style={{maxWidth:860,margin:"0 auto"}}>
+            {/* Verdict banner for DASH players */}
+            {(sel.id==="paananen"||sel.id==="diarra"||sel.id==="kilen") && (() => {
+              const verdict = computeVerdict(sel);
+              const vs = VERDICT_STYLE[verdict];
+              return (
+                <div style={{display:"flex",gap:12,alignItems:"center",marginBottom:16,
+                  padding:"10px 16px",background:"#111827",borderRadius:8,flexWrap:"wrap"}}>
+                  <span style={{fontSize:13,fontWeight:800,letterSpacing:"0.08em",
+                    padding:"4px 14px",borderRadius:4,background:vs.bg,color:vs.text}}>
+                    {verdict}
+                  </span>
+                  <span style={{fontSize:12,color:"#9ca3af"}}>
+                    {sel.fullName} · {sel.marketValue??""} · Kontrakt t.o.m. {sel.contract??"—"}
+                  </span>
+                </div>
+              );
+            })()}
             {sel.id==="paananen" ? <PaananenDashboard/> :
              sel.id==="diarra"   ? <DiarraDashboard/>   :
              sel.id==="kilen"    ? <KilenDashboard/>    :
-             <PlayerDashboard player={sel} />}
+             <PlayerDashboard player={sel}/>}
           </div>
         </div>
       )}
 
-      {/* Benchmark modal */}
-      {bm&&(()=>{
-        const b=benchmarks[bm];
-        const metrics=posMetrics[bm]?.table??[];
+      {/* ── BENCHMARK MODAL ── */}
+      {bm && (()=>{
+        const b=benchmarks[bm], mets=tableCols[bm]??[];
         return(
-          <div style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.75)",display:"flex",
-            alignItems:"center",justifyContent:"center",zIndex:1000,padding:16}}
+          <div style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.8)",
+            display:"flex",alignItems:"center",justifyContent:"center",zIndex:1000,padding:16}}
             onClick={()=>setBm(null)}>
-            <div style={{background:"#111827",border:"1px solid #1f2937",borderRadius:16,
-              width:"100%",maxWidth:480,padding:28}} onClick={e=>e.stopPropagation()}>
-              <div style={{display:"flex",justifyContent:"space-between",marginBottom:16}}>
+            <div style={{background:"#111827",border:"1px solid #1f2937",borderRadius:14,
+              width:"100%",maxWidth:460,padding:24}} onClick={e=>e.stopPropagation()}>
+              <div style={{display:"flex",justifyContent:"space-between",marginBottom:14}}>
                 <div>
-                  <div style={{fontSize:11,color:"#6b7280",fontWeight:700,marginBottom:4,textTransform:"uppercase",letterSpacing:1}}>
-                    {posGroupLabels[bm]??bm} — Viking FK Benchmark
+                  <div style={{fontSize:10,color:"#6b7280",fontWeight:700,marginBottom:3,textTransform:"uppercase",letterSpacing:1}}>
+                    {posGroupLabels[bm]} — Benchmark
                   </div>
-                  <h2 style={{margin:0,fontSize:20,fontWeight:900,color:"#f9fafb"}}>{b.fullName}</h2>
-                  <div style={{color:"#6b7280",fontSize:13,marginTop:3}}>{b.position} · {b.club}</div>
+                  <h2 style={{margin:0,fontSize:18,fontWeight:900,color:"#f9fafb"}}>{b.fullName}</h2>
+                  <div style={{color:"#6b7280",fontSize:12,marginTop:2}}>{b.position} · {b.club}</div>
                 </div>
-                <button onClick={()=>setBm(null)} style={{background:"none",border:"none",color:"#6b7280",fontSize:22,cursor:"pointer"}}>✕</button>
+                <button onClick={()=>setBm(null)} style={{background:"none",border:"none",color:"#6b7280",fontSize:20,cursor:"pointer"}}>✕</button>
               </div>
-              <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}}>
-                {metrics.map(k=>{
-                  const isPct=["passAcc","duelWin","aerialWin","longPassAcc","dribbleSucc"].includes(k);
-                  const label=posMetrics[bm]?.labels?.[k]??k;
-                  const val=b.stats[k];
-                  return(
-                    <div key={k} style={{background:"#1f2937",borderRadius:8,padding:"10px 12px"}}>
-                      <div style={{fontSize:11,color:"#6b7280",marginBottom:2}}>{label}</div>
-                      <div style={{fontSize:17,fontWeight:700,color:"#f9fafb"}}>
-                        {val!=null?(isPct?val.toFixed(1)+"%":val.toFixed(2)):"—"}
-                      </div>
+              <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:6}}>
+                {mets.map(({l,k,isPct})=>(
+                  <div key={k} style={{background:"#1f2937",borderRadius:6,padding:"8px 10px"}}>
+                    <div style={{fontSize:10,color:"#6b7280",marginBottom:1}}>{l}</div>
+                    <div style={{fontSize:15,fontWeight:700,color:"#f9fafb"}}>
+                      {b.stats[k]!=null?(isPct?b.stats[k].toFixed(1)+"%":b.stats[k].toFixed(2)):"—"}
                     </div>
-                  );
-                })}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         );
       })()}
+
+      {/* ── FOOTER ── */}
+      <div style={{
+        borderTop:"1px solid #1f2937",
+        padding:"16px 20px",
+        marginTop:8,
+      }}>
+        <div style={{maxWidth:1100,margin:"0 auto",display:"flex",flexWrap:"wrap",gap:12,alignItems:"center",justifyContent:"space-between"}}>
+          <div style={{fontSize:11,color:"#4b5563"}}>
+            <span style={{color:"#6b7280"}}>Datakilde:</span>{" "}
+            <span style={{color:"#9ca3af"}}>Wyscout · Transfermarkt</span>
+            <span style={{color:"#374151",margin:"0 8px"}}>·</span>
+            <span style={{color:"#6b7280"}}>Periode:</span>{" "}
+            <span style={{color:"#9ca3af"}}>Sesong 2025 (Skandinavia/Finland) · Sesong 2025/26 (øvrige ligaer)</span>
+            <span style={{color:"#374151",margin:"0 8px"}}>·</span>
+            <span style={{color:"#6b7280"}}>Sist oppdatert:</span>{" "}
+            <span style={{color:"#9ca3af"}}>Mars 2026</span>
+          </div>
+          <div style={{fontSize:11,color:"#374151"}}>
+            Alle stats per 90 min · Spillere sammenlignes mot utvalgte Viking FK-spillere i tilsvarende posisjon · Projeksjoner er estimater basert på ligakontekst og systemanalyse
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
