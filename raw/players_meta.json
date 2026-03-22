@@ -1,0 +1,482 @@
+{
+
+  "paananen": {
+    "full_name": "Kasper Paananen",
+    "short_name": "K. Paananen",
+    "pos_group": "CF",
+    "position_detail": "CF / AMF",
+    "has_detailed_dashboard": true,
+    "age": 23,
+    "nationality": "Finland",
+    "league": "Finland. Veikkausliiga",
+    "club": "SJK Seinäjoki",
+    "bio": "23-årig finsk angripende midtbanespiller med naturlig posisjonsforståelse i halvrom. Scoret 18 mål i Veikkausliiga 2025 med 0.55/90. G–xG +5.19 er en risikovariabel. Passer Vikings halvromsstil.",
+    "wyscout_dir": "raw/wyscout/paananen",
+    "manual_overrides": []
+  },
+
+  "diarra": {
+    "full_name": "Sory Diarra",
+    "short_name": "S. Diarra",
+    "pos_group": "CF",
+    "position_detail": "CF",
+    "has_detailed_dashboard": true,
+    "age": 26,
+    "nationality": "Mali",
+    "league": "Norway. 1. divisjon",
+    "club": "FK Haugesund",
+    "bio": "26-årig malisk spiss med fysisk dominans og sterk heading-profil. Scorer konsekvent på xG-nivå over tre sesonger. Passer Vikings direkte spill.",
+    "wyscout_dir": "raw/wyscout/diarra",
+    "manual_overrides": []
+  },
+
+  "kucys": {
+    "full_name": "Armandas Kučys",
+    "short_name": "A. Kučys",
+    "pos_group": "CF",
+    "position_detail": "CF",
+    "has_detailed_dashboard": false,
+    "age": 23,
+    "nationality": "Lithuania",
+    "league": "Slovenia. Prva Liga",
+    "club": "NK Celje",
+    "bio": "23-årig litauisk spiss med høyt scoringsvolum. Nå i slovenisk Prva Liga. Ligakoeff. 0.75 gir moderat skaleringsrisiko.",
+    "wyscout_dir": "raw/wyscout/kucys",
+    "manual_overrides": []
+  },
+
+  "gonstad": {
+    "full_name": "Julian Gonstad",
+    "short_name": "J. Gonstad",
+    "pos_group": "CF",
+    "position_detail": "CF",
+    "has_detailed_dashboard": false,
+    "age": 19,
+    "nationality": "Norway",
+    "league": "Norway. Eliteserien",
+    "club": "Hamarkameratene",
+    "bio": "19-årig norsk spiss i Eliteserien. Begrenset data — MONITOR inntil mer spilletid foreligger.",
+    "wyscout_dir": "raw/wyscout/gonstad",
+    "manual_overrides": []
+  },
+
+  "fenger": {
+    "full_name": "Max Fenger",
+    "short_name": "M. Fenger",
+    "pos_group": "CF",
+    "position_detail": "CF",
+    "has_detailed_dashboard": false,
+    "age": 24,
+    "nationality": "Denmark",
+    "league": "Sweden. Allsvenskan",
+    "club": "IFK Göteborg",
+    "bio": "24-årig dansk spiss nå i IFK Göteborg. Solid volumscorer. Aerialwin 57% er over benchmark.",
+    "wyscout_dir": "raw/wyscout/fenger",
+    "manual_overrides": []
+  },
+
+  "ladefoged": {
+    "full_name": "Mikkel Ladefoged",
+    "short_name": "M. Ladefoged",
+    "pos_group": "CF",
+    "position_detail": "CF",
+    "has_detailed_dashboard": false,
+    "age": 22,
+    "nationality": "Denmark",
+    "league": "Sweden. Allsvenskan",
+    "club": "Västerås SK",
+    "bio": "22-årig dansk spiss i Västerås SK. Begrenset spilletid — sample size er for lav for sikker vurdering.",
+    "wyscout_dir": "raw/wyscout/ladefoged",
+    "manual_overrides": []
+  },
+
+  "kilen": {
+    "full_name": "Sander Kilen",
+    "short_name": "S. Kilen",
+    "pos_group": "WING",
+    "position_detail": "LWF",
+    "has_detailed_dashboard": true,
+    "age": 20,
+    "nationality": "Norway",
+    "league": "Norway. Eliteserien",
+    "club": "Kristiansund BK",
+    "bio": "20-årig norsk venstrekant med ekstraordinær dribling. Ligaleder i progressive runs og dribbles/90 i Eliteserien 2025. HIGH POTENTIAL-profil.",
+    "wyscout_dir": "raw/wyscout/kilen",
+    "manual_overrides": []
+  },
+
+  "bjerkebo": {
+    "full_name": "Isak Bjerkebø",
+    "short_name": "I. Bjerkebø",
+    "pos_group": "WING",
+    "position_detail": "LW",
+    "has_detailed_dashboard": false,
+    "age": 23,
+    "nationality": "Sweden",
+    "league": "Sweden. Allsvenskan",
+    "club": "IK Sirius",
+    "bio": "23-årig svensk venstrekant med god toveis bidragsbalanse. Aktiv presser. Allsvenskan gir god ligavaliditet.",
+    "wyscout_dir": "raw/wyscout/bjerkebo",
+    "manual_overrides": []
+  },
+
+  "ejdum": {
+    "full_name": "Max Ejdum",
+    "short_name": "M. Ejdum",
+    "pos_group": "CM",
+    "position_detail": "CM / RW",
+    "has_detailed_dashboard": false,
+    "age": 21,
+    "nationality": "Denmark",
+    "league": "Denmark. Superliga",
+    "club": "Odense BK",
+    "bio": "21-årig dansk midtbanespiller i Odense BK med svært høy pasningsnøyaktighet (84.8%). Taktisk fleksibel profil.",
+    "wyscout_dir": "raw/wyscout/ejdum",
+    "manual_overrides": []
+  },
+
+  "heintz": {
+    "full_name": "Tobias Heintz",
+    "short_name": "T. Heintz",
+    "pos_group": "WING",
+    "position_detail": "LWF",
+    "has_detailed_dashboard": false,
+    "age": 27,
+    "nationality": "Norway",
+    "league": "Sweden. Allsvenskan",
+    "club": "IFK Göteborg",
+    "bio": "27-årig norsk venstrekant nå i IFK Göteborg. Allsvenskan gir best ligakontekst blant wing-kandidatene. Konservativ spiller.",
+    "wyscout_dir": "raw/wyscout/heintz",
+    "manual_overrides": []
+  },
+
+  "balov": {
+    "full_name": "Kristiyan Balov",
+    "short_name": "K. Balov",
+    "pos_group": "WING",
+    "position_detail": "LW",
+    "has_detailed_dashboard": false,
+    "age": 19,
+    "nationality": "Bulgaria",
+    "league": "Bulgaria. First League",
+    "club": "Slavia Sofia",
+    "bio": "19-årig bulgarsk venstrekant med høyt driblingsvolum men svak ligakontekst. Duelwin 38.3% er kritisk lavt.",
+    "wyscout_dir": "raw/wyscout/balov",
+    "manual_overrides": []
+  },
+
+  "mccowatt": {
+    "full_name": "Callum McCowatt",
+    "short_name": "C. McCowatt",
+    "pos_group": "CM",
+    "position_detail": "AMF",
+    "has_detailed_dashboard": false,
+    "age": 26,
+    "nationality": "New Zealand",
+    "league": "Denmark. Superliga",
+    "club": "Silkeborg IF",
+    "bio": "26-årig newzealandsk AMF nå i Silkeborg. Solid bidragsbalanse. Begrenset oppsidepotensial.",
+    "wyscout_dir": "raw/wyscout/mccowatt",
+    "manual_overrides": []
+  },
+
+  "tahaui": {
+    "full_name": "Adam Tahaui",
+    "short_name": "A. Tahaui",
+    "pos_group": "CM",
+    "position_detail": "AMF",
+    "has_detailed_dashboard": false,
+    "age": 20,
+    "nationality": "Netherlands",
+    "league": "Netherlands. Eerste Divisie",
+    "club": "Vitesse Arnhem",
+    "bio": "20-årig nederlandsk AMF med sterk teknisk profil. Dribble% 72.8% er eksepsjonelt. Vitesse i urolig periode.",
+    "wyscout_dir": "raw/wyscout/tahaui",
+    "manual_overrides": []
+  },
+
+  "jorgensen": {
+    "full_name": "Thomas Jørgensen",
+    "short_name": "T. Jørgensen",
+    "pos_group": "CM",
+    "position_detail": "CM / AMF",
+    "has_detailed_dashboard": false,
+    "age": 20,
+    "nationality": "Denmark",
+    "league": "Denmark. Superliga",
+    "club": "Viborg FF",
+    "bio": "20-årig dansk CM/AMF i Viborg med imponerende allround-tall. 3.65 ProgRuns og 3.19 Int/90. Taktisk fleksibel. €4.0M markedsverdi.",
+    "wyscout_dir": "raw/wyscout/jorgensen",
+    "manual_overrides": []
+  },
+
+  "popoola": {
+    "full_name": "Ridwan Popoola",
+    "short_name": "R. Popoola",
+    "pos_group": "CM",
+    "position_detail": "CM / DMF",
+    "has_detailed_dashboard": false,
+    "age": 19,
+    "nationality": "Nigeria",
+    "league": "Hungary. NB I",
+    "club": "Kisvárda FC",
+    "bio": "19-årig nigeriansk CM/DMF med ekstraordinær defensiv profil. 5.19 Int/90. NB I er svak liga — stor skaleringsrisiko.",
+    "wyscout_dir": "raw/wyscout/popoola",
+    "manual_overrides": []
+  },
+
+  "diop": {
+    "full_name": "Cheikh Mbacke Diop",
+    "short_name": "C. Diop",
+    "pos_group": "CB",
+    "position_detail": "CB",
+    "has_detailed_dashboard": false,
+    "age": 20,
+    "nationality": "Senegal",
+    "league": "Croatia. SuperSport HNL",
+    "club": "NK Lokomotiva Zagreb",
+    "bio": "20-årig senegalesisk CB nå i kroatisk HNL. Duelwin 60.2% og aerialwin 62% er solide. Interessant profil i sterkere liga enn Sogndal.",
+    "wyscout_dir": "raw/wyscout/diop",
+    "manual_overrides": []
+  },
+
+  "amundsen": {
+    "full_name": "Ethan Amundsen-Day",
+    "short_name": "E. Amundsen-Day",
+    "pos_group": "CB",
+    "position_detail": "CB",
+    "has_detailed_dashboard": false,
+    "age": 20,
+    "nationality": "Norway",
+    "league": "Norway. Eliteserien",
+    "club": "Hamarkameratene",
+    "bio": "20-årig norsk CB i Eliteserien. Stabil defensiv profil. LongPass% 47% er svak. Rom for utvikling.",
+    "wyscout_dir": "raw/wyscout/amundsen",
+    "manual_overrides": []
+  },
+
+  "askou": {
+    "full_name": "Julius Berthel Askou",
+    "short_name": "J. Askou",
+    "pos_group": "CB",
+    "position_detail": "CB",
+    "has_detailed_dashboard": false,
+    "age": 19,
+    "nationality": "Denmark",
+    "league": "Denmark. Superliga",
+    "club": "Odense BK",
+    "bio": "19-årig dansk CB i Odense BK med eksepsjonell pasningsnøyaktighet (89.6%). Den teknisk sterkeste CB-kandidaten i porteføljen.",
+    "wyscout_dir": "raw/wyscout/askou",
+    "manual_overrides": []
+  },
+
+  "markmann": {
+    "full_name": "Noah Markmann",
+    "short_name": "N. Markmann",
+    "pos_group": "CB",
+    "position_detail": "CB",
+    "has_detailed_dashboard": false,
+    "age": 19,
+    "nationality": "Denmark",
+    "league": "Denmark. Superliga",
+    "club": "FC Nordsjælland",
+    "bio": "19-årig dansk CB i FC Nordsjælland. Pass% 92.7% er høyest i datasettet. Int/90 5.50 er over benchmark. €2.5M markedsverdi.",
+    "wyscout_dir": "raw/wyscout/markmann",
+    "manual_overrides": []
+  },
+
+  "coulibaly": {
+    "full_name": "Souleymane Coulibaly",
+    "short_name": "S. Coulibaly",
+    "pos_group": "CB",
+    "position_detail": "CB",
+    "has_detailed_dashboard": false,
+    "age": 24,
+    "nationality": "Ivory Coast",
+    "league": "Sweden. Superettan",
+    "club": "IFK Värnamo",
+    "bio": "24-årig ivorisk CB i IFK Värnamo. Sterk aerialwin (70.5%) — høyest i CB-porteføljen. Superettan gir begrenset validitet.",
+    "wyscout_dir": "raw/wyscout/coulibaly",
+    "manual_overrides": []
+  },
+
+  "graham": {
+    "full_name": "Luke Graham",
+    "short_name": "L. Graham",
+    "pos_group": "CB",
+    "position_detail": "CB",
+    "has_detailed_dashboard": false,
+    "age": 22,
+    "nationality": "Scotland",
+    "league": "Scotland. Premiership",
+    "club": "Dundee FC",
+    "bio": "22-årig skotsk CB i Dundee FC. Imponerende volum (3293 min). ProgRuns 1.42 er best i CB-gruppen. Ball-fremførende type.",
+    "wyscout_dir": "raw/wyscout/graham",
+    "manual_overrides": []
+  },
+
+  "mohammed": {
+    "full_name": "Rufai Mohammed",
+    "short_name": "R. Mohammed",
+    "pos_group": "CB",
+    "position_detail": "CB",
+    "has_detailed_dashboard": false,
+    "age": 20,
+    "nationality": "Ghana",
+    "league": "Sweden. Allsvenskan",
+    "club": "IF Elfsborg",
+    "bio": "20-årig ghanesisk CB i IF Elfsborg. Ekstraordinær interception-rate (8.41/90). Aerialwin 69.9% er høyest. Sterk Allsvenskan-kontekst.",
+    "wyscout_dir": "raw/wyscout/mohammed",
+    "manual_overrides": []
+  },
+
+  "smajlovic": {
+    "full_name": "Zinedin Smajlović",
+    "short_name": "Z. Smajlović",
+    "pos_group": "CB",
+    "position_detail": "CB",
+    "has_detailed_dashboard": false,
+    "age": 22,
+    "nationality": "Sweden",
+    "league": "Norway. Eliteserien",
+    "club": "Sandefjord Fotball",
+    "bio": "22-årig svenske CB i Sandefjord. Allerede i Eliteserien — ingen skaleringsrisiko. Pass% 85.6% og Int/90 5.37 er over benchmark.",
+    "wyscout_dir": "raw/wyscout/smajlovic",
+    "manual_overrides": []
+  },
+
+  "tape": {
+    "full_name": "Christ Tapé",
+    "short_name": "C. Tapé",
+    "pos_group": "CB",
+    "position_detail": "CB",
+    "has_detailed_dashboard": false,
+    "age": 20,
+    "nationality": "Ivory Coast",
+    "league": "Denmark. 1st Division",
+    "club": "AC Horsens",
+    "bio": "20-årig ivorisk CB i AC Horsens. Sterk aerialwin (72.1%) og pasning (84.7%). Begrenset datagrunnlag (1473 min).",
+    "wyscout_dir": "raw/wyscout/tape",
+    "manual_overrides": []
+  },
+
+  "bagan": {
+    "full_name": "Joel Bagan",
+    "short_name": "J. Bagan",
+    "pos_group": "BACK",
+    "position_detail": "LB",
+    "has_detailed_dashboard": false,
+    "age": 24,
+    "nationality": "Ireland",
+    "league": "England. League One",
+    "club": "Cardiff City",
+    "bio": "24-årig irsk venstreback i Cardiff. 42 kamper gir godt datagrunnlag. Pass% 81.1% er over Haugen-benchmark. Forventes å øke offensive bidrag i Viking.",
+    "wyscout_dir": "raw/wyscout/bagan",
+    "manual_overrides": []
+  },
+
+  "braude": {
+    "full_name": "Oliver Braude",
+    "short_name": "O. Braude",
+    "pos_group": "BACK",
+    "position_detail": "RB",
+    "has_detailed_dashboard": false,
+    "age": 21,
+    "nationality": "Norway",
+    "league": "Netherlands. Eredivisie",
+    "club": "SC Heerenveen",
+    "bio": "21-årig norsk høyreback i Eredivisie. Duelwin 53.1% og aerialwin 52.3% over Haugen-benchmark. Markedsverdi €4.5M reflekterer ligakvaliteten.",
+    "wyscout_dir": "raw/wyscout/braude",
+    "manual_overrides": []
+  },
+
+  "yapi": {
+    "full_name": "Darren Yapi",
+    "short_name": "D. Yapi",
+    "pos_group": "WING",
+    "position_detail": "LWF",
+    "has_detailed_dashboard": false,
+    "age": 21,
+    "nationality": "USA",
+    "league": "United States. MLS",
+    "club": "Colorado Rapids",
+    "bio": "21-årig amerikansk-ivorisk venstrekant med høyt scoringsvolum i MLS. Ligakoeff. 0.65 gir betydelig skaleringsrisiko.",
+    "wyscout_dir": "raw/wyscout/yapi",
+    "manual_overrides": []
+  },
+
+  "dobson": {
+    "full_name": "Will Dobson",
+    "short_name": "W. Dobson",
+    "pos_group": "CM",
+    "position_detail": "CM",
+    "has_detailed_dashboard": false,
+    "age": 18,
+    "nationality": "Australia",
+    "league": "Australia. A-League",
+    "club": "Newcastle Jets",
+    "bio": "18-årig australsk CM — ekstraordinært ung for A-League-nivå. HIGH POTENTIAL med stor usikkerhet. A-League koeff. 0.65.",
+    "wyscout_dir": "raw/wyscout/dobson",
+    "manual_overrides": []
+  },
+
+  "ballard": {
+    "full_name": "Dom Ballard",
+    "short_name": "D. Ballard",
+    "pos_group": "CF",
+    "position_detail": "CF",
+    "has_detailed_dashboard": false,
+    "age": 20,
+    "nationality": "England",
+    "league": "England. League One",
+    "club": "Leyton Orient",
+    "bio": "20-årig engelsk spiss fra Southampton-akademiet. 0.65 G/90 over 31 kamper er klart over Christiansen-benchmark. Duelwin 31.4% er svakt.",
+    "wyscout_dir": "raw/wyscout/ballard",
+    "manual_overrides": []
+  },
+
+  "stojakovic": {
+    "full_name": "Aleks Stojaković",
+    "short_name": "A. Stojaković",
+    "pos_group": "CF",
+    "position_detail": "CF",
+    "has_detailed_dashboard": false,
+    "age": 21,
+    "nationality": "Slovenia",
+    "league": "Croatia. SuperSport HNL",
+    "club": "NK Lokomotiva Zagreb",
+    "bio": "21-årig slovensk spiss i Croatia HNL. TouchesPenArea 3.26 og shotsOT 0.84 er over benchmark. Lavpris-profil med potensial.",
+    "wyscout_dir": "raw/wyscout/stojakovic",
+    "manual_overrides": []
+  },
+
+  "fraulo": {
+    "full_name": "Gustav Fraulo",
+    "short_name": "G. Fraulo",
+    "pos_group": "WING",
+    "position_detail": "RW",
+    "has_detailed_dashboard": false,
+    "age": 20,
+    "nationality": "Denmark",
+    "league": "Denmark. 1st Division",
+    "club": "Lyngby BK",
+    "bio": "20-årig dansk høyrekant i Lyngby. ShotAss 1.61/90 er høyest i WING-porteføljen. Kreativ profil med sterk assistpotensial.",
+    "wyscout_dir": "raw/wyscout/fraulo",
+    "manual_overrides": []
+  },
+
+  "moller": {
+    "full_name": "Valdemar Møller",
+    "short_name": "V. Møller",
+    "pos_group": "CM",
+    "position_detail": "CM",
+    "has_detailed_dashboard": false,
+    "age": 18,
+    "nationality": "Denmark",
+    "league": "Denmark. 1st Division",
+    "club": "AaB",
+    "bio": "18-årig dansk CM i AaB. Pass% 81.2% over benchmark. Begrenset spilletid (1091 min). HIGH POTENTIAL med stor nedsiderisiko.",
+    "wyscout_dir": "raw/wyscout/moller",
+    "manual_overrides": []
+  }
+}
