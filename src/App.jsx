@@ -69,8 +69,11 @@ const scatterAxes = {
   BACK: {xKey:"progRuns", yKey:"duelWin",      xLabel:"ProgRuns/90", yLabel:"Duell%"},
 };
 
-// Compute verdict for any player
+// Compute verdict for any player - bruker pipeline verdict direkte
 function computeVerdict(player) {
+  const v = player.verdict;
+  if (v === "STRONG BUY" || v === "BUY" || v === "MONITOR" || v === "PASS") return v;
+  // Fallback for spillere uten pipeline verdict (paananen/diarra)
   const posGrp = player.posGroup;
   const bench = benchmarks[posGrp];
   const metrics = posMetrics?.[posGrp];
