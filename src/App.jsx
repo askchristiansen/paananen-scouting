@@ -70,46 +70,7 @@ const scatterAxes = {
 };
 
 // Compute verdict for any player - bruker pipeline verdict direkte
-function computeVerdict(player) {
-  const v = player.verdict;
-  if (v === "STRONG BUY" || v === "BUY" || v === "MONITOR" || v === "PASS") return v;
-  // Fallback for spillere uten pipeline verdict (paananen/diarra)
-  const posGrp = player.posGroup;
-  const bench = benchmarks[posGrp];
-  const metrics = posMetrics?.[posGrp];
-  if (!bench || !metrics) return "MONITOR";
-  const thresholds = {
-    CF:   { keys:['goals','xG','duelWin'],           mins:[0.40,0.30,48] },
-    WING: { keys:['goals','dribbleSucc','progRuns'],  mins:[0.30,55,3.5] },
-    CM:   { keys:['passAcc','interceptions','duelWin'],mins:[78,3.0,46] },
-    CB:   { keys:['duelWin','aerialWin','interceptions'],mins:[60,58,4.0] },
-    BACK: { keys:['duelWin','passAcc','progRuns'],    mins:[50,76,1.0] },
-  }[posGrp] ?? { keys:[], mins:[] };
-  const meetsMin = thresholds.keys.filter((k,i)=>(player.stats[k]??0)>=thresholds.mins[i]).length;
-  const total = thresholds.keys.length;
-  const riskScores = metrics.risiko.map(k=>{
-    const pv=player.stats[k]??0, bv=bench.stats[k]??0;
-    const diff=bv>0?((pv-bv)/bv)*100:0;
-    return Math.min(90,Math.round(Math.abs(diff)));
-  });
-  const avgRisk = riskScores.length ? riskScores.reduce((s,v)=>s+v,0)/riskScores.length : 50;
-  const leagueScale = {
-    'Norway. Eliteserien':1.00,'Norway. 1. divisjon':0.82,
-    'Sweden. Allsvenskan':0.95,'Sweden. Superettan':0.80,
-    'Denmark. Superliga':0.90,'Denmark. 1st Division':0.80,
-    'England. League One':0.85,'Scotland. Premiership':0.88,
-    'Finland. Veikkausliiga':0.78,'Netherlands. Eerste Divisie':0.82,
-    'Netherlands. Eredivisie':1.05,
-    'Bulgaria. First League':0.72,'Hungary. NB I':0.70,
-    'Lithuania. A Lyga':0.68,'Slovenia. Prva Liga':0.75,
-    'Croatia. SuperSport HNL':0.77,
-    'United States. MLS':0.65,'Australia. A-League':0.65,
-  }[player.league] ?? 0.75;
-  if (meetsMin===total && avgRisk<30 && leagueScale>=0.85) return "STRONG BUY";
-  if (meetsMin>=Math.ceil(total*0.67) && avgRisk<50) return "BUY";
-  if (meetsMin>=Math.ceil(total*0.50) && avgRisk<65) return "MONITOR";
-  return "PASS";
-}
+
 
 function Dot({cx,cy,payload}){
   if(!cx||!cy)return null;
@@ -166,15 +127,15 @@ export default function App(){
   // Sort by verdict for card view
   const sortedCards = useMemo(() =>
     [...filtered].sort((a,b) => {
-      const va = VERDICT_ORDER[computeVerdict(a)] ?? 3;
-      const vb = VERDICT_ORDER[computeVerdict(b)] ?? 3;
+      const va = VERDICT_ORDER[a.verdict] ?? 3;
+      const vb = VERDICT_ORDER[b.verdict] ?? 3;
       return va - vb;
     }), [filtered]);
 
   const sortedTable = useMemo(() =>
     [...filtered].sort((a,b) => {
-      const va = VERDICT_ORDER[computeVerdict(a)] ?? 3;
-      const vb = VERDICT_ORDER[computeVerdict(b)] ?? 3;
+      const va = VERDICT_ORDER[a.verdict] ?? 3;
+      const vb = VERDICT_ORDER[b.verdict] ?? 3;
       return va - vb;
     }), [filtered]);
 
@@ -285,7 +246,7 @@ export default function App(){
             gap:10,
           }}>
             {sortedCards.map(player => {
-              const verdict = computeVerdict(player);
+              const verdict = player.verdict;
               const vs = VERDICT_STYLE[verdict];
               const bench = benchmarks[player.posGroup];
               const rating = getOverallRating(player);
@@ -376,7 +337,7 @@ export default function App(){
                 <tbody>
                   {sortedTable.map(player => {
                     const bench  = benchmarks[player.posGroup];
-                    const verdict = computeVerdict(player);
+                    const verdict = player.verdict;
                     const vs = VERDICT_STYLE[verdict];
                     return (
                       <tr key={player.id} onClick={()=>setSel(player)}
@@ -458,7 +419,7 @@ export default function App(){
           <div style={{maxWidth:860,margin:"0 auto"}}>
             {/* Verdict banner for DASH players */}
             {(sel.id==="paananen"||sel.id==="diarra"||sel.id==="kilen") && (() => {
-              const verdict = computeVerdict(sel);
+              const verdict = sel.verdict;
               const vs = VERDICT_STYLE[verdict];
               return (
                 <div style={{display:"flex",gap:12,alignItems:"center",marginBottom:16,

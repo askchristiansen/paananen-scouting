@@ -333,7 +333,7 @@ export default function Dashboard() {
       </div>
       <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 24 }}>
         <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', padding: '4px 10px', border: '1.5px solid #185FA5', color: '#185FA5', borderRadius: 2 }}>
-          CONDITIONAL FIT
+          {player.verdict ?? 'MONITOR'}
         </span>
         <span style={{ fontSize: 12, color: '#888' }}>FIN · 23 år · Venstrefot</span>
       </div>
