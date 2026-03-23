@@ -406,17 +406,14 @@ export default function PlayerDashboard({ player }) {
     return <div style={{ padding: 32, fontFamily: 'system-ui' }}>Ingen benchmark for posisjon: {posGrp}</div>
   }
 
-  const fitLabel = (() => {
-    let b = 0, w = 0
-    metrics.risiko.forEach(k => {
-      const r = compareVsBenchmark(player.stats[k] ?? 0, bench.stats[k] ?? 0)
-      if (r === 'better') b++
-      if (r === 'weaker') w++
-    })
-    if (b >= 3) return { label: 'STRONG FIT',      color: CGREEN }
-    if (w >= 3) return { label: 'DEVELOPMENT FIT', color: CRED   }
-    return            { label: 'CONDITIONAL FIT',  color: CBLUE  }
-  })()
+  const VERDICT_COLORS = {
+    "STRONG BUY": CGREEN,
+    "BUY":        CGREEN,
+    "MONITOR":    CAMBER,
+    "PASS":       CRED,
+  }
+  const verdictLabel = player.verdict ?? "MONITOR"
+  const fitLabel = { label: verdictLabel, color: VERDICT_COLORS[verdictLabel] ?? CAMBER }
 
   const tabs = [
     { id:'oversikt',    label:'Oversikt',       comp: Oversikt       },
