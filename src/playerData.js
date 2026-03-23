@@ -560,9 +560,6 @@ export const statConfig = [
   { key:"shotAssists",    label:"Shot assists",      unit:"/90" },
 ];
 players.forEach(p => {
-  p.verdict = {
-    label: generateVerdict(p),
-    confidence_in_verdict: "medium"
-  }
+  p.verdict = { label: generateVerdict(p), confidence_in_verdict: "medium" }
 })
 
