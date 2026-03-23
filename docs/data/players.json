@@ -17,7 +17,7 @@
         "date_of_birth": "2004-01-01",
         "age": 21,
         "nationality": "Denmark",
-        "flag": "🇩🇰",
+        "flag": "\ud83c\udde9\ud83c\uddf0",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -28,7 +28,7 @@
       },
       "market": {
         "market_value_eur": 1700000,
-        "market_value_display": "€1.7M",
+        "market_value_display": "\u20ac1.7M",
         "contract_expires": "2028-06-30",
         "contract_year": "2028",
         "source": "transfermarkt",
@@ -38,7 +38,7 @@
         "pos_group": "CM",
         "position_detail": "CM / RW",
         "has_detailed_dashboard": false,
-        "bio": "21-årig dansk midtbanespiller i Odense BK med svært høy pasningsnøyaktighet (84.8%). Taktisk fleksibel profil."
+        "bio": "21-\u00e5rig dansk midtbanespiller i Odense BK med sv\u00e6rt h\u00f8y pasningsn\u00f8yaktighet (84.8%). Taktisk fleksibel profil."
       },
       "aggregates": {
         "all": {
@@ -128,7 +128,7 @@
           "adaptation": {
             "score": 10,
             "factors": [
-              "Ung (21 år)"
+              "Ung (21 \u00e5r)"
             ]
           },
           "availability": {
@@ -140,21 +140,42 @@
       "verdict": {
         "recommendation": "STRONG BUY",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter alle 3 terskler, lav risiko (2), sterk ligakontekst",
+        "key_reason": "M\u00f8ter alle 3 terskler, lav risiko (2), sterk ligakontekst",
         "computed_at": "2026-03-22T15:45:30.156708Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "STRONG BUY"
+      },
+      "fullName": "Max Ejdum",
+      "name": "M. Ejdum",
+      "age": 21,
+      "nationality": "Denmark",
+      "flag": "\ud83c\udde9\ud83c\uddf0",
+      "goals": 0.094,
+      "xG": 0.064,
+      "shots": 0.802,
+      "shotsOT": 0.33,
+      "passAcc": 84.9,
+      "longPassAcc": 29.6,
+      "dribbleSucc": 58.8,
+      "dribbles": 1.604,
+      "duelWin": 50.7,
+      "aerialWin": 52.8,
+      "interceptions": 3.585,
+      "recoveriesOpp": 4.387,
+      "touchesPenArea": 2.075,
+      "progRuns": 1.368,
+      "shotAssists": 0.755
     },
     {
       "id": "jorgensen",
       "schema_version": "2.0.0",
       "identity": {
-        "full_name": "Thomas Jørgensen",
-        "short_name": "T. Jørgensen",
+        "full_name": "Thomas J\u00f8rgensen",
+        "short_name": "T. J\u00f8rgensen",
         "date_of_birth": "2005-01-01",
         "age": 20,
         "nationality": "Denmark",
-        "flag": "🇩🇰",
+        "flag": "\ud83c\udde9\ud83c\uddf0",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -165,7 +186,7 @@
       },
       "market": {
         "market_value_eur": 4000000,
-        "market_value_display": "€4.0M",
+        "market_value_display": "\u20ac4.0M",
         "contract_expires": "2028-06-30",
         "contract_year": "2028",
         "source": "transfermarkt",
@@ -175,7 +196,7 @@
         "pos_group": "CM",
         "position_detail": "CM / AMF",
         "has_detailed_dashboard": false,
-        "bio": "20-årig dansk CM/AMF i Viborg med imponerende allround-tall. 3.65 ProgRuns og 3.19 Int/90. Taktisk fleksibel. €4.0M markedsverdi."
+        "bio": "20-\u00e5rig dansk CM/AMF i Viborg med imponerende allround-tall. 3.65 ProgRuns og 3.19 Int/90. Taktisk fleksibel. \u20ac4.0M markedsverdi."
       },
       "aggregates": {
         "all": {
@@ -256,10 +277,10 @@
       "provenance": {
         "performance_source": "wyscout",
         "performance_files": [
-          "Player stats T. Jørgensen.xlsx",
-          "Player stats T. Jørgensen (1).xlsx",
-          "Player stats T. Jørgensen (2).xlsx",
-          "Player stats T. Jørgensen (3).xlsx"
+          "Player stats T. J\u00f8rgensen.xlsx",
+          "Player stats T. J\u00f8rgensen (1).xlsx",
+          "Player stats T. J\u00f8rgensen (2).xlsx",
+          "Player stats T. J\u00f8rgensen (3).xlsx"
         ],
         "market_source": "transfermarkt",
         "market_file": "jorgensen.json",
@@ -289,13 +310,13 @@
           "economic": {
             "score": 20,
             "factors": [
-              "Høy markedsverdi: €4.0M"
+              "H\u00f8y markedsverdi: \u20ac4.0M"
             ]
           },
           "adaptation": {
             "score": 10,
             "factors": [
-              "Ung (20 år)"
+              "Ung (20 \u00e5r)"
             ]
           },
           "availability": {
@@ -307,10 +328,31 @@
       "verdict": {
         "recommendation": "STRONG BUY",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter alle 3 terskler, lav risiko (11), sterk ligakontekst",
+        "key_reason": "M\u00f8ter alle 3 terskler, lav risiko (11), sterk ligakontekst",
         "computed_at": "2026-03-22T15:45:30.249648Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "STRONG BUY"
+      },
+      "fullName": "Thomas J\u00f8rgensen",
+      "name": "T. J\u00f8rgensen",
+      "age": 20,
+      "nationality": "Denmark",
+      "flag": "\ud83c\udde9\ud83c\uddf0",
+      "goals": 0.14,
+      "xG": 0.172,
+      "shots": 2.036,
+      "shotsOT": 0.772,
+      "passAcc": 79.7,
+      "longPassAcc": 59.7,
+      "dribbleSucc": 55.6,
+      "dribbles": 2.527,
+      "duelWin": 49.8,
+      "aerialWin": 47.7,
+      "interceptions": 3.194,
+      "recoveriesOpp": 3.721,
+      "touchesPenArea": 1.79,
+      "progRuns": 3.651,
+      "shotAssists": 1.439
     },
     {
       "id": "askou",
@@ -321,7 +363,7 @@
         "date_of_birth": "2006-01-01",
         "age": 19,
         "nationality": "Denmark",
-        "flag": "🇩🇰",
+        "flag": "\ud83c\udde9\ud83c\uddf0",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -332,7 +374,7 @@
       },
       "market": {
         "market_value_eur": 1000000,
-        "market_value_display": "€1.0M",
+        "market_value_display": "\u20ac1.0M",
         "contract_expires": "2027-06-30",
         "contract_year": "2027",
         "source": "transfermarkt",
@@ -342,7 +384,7 @@
         "pos_group": "CB",
         "position_detail": "CB",
         "has_detailed_dashboard": false,
-        "bio": "19-årig dansk CB i Odense BK med eksepsjonell pasningsnøyaktighet (89.6%). Den teknisk sterkeste CB-kandidaten i porteføljen."
+        "bio": "19-\u00e5rig dansk CB i Odense BK med eksepsjonell pasningsn\u00f8yaktighet (89.6%). Den teknisk sterkeste CB-kandidaten i portef\u00f8ljen."
       },
       "aggregates": {
         "all": {
@@ -432,7 +474,7 @@
           "adaptation": {
             "score": 20,
             "factors": [
-              "Svært ung (19 år)"
+              "Sv\u00e6rt ung (19 \u00e5r)"
             ]
           },
           "availability": {
@@ -444,10 +486,31 @@
       "verdict": {
         "recommendation": "STRONG BUY",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter alle 3 terskler, lav risiko (5), sterk ligakontekst",
+        "key_reason": "M\u00f8ter alle 3 terskler, lav risiko (5), sterk ligakontekst",
         "computed_at": "2026-03-22T15:45:30.310247Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "STRONG BUY"
+      },
+      "fullName": "Julius Berthel Askou",
+      "name": "J. Askou",
+      "age": 19,
+      "nationality": "Denmark",
+      "flag": "\ud83c\udde9\ud83c\uddf0",
+      "goals": 0.058,
+      "xG": 0.035,
+      "shots": 0.29,
+      "shotsOT": 0.116,
+      "passAcc": 89.6,
+      "longPassAcc": 54.9,
+      "dribbleSucc": 100.0,
+      "dribbles": 0.174,
+      "duelWin": 63.2,
+      "aerialWin": 62.8,
+      "interceptions": 5.11,
+      "recoveriesOpp": 1.684,
+      "touchesPenArea": 0.697,
+      "progRuns": 0.406,
+      "shotAssists": 0.058
     },
     {
       "id": "graham",
@@ -458,7 +521,7 @@
         "date_of_birth": "2003-01-01",
         "age": 22,
         "nationality": "Scotland",
-        "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+        "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc73\udb40\udc63\udb40\udc74\udb40\udc7f",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -469,7 +532,7 @@
       },
       "market": {
         "market_value_eur": 1200000,
-        "market_value_display": "€1.2M",
+        "market_value_display": "\u20ac1.2M",
         "contract_expires": "2026-06-30",
         "contract_year": "2026",
         "source": "transfermarkt",
@@ -479,7 +542,7 @@
         "pos_group": "CB",
         "position_detail": "CB",
         "has_detailed_dashboard": false,
-        "bio": "22-årig skotsk CB i Dundee FC. Imponerende volum (3293 min). ProgRuns 1.42 er best i CB-gruppen. Ball-fremførende type."
+        "bio": "22-\u00e5rig skotsk CB i Dundee FC. Imponerende volum (3293 min). ProgRuns 1.42 er best i CB-gruppen. Ball-fremf\u00f8rende type."
       },
       "aggregates": {
         "all": {
@@ -593,7 +656,7 @@
           "economic": {
             "score": 30,
             "factors": [
-              "Kontrakt utløper < 6 mnd"
+              "Kontrakt utl\u00f8per < 6 mnd"
             ]
           },
           "adaptation": {
@@ -609,10 +672,31 @@
       "verdict": {
         "recommendation": "STRONG BUY",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter alle 3 terskler, lav risiko (10), sterk ligakontekst",
+        "key_reason": "M\u00f8ter alle 3 terskler, lav risiko (10), sterk ligakontekst",
         "computed_at": "2026-03-22T15:45:30.356338Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "STRONG BUY"
+      },
+      "fullName": "Luke Graham",
+      "name": "L. Graham",
+      "age": 22,
+      "nationality": "Scotland",
+      "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc73\udb40\udc63\udb40\udc74\udb40\udc7f",
+      "goals": 0.082,
+      "xG": 0.087,
+      "shots": 0.492,
+      "shotsOT": 0.082,
+      "passAcc": 82.8,
+      "longPassAcc": 39.6,
+      "dribbleSucc": 80.6,
+      "dribbles": 0.847,
+      "duelWin": 62.8,
+      "aerialWin": 66.7,
+      "interceptions": 4.455,
+      "recoveriesOpp": 1.722,
+      "touchesPenArea": 0.765,
+      "progRuns": 1.421,
+      "shotAssists": 0.219
     },
     {
       "id": "mohammed",
@@ -623,7 +707,7 @@
         "date_of_birth": "2005-01-01",
         "age": 20,
         "nationality": "Ghana",
-        "flag": "🇬🇭",
+        "flag": "\ud83c\uddec\ud83c\udded",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -634,7 +718,7 @@
       },
       "market": {
         "market_value_eur": 250000,
-        "market_value_display": "€250k",
+        "market_value_display": "\u20ac250k",
         "contract_expires": "2029-06-30",
         "contract_year": "2029",
         "source": "transfermarkt",
@@ -644,7 +728,7 @@
         "pos_group": "CB",
         "position_detail": "CB",
         "has_detailed_dashboard": false,
-        "bio": "20-årig ghanesisk CB i IF Elfsborg. Ekstraordinær interception-rate (8.41/90). Aerialwin 69.9% er høyest. Sterk Allsvenskan-kontekst."
+        "bio": "20-\u00e5rig ghanesisk CB i IF Elfsborg. Ekstraordin\u00e6r interception-rate (8.41/90). Aerialwin 69.9% er h\u00f8yest. Sterk Allsvenskan-kontekst."
       },
       "aggregates": {
         "all": {
@@ -748,7 +832,7 @@
           "adaptation": {
             "score": 10,
             "factors": [
-              "Ung (20 år)"
+              "Ung (20 \u00e5r)"
             ]
           },
           "availability": {
@@ -760,10 +844,31 @@
       "verdict": {
         "recommendation": "STRONG BUY",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter alle 3 terskler, lav risiko (2), sterk ligakontekst",
+        "key_reason": "M\u00f8ter alle 3 terskler, lav risiko (2), sterk ligakontekst",
         "computed_at": "2026-03-22T15:45:30.372697Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "STRONG BUY"
+      },
+      "fullName": "Rufai Mohammed",
+      "name": "R. Mohammed",
+      "age": 20,
+      "nationality": "Ghana",
+      "flag": "\ud83c\uddec\ud83c\udded",
+      "goals": 0.178,
+      "xG": 0.128,
+      "shots": 0.654,
+      "shotsOT": 0.297,
+      "passAcc": 81.6,
+      "longPassAcc": 44.7,
+      "dribbleSucc": 75.0,
+      "dribbles": 0.238,
+      "duelWin": 60.8,
+      "aerialWin": 69.9,
+      "interceptions": 8.447,
+      "recoveriesOpp": 1.904,
+      "touchesPenArea": 0.773,
+      "progRuns": 0.714,
+      "shotAssists": 0.297
     },
     {
       "id": "bagan",
@@ -774,7 +879,7 @@
         "date_of_birth": "2001-01-01",
         "age": 24,
         "nationality": "Ireland",
-        "flag": "🇮🇪",
+        "flag": "\ud83c\uddee\ud83c\uddea",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -785,7 +890,7 @@
       },
       "market": {
         "market_value_eur": 650000,
-        "market_value_display": "€650k",
+        "market_value_display": "\u20ac650k",
         "contract_expires": "2026-06-30",
         "contract_year": "2026",
         "source": "transfermarkt",
@@ -795,7 +900,7 @@
         "pos_group": "BACK",
         "position_detail": "LB",
         "has_detailed_dashboard": false,
-        "bio": "24-årig irsk venstreback i Cardiff. 42 kamper gir godt datagrunnlag. Pass% 81.1% er over Haugen-benchmark. Forventes å øke offensive bidrag i Viking."
+        "bio": "24-\u00e5rig irsk venstreback i Cardiff. 42 kamper gir godt datagrunnlag. Pass% 81.1% er over Haugen-benchmark. Forventes \u00e5 \u00f8ke offensive bidrag i Viking."
       },
       "aggregates": {
         "all": {
@@ -895,7 +1000,7 @@
           "economic": {
             "score": 30,
             "factors": [
-              "Kontrakt utløper < 6 mnd"
+              "Kontrakt utl\u00f8per < 6 mnd"
             ]
           },
           "adaptation": {
@@ -911,10 +1016,31 @@
       "verdict": {
         "recommendation": "STRONG BUY",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter alle 3 terskler, lav risiko (10), sterk ligakontekst",
+        "key_reason": "M\u00f8ter alle 3 terskler, lav risiko (10), sterk ligakontekst",
         "computed_at": "2026-03-22T15:45:30.426816Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "STRONG BUY"
+      },
+      "fullName": "Joel Bagan",
+      "name": "J. Bagan",
+      "age": 24,
+      "nationality": "Ireland",
+      "flag": "\ud83c\uddee\ud83c\uddea",
+      "goals": 0.024,
+      "xG": 0.049,
+      "shots": 0.406,
+      "shotsOT": 0.119,
+      "passAcc": 81.1,
+      "longPassAcc": 45.7,
+      "dribbleSucc": 47.4,
+      "dribbles": 0.908,
+      "duelWin": 51.8,
+      "aerialWin": 46.7,
+      "interceptions": 3.44,
+      "recoveriesOpp": 2.628,
+      "touchesPenArea": 1.147,
+      "progRuns": 1.625,
+      "shotAssists": 1.195
     },
     {
       "id": "braude",
@@ -925,7 +1051,7 @@
         "date_of_birth": "2004-02-21",
         "age": 21,
         "nationality": "Norway",
-        "flag": "🇳🇴",
+        "flag": "\ud83c\uddf3\ud83c\uddf4",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -936,7 +1062,7 @@
       },
       "market": {
         "market_value_eur": 4500000,
-        "market_value_display": "€4.5M",
+        "market_value_display": "\u20ac4.5M",
         "contract_expires": "2027-06-30",
         "contract_year": "2027",
         "source": "transfermarkt",
@@ -946,7 +1072,7 @@
         "pos_group": "BACK",
         "position_detail": "RB",
         "has_detailed_dashboard": false,
-        "bio": "21-årig norsk høyreback i Eredivisie. Duelwin 53.1% og aerialwin 52.3% over Haugen-benchmark. Markedsverdi €4.5M reflekterer ligakvaliteten."
+        "bio": "21-\u00e5rig norsk h\u00f8yreback i Eredivisie. Duelwin 53.1% og aerialwin 52.3% over Haugen-benchmark. Markedsverdi \u20ac4.5M reflekterer ligakvaliteten."
       },
       "aggregates": {
         "all": {
@@ -1046,13 +1172,13 @@
           "economic": {
             "score": 20,
             "factors": [
-              "Høy markedsverdi: €4.5M"
+              "H\u00f8y markedsverdi: \u20ac4.5M"
             ]
           },
           "adaptation": {
             "score": 10,
             "factors": [
-              "Ung (21 år)"
+              "Ung (21 \u00e5r)"
             ]
           },
           "availability": {
@@ -1064,21 +1190,42 @@
       "verdict": {
         "recommendation": "STRONG BUY",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter alle 3 terskler, lav risiko (8), sterk ligakontekst",
+        "key_reason": "M\u00f8ter alle 3 terskler, lav risiko (8), sterk ligakontekst",
         "computed_at": "2026-03-22T15:45:30.445410Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "STRONG BUY"
+      },
+      "fullName": "Oliver Braude",
+      "name": "O. Braude",
+      "age": 21,
+      "nationality": "Norway",
+      "flag": "\ud83c\uddf3\ud83c\uddf4",
+      "goals": 0.032,
+      "xG": 0.053,
+      "shots": 0.537,
+      "shotsOT": 0.158,
+      "passAcc": 78.0,
+      "longPassAcc": 41.5,
+      "dribbleSucc": 70.6,
+      "dribbles": 1.074,
+      "duelWin": 53.1,
+      "aerialWin": 52.3,
+      "interceptions": 3.919,
+      "recoveriesOpp": 2.496,
+      "touchesPenArea": 1.485,
+      "progRuns": 1.074,
+      "shotAssists": 0.442
     },
     {
       "id": "kucys",
       "schema_version": "2.0.0",
       "identity": {
-        "full_name": "Armandas Kučys",
-        "short_name": "A. Kučys",
+        "full_name": "Armandas Ku\u010dys",
+        "short_name": "A. Ku\u010dys",
         "date_of_birth": "2002-01-01",
         "age": 23,
         "nationality": "Lithuania",
-        "flag": "🇱🇹",
+        "flag": "\ud83c\uddf1\ud83c\uddf9",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -1089,7 +1236,7 @@
       },
       "market": {
         "market_value_eur": 700000,
-        "market_value_display": "€700k",
+        "market_value_display": "\u20ac700k",
         "contract_expires": "2028-06-30",
         "contract_year": "2028",
         "source": "transfermarkt",
@@ -1099,7 +1246,7 @@
         "pos_group": "CF",
         "position_detail": "CF",
         "has_detailed_dashboard": false,
-        "bio": "23-årig litauisk spiss med høyt scoringsvolum. Nå i slovenisk Prva Liga. Ligakoeff. 0.75 gir moderat skaleringsrisiko."
+        "bio": "23-\u00e5rig litauisk spiss med h\u00f8yt scoringsvolum. N\u00e5 i slovenisk Prva Liga. Ligakoeff. 0.75 gir moderat skaleringsrisiko."
       },
       "aggregates": {
         "all": {
@@ -1194,10 +1341,10 @@
       "provenance": {
         "performance_source": "wyscout",
         "performance_files": [
-          "Player stats A. Kučys.xlsx",
-          "Player stats A. Kučys (1).xlsx",
-          "Player stats A. Kučys (2).xlsx",
-          "Player stats A. Kučys (3).xlsx"
+          "Player stats A. Ku\u010dys.xlsx",
+          "Player stats A. Ku\u010dys (1).xlsx",
+          "Player stats A. Ku\u010dys (2).xlsx",
+          "Player stats A. Ku\u010dys (3).xlsx"
         ],
         "market_source": "transfermarkt",
         "market_file": "kucys.json",
@@ -1246,10 +1393,31 @@
       "verdict": {
         "recommendation": "BUY",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 2/3 terskler med moderat risiko (19)",
+        "key_reason": "M\u00f8ter 2/3 terskler med moderat risiko (19)",
         "computed_at": "2026-03-22T15:45:30.048506Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "BUY"
+      },
+      "fullName": "Armandas Ku\u010dys",
+      "name": "A. Ku\u010dys",
+      "age": 23,
+      "nationality": "Lithuania",
+      "flag": "\ud83c\uddf1\ud83c\uddf9",
+      "goals": 0.734,
+      "xG": 0.564,
+      "shots": 2.287,
+      "shotsOT": 1.299,
+      "passAcc": 75.4,
+      "longPassAcc": 50.0,
+      "dribbleSucc": 44.4,
+      "dribbles": 1.017,
+      "duelWin": 41.4,
+      "aerialWin": 50.7,
+      "interceptions": 1.92,
+      "recoveriesOpp": 1.186,
+      "touchesPenArea": 3.897,
+      "progRuns": 0.565,
+      "shotAssists": 0.819
     },
     {
       "id": "ladefoged",
@@ -1260,18 +1428,18 @@
         "date_of_birth": "2003-01-01",
         "age": 22,
         "nationality": "Denmark",
-        "flag": "🇩🇰",
+        "flag": "\ud83c\udde9\ud83c\uddf0",
         "height_cm": null,
         "preferred_foot": null
       },
       "current_club": {
-        "name": "Västerås SK",
+        "name": "V\u00e4ster\u00e5s SK",
         "league": "Sweden. Allsvenskan",
         "country": "Sweden"
       },
       "market": {
         "market_value_eur": 500000,
-        "market_value_display": "€500k",
+        "market_value_display": "\u20ac500k",
         "contract_expires": "2028-06-30",
         "contract_year": "2028",
         "source": "transfermarkt",
@@ -1281,7 +1449,7 @@
         "pos_group": "CF",
         "position_detail": "CF",
         "has_detailed_dashboard": false,
-        "bio": "22-årig dansk spiss i Västerås SK. Begrenset spilletid — sample size er for lav for sikker vurdering."
+        "bio": "22-\u00e5rig dansk spiss i V\u00e4ster\u00e5s SK. Begrenset spilletid \u2014 sample size er for lav for sikker vurdering."
       },
       "aggregates": {
         "all": {
@@ -1386,10 +1554,31 @@
       "verdict": {
         "recommendation": "BUY",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 2/3 terskler med moderat risiko (18)",
+        "key_reason": "M\u00f8ter 2/3 terskler med moderat risiko (18)",
         "computed_at": "2026-03-22T15:45:30.098532Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "BUY"
+      },
+      "fullName": "Mikkel Ladefoged",
+      "name": "M. Ladefoged",
+      "age": 22,
+      "nationality": "Denmark",
+      "flag": "\ud83c\udde9\ud83c\uddf0",
+      "goals": 1.088,
+      "xG": 0.728,
+      "shots": 3.156,
+      "shotsOT": 1.959,
+      "passAcc": 76.4,
+      "longPassAcc": 66.7,
+      "dribbleSucc": 62.5,
+      "dribbles": 0.871,
+      "duelWin": 32.5,
+      "aerialWin": 48.1,
+      "interceptions": 1.959,
+      "recoveriesOpp": 1.524,
+      "touchesPenArea": 5.985,
+      "progRuns": 0.218,
+      "shotAssists": 0.979
     },
     {
       "id": "balov",
@@ -1400,7 +1589,7 @@
         "date_of_birth": "2006-01-01",
         "age": 19,
         "nationality": "Bulgaria",
-        "flag": "🇧🇬",
+        "flag": "\ud83c\udde7\ud83c\uddec",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -1411,7 +1600,7 @@
       },
       "market": {
         "market_value_eur": 500000,
-        "market_value_display": "€500k",
+        "market_value_display": "\u20ac500k",
         "contract_expires": "2027-06-30",
         "contract_year": "2027",
         "source": "transfermarkt",
@@ -1421,7 +1610,7 @@
         "pos_group": "WING",
         "position_detail": "LW",
         "has_detailed_dashboard": false,
-        "bio": "19-årig bulgarsk venstrekant med høyt driblingsvolum men svak ligakontekst. Duelwin 38.3% er kritisk lavt."
+        "bio": "19-\u00e5rig bulgarsk venstrekant med h\u00f8yt driblingsvolum men svak ligakontekst. Duelwin 38.3% er kritisk lavt."
       },
       "aggregates": {
         "all": {
@@ -1506,7 +1695,7 @@
             "score": 35,
             "factors": [
               "Lav duellvinnprosent: 38.0%",
-              "Lav pasningsnøyaktighet: 63.9%"
+              "Lav pasningsn\u00f8yaktighet: 63.9%"
             ]
           },
           "economic": {
@@ -1517,7 +1706,7 @@
             "score": 40,
             "factors": [
               "Svak liga (koeff 0.72)",
-              "Svært ung (19 år)"
+              "Sv\u00e6rt ung (19 \u00e5r)"
             ]
           },
           "availability": {
@@ -1529,10 +1718,31 @@
       "verdict": {
         "recommendation": "BUY",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 2/3 terskler med moderat risiko (22)",
+        "key_reason": "M\u00f8ter 2/3 terskler med moderat risiko (22)",
         "computed_at": "2026-03-22T15:45:30.193407Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "BUY"
+      },
+      "fullName": "Kristiyan Balov",
+      "name": "K. Balov",
+      "age": 19,
+      "nationality": "Bulgaria",
+      "flag": "\ud83c\udde7\ud83c\uddec",
+      "goals": 0.192,
+      "xG": 0.169,
+      "shots": 1.632,
+      "shotsOT": 0.624,
+      "passAcc": 63.9,
+      "longPassAcc": 37.5,
+      "dribbleSucc": 56.5,
+      "dribbles": 5.952,
+      "duelWin": 38.0,
+      "aerialWin": 9.5,
+      "interceptions": 2.832,
+      "recoveriesOpp": 1.968,
+      "touchesPenArea": 3.216,
+      "progRuns": 3.792,
+      "shotAssists": 1.152
     },
     {
       "id": "tahaui",
@@ -1543,7 +1753,7 @@
         "date_of_birth": "2005-01-01",
         "age": 20,
         "nationality": "Netherlands",
-        "flag": "🇳🇱",
+        "flag": "\ud83c\uddf3\ud83c\uddf1",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -1554,7 +1764,7 @@
       },
       "market": {
         "market_value_eur": 400000,
-        "market_value_display": "€400k",
+        "market_value_display": "\u20ac400k",
         "contract_expires": "2027-06-30",
         "contract_year": "2027",
         "source": "transfermarkt",
@@ -1564,7 +1774,7 @@
         "pos_group": "CM",
         "position_detail": "AMF",
         "has_detailed_dashboard": false,
-        "bio": "20-årig nederlandsk AMF med sterk teknisk profil. Dribble% 72.8% er eksepsjonelt. Vitesse i urolig periode."
+        "bio": "20-\u00e5rig nederlandsk AMF med sterk teknisk profil. Dribble% 72.8% er eksepsjonelt. Vitesse i urolig periode."
       },
       "aggregates": {
         "all": {
@@ -1668,7 +1878,7 @@
           "adaptation": {
             "score": 20,
             "factors": [
-              "Ung (20 år)"
+              "Ung (20 \u00e5r)"
             ]
           },
           "availability": {
@@ -1680,10 +1890,31 @@
       "verdict": {
         "recommendation": "BUY",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 2/3 terskler med moderat risiko (8)",
+        "key_reason": "M\u00f8ter 2/3 terskler med moderat risiko (8)",
         "computed_at": "2026-03-22T15:45:30.231048Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "BUY"
+      },
+      "fullName": "Adam Tahaui",
+      "name": "A. Tahaui",
+      "age": 20,
+      "nationality": "Netherlands",
+      "flag": "\ud83c\uddf3\ud83c\uddf1",
+      "goals": 0.107,
+      "xG": 0.157,
+      "shots": 2.216,
+      "shotsOT": 0.786,
+      "passAcc": 79.6,
+      "longPassAcc": 60.0,
+      "dribbleSucc": 63.9,
+      "dribbles": 3.467,
+      "duelWin": 49.4,
+      "aerialWin": 36.9,
+      "interceptions": 2.645,
+      "recoveriesOpp": 3.967,
+      "touchesPenArea": 2.252,
+      "progRuns": 1.751,
+      "shotAssists": 1.501
     },
     {
       "id": "popoola",
@@ -1694,18 +1925,18 @@
         "date_of_birth": "2006-01-01",
         "age": 19,
         "nationality": "Nigeria",
-        "flag": "🇳🇬",
+        "flag": "\ud83c\uddf3\ud83c\uddec",
         "height_cm": null,
         "preferred_foot": null
       },
       "current_club": {
-        "name": "Kisvárda FC",
+        "name": "Kisv\u00e1rda FC",
         "league": "Hungary. NB I",
         "country": "Hungary"
       },
       "market": {
         "market_value_eur": 500000,
-        "market_value_display": "€500k",
+        "market_value_display": "\u20ac500k",
         "contract_expires": "2026-06-30",
         "contract_year": "2026",
         "source": "transfermarkt",
@@ -1715,7 +1946,7 @@
         "pos_group": "CM",
         "position_detail": "CM / DMF",
         "has_detailed_dashboard": false,
-        "bio": "19-årig nigeriansk CM/DMF med ekstraordinær defensiv profil. 5.19 Int/90. NB I er svak liga — stor skaleringsrisiko."
+        "bio": "19-\u00e5rig nigeriansk CM/DMF med ekstraordin\u00e6r defensiv profil. 5.19 Int/90. NB I er svak liga \u2014 stor skaleringsrisiko."
       },
       "aggregates": {
         "all": {
@@ -1803,14 +2034,14 @@
           "economic": {
             "score": 30,
             "factors": [
-              "Kontrakt utløper < 6 mnd"
+              "Kontrakt utl\u00f8per < 6 mnd"
             ]
           },
           "adaptation": {
             "score": 40,
             "factors": [
               "Svak liga (koeff 0.70)",
-              "Svært ung (19 år)"
+              "Sv\u00e6rt ung (19 \u00e5r)"
             ]
           },
           "availability": {
@@ -1822,10 +2053,31 @@
       "verdict": {
         "recommendation": "BUY",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 3/3 terskler med moderat risiko (18)",
+        "key_reason": "M\u00f8ter 3/3 terskler med moderat risiko (18)",
         "computed_at": "2026-03-22T15:45:30.264429Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "BUY"
+      },
+      "fullName": "Ridwan Popoola",
+      "name": "R. Popoola",
+      "age": 19,
+      "nationality": "Nigeria",
+      "flag": "\ud83c\uddf3\ud83c\uddec",
+      "goals": 0.05,
+      "xG": 0.018,
+      "shots": 0.907,
+      "shotsOT": 0.101,
+      "passAcc": 86.9,
+      "longPassAcc": 50.6,
+      "dribbleSucc": 57.9,
+      "dribbles": 0.957,
+      "duelWin": 53.3,
+      "aerialWin": 55.8,
+      "interceptions": 5.187,
+      "recoveriesOpp": 5.238,
+      "touchesPenArea": 0.252,
+      "progRuns": 1.007,
+      "shotAssists": 0.554
     },
     {
       "id": "diop",
@@ -1836,7 +2088,7 @@
         "date_of_birth": "2005-01-01",
         "age": 20,
         "nationality": "Senegal",
-        "flag": "🇸🇳",
+        "flag": "\ud83c\uddf8\ud83c\uddf3",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -1847,7 +2099,7 @@
       },
       "market": {
         "market_value_eur": 1000000,
-        "market_value_display": "€1.0M",
+        "market_value_display": "\u20ac1.0M",
         "contract_expires": "2029-06-30",
         "contract_year": "2029",
         "source": "transfermarkt",
@@ -1857,7 +2109,7 @@
         "pos_group": "CB",
         "position_detail": "CB",
         "has_detailed_dashboard": false,
-        "bio": "20-årig senegalesisk CB nå i kroatisk HNL. Duelwin 60.2% og aerialwin 62% er solide. Interessant profil i sterkere liga enn Sogndal."
+        "bio": "20-\u00e5rig senegalesisk CB n\u00e5 i kroatisk HNL. Duelwin 60.2% og aerialwin 62% er solide. Interessant profil i sterkere liga enn Sogndal."
       },
       "aggregates": {
         "all": {
@@ -1948,7 +2200,7 @@
             "score": 30,
             "factors": [
               "Svak liga (koeff 0.77)",
-              "Ung (20 år)"
+              "Ung (20 \u00e5r)"
             ]
           },
           "availability": {
@@ -1960,10 +2212,31 @@
       "verdict": {
         "recommendation": "BUY",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 2/3 terskler med moderat risiko (8)",
+        "key_reason": "M\u00f8ter 2/3 terskler med moderat risiko (8)",
         "computed_at": "2026-03-22T15:45:30.278958Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "BUY"
+      },
+      "fullName": "Cheikh Mbacke Diop",
+      "name": "C. Diop",
+      "age": 20,
+      "nationality": "Senegal",
+      "flag": "\ud83c\uddf8\ud83c\uddf3",
+      "goals": 0.051,
+      "xG": 0.053,
+      "shots": 0.354,
+      "shotsOT": 0.051,
+      "passAcc": 84.2,
+      "longPassAcc": 47.3,
+      "dribbleSucc": 80.0,
+      "dribbles": 0.253,
+      "duelWin": 60.5,
+      "aerialWin": 53.7,
+      "interceptions": 6.317,
+      "recoveriesOpp": 1.213,
+      "touchesPenArea": 0.657,
+      "progRuns": 0.96,
+      "shotAssists": 0.051
     },
     {
       "id": "markmann",
@@ -1974,18 +2247,18 @@
         "date_of_birth": "2006-01-01",
         "age": 19,
         "nationality": "Denmark",
-        "flag": "🇩🇰",
+        "flag": "\ud83c\udde9\ud83c\uddf0",
         "height_cm": null,
         "preferred_foot": null
       },
       "current_club": {
-        "name": "FC Nordsjælland",
+        "name": "FC Nordsj\u00e6lland",
         "league": "Denmark. Superliga",
         "country": "Denmark"
       },
       "market": {
         "market_value_eur": 2500000,
-        "market_value_display": "€2.5M",
+        "market_value_display": "\u20ac2.5M",
         "contract_expires": "2027-06-30",
         "contract_year": "2027",
         "source": "transfermarkt",
@@ -1995,7 +2268,7 @@
         "pos_group": "CB",
         "position_detail": "CB",
         "has_detailed_dashboard": false,
-        "bio": "19-årig dansk CB i FC Nordsjælland. Pass% 92.7% er høyest i datasettet. Int/90 5.50 er over benchmark. €2.5M markedsverdi."
+        "bio": "19-\u00e5rig dansk CB i FC Nordsj\u00e6lland. Pass% 92.7% er h\u00f8yest i datasettet. Int/90 5.50 er over benchmark. \u20ac2.5M markedsverdi."
       },
       "aggregates": {
         "all": {
@@ -2085,7 +2358,7 @@
           "adaptation": {
             "score": 20,
             "factors": [
-              "Svært ung (19 år)"
+              "Sv\u00e6rt ung (19 \u00e5r)"
             ]
           },
           "availability": {
@@ -2097,10 +2370,31 @@
       "verdict": {
         "recommendation": "BUY",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 2/3 terskler med moderat risiko (5)",
+        "key_reason": "M\u00f8ter 2/3 terskler med moderat risiko (5)",
         "computed_at": "2026-03-22T15:45:30.324179Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "BUY"
+      },
+      "fullName": "Noah Markmann",
+      "name": "N. Markmann",
+      "age": 19,
+      "nationality": "Denmark",
+      "flag": "\ud83c\udde9\ud83c\uddf0",
+      "goals": 0.0,
+      "xG": 0.005,
+      "shots": 0.107,
+      "shotsOT": 0.054,
+      "passAcc": 92.7,
+      "longPassAcc": 43.0,
+      "dribbleSucc": 50.0,
+      "dribbles": 0.322,
+      "duelWin": 61.8,
+      "aerialWin": 57.6,
+      "interceptions": 4.235,
+      "recoveriesOpp": 1.983,
+      "touchesPenArea": 0.054,
+      "progRuns": 2.787,
+      "shotAssists": 0.107
     },
     {
       "id": "coulibaly",
@@ -2111,18 +2405,18 @@
         "date_of_birth": "2001-01-01",
         "age": 24,
         "nationality": "Ivory Coast",
-        "flag": "🇨🇮",
+        "flag": "\ud83c\udde8\ud83c\uddee",
         "height_cm": null,
         "preferred_foot": null
       },
       "current_club": {
-        "name": "IFK Värnamo",
+        "name": "IFK V\u00e4rnamo",
         "league": "Sweden. Superettan",
         "country": "Sweden"
       },
       "market": {
         "market_value_eur": 150000,
-        "market_value_display": "€150k",
+        "market_value_display": "\u20ac150k",
         "contract_expires": "2027-06-30",
         "contract_year": "2027",
         "source": "transfermarkt",
@@ -2132,7 +2426,7 @@
         "pos_group": "CB",
         "position_detail": "CB",
         "has_detailed_dashboard": false,
-        "bio": "24-årig ivorisk CB i IFK Värnamo. Sterk aerialwin (70.5%) — høyest i CB-porteføljen. Superettan gir begrenset validitet."
+        "bio": "24-\u00e5rig ivorisk CB i IFK V\u00e4rnamo. Sterk aerialwin (70.5%) \u2014 h\u00f8yest i CB-portef\u00f8ljen. Superettan gir begrenset validitet."
       },
       "aggregates": {
         "all": {
@@ -2234,21 +2528,42 @@
       "verdict": {
         "recommendation": "BUY",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 3/3 terskler med moderat risiko (6)",
+        "key_reason": "M\u00f8ter 3/3 terskler med moderat risiko (6)",
         "computed_at": "2026-03-22T15:45:30.336757Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "BUY"
+      },
+      "fullName": "Souleymane Coulibaly",
+      "name": "S. Coulibaly",
+      "age": 24,
+      "nationality": "Ivory Coast",
+      "flag": "\ud83c\udde8\ud83c\uddee",
+      "goals": 0.0,
+      "xG": 0.01,
+      "shots": 0.122,
+      "shotsOT": 0.0,
+      "passAcc": 89.4,
+      "longPassAcc": 57.1,
+      "dribbleSucc": null,
+      "dribbles": 0.0,
+      "duelWin": 62.9,
+      "aerialWin": 70.7,
+      "interceptions": 6.707,
+      "recoveriesOpp": 1.22,
+      "touchesPenArea": 0.122,
+      "progRuns": 0.366,
+      "shotAssists": 0.0
     },
     {
       "id": "tape",
       "schema_version": "2.0.0",
       "identity": {
-        "full_name": "Christ Tapé",
-        "short_name": "C. Tapé",
+        "full_name": "Christ Tap\u00e9",
+        "short_name": "C. Tap\u00e9",
         "date_of_birth": "2005-01-01",
         "age": 20,
         "nationality": "Ivory Coast",
-        "flag": "🇨🇮",
+        "flag": "\ud83c\udde8\ud83c\uddee",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -2259,7 +2574,7 @@
       },
       "market": {
         "market_value_eur": 600000,
-        "market_value_display": "€600k",
+        "market_value_display": "\u20ac600k",
         "contract_expires": "2028-06-30",
         "contract_year": "2028",
         "source": "transfermarkt",
@@ -2269,7 +2584,7 @@
         "pos_group": "CB",
         "position_detail": "CB",
         "has_detailed_dashboard": false,
-        "bio": "20-årig ivorisk CB i AC Horsens. Sterk aerialwin (72.1%) og pasning (84.7%). Begrenset datagrunnlag (1473 min)."
+        "bio": "20-\u00e5rig ivorisk CB i AC Horsens. Sterk aerialwin (72.1%) og pasning (84.7%). Begrenset datagrunnlag (1473 min)."
       },
       "aggregates": {
         "all": {
@@ -2359,7 +2674,7 @@
           "adaptation": {
             "score": 20,
             "factors": [
-              "Ung (20 år)"
+              "Ung (20 \u00e5r)"
             ]
           },
           "availability": {
@@ -2371,10 +2686,31 @@
       "verdict": {
         "recommendation": "BUY",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 3/3 terskler med moderat risiko (6)",
+        "key_reason": "M\u00f8ter 3/3 terskler med moderat risiko (6)",
         "computed_at": "2026-03-22T15:45:30.404678Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "BUY"
+      },
+      "fullName": "Christ Tap\u00e9",
+      "name": "C. Tap\u00e9",
+      "age": 20,
+      "nationality": "Ivory Coast",
+      "flag": "\ud83c\udde8\ud83c\uddee",
+      "goals": 0.061,
+      "xG": 0.042,
+      "shots": 0.428,
+      "shotsOT": 0.122,
+      "passAcc": 84.7,
+      "longPassAcc": 45.6,
+      "dribbleSucc": 69.2,
+      "dribbles": 0.794,
+      "duelWin": 60.3,
+      "aerialWin": 72.1,
+      "interceptions": 4.644,
+      "recoveriesOpp": 1.894,
+      "touchesPenArea": 0.55,
+      "progRuns": 1.161,
+      "shotAssists": 0.183
     },
     {
       "id": "ballard",
@@ -2385,7 +2721,7 @@
         "date_of_birth": "2005-01-01",
         "age": 20,
         "nationality": "England",
-        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -2396,7 +2732,7 @@
       },
       "market": {
         "market_value_eur": 800000,
-        "market_value_display": "€800k",
+        "market_value_display": "\u20ac800k",
         "contract_expires": "2028-06-30",
         "contract_year": "2028",
         "source": "transfermarkt",
@@ -2406,7 +2742,7 @@
         "pos_group": "CF",
         "position_detail": "CF",
         "has_detailed_dashboard": false,
-        "bio": "20-årig engelsk spiss fra Southampton-akademiet. 0.65 G/90 over 31 kamper er klart over Christiansen-benchmark. Duelwin 31.4% er svakt."
+        "bio": "20-\u00e5rig engelsk spiss fra Southampton-akademiet. 0.65 G/90 over 31 kamper er klart over Christiansen-benchmark. Duelwin 31.4% er svakt."
       },
       "aggregates": {
         "all": {
@@ -2490,7 +2826,7 @@
             "factors": [
               "xG overperformance: +0.19/90",
               "Lav duellvinnprosent: 31.4%",
-              "Lav pasningsnøyaktighet: 70.0%",
+              "Lav pasningsn\u00f8yaktighet: 70.0%",
               "Svak i luftdueller: 23.0%"
             ]
           },
@@ -2501,7 +2837,7 @@
           "adaptation": {
             "score": 20,
             "factors": [
-              "Ung (20 år)"
+              "Ung (20 \u00e5r)"
             ]
           },
           "availability": {
@@ -2513,10 +2849,31 @@
       "verdict": {
         "recommendation": "BUY",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 2/3 terskler med moderat risiko (28)",
+        "key_reason": "M\u00f8ter 2/3 terskler med moderat risiko (28)",
         "computed_at": "2026-03-22T15:45:30.520389Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "BUY"
+      },
+      "fullName": "Dom Ballard",
+      "name": "D. Ballard",
+      "age": 20,
+      "nationality": "England",
+      "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+      "goals": 0.647,
+      "xG": 0.458,
+      "shots": 2.125,
+      "shotsOT": 0.985,
+      "passAcc": 70.0,
+      "longPassAcc": 29.6,
+      "dribbleSucc": 53.5,
+      "dribbles": 2.648,
+      "duelWin": 31.4,
+      "aerialWin": 23.0,
+      "interceptions": 1.386,
+      "recoveriesOpp": 1.478,
+      "touchesPenArea": 3.449,
+      "progRuns": 1.201,
+      "shotAssists": 0.523
     },
     {
       "id": "fenger",
@@ -2527,18 +2884,18 @@
         "date_of_birth": "2001-01-01",
         "age": 24,
         "nationality": "Denmark",
-        "flag": "🇩🇰",
+        "flag": "\ud83c\udde9\ud83c\uddf0",
         "height_cm": null,
         "preferred_foot": null
       },
       "current_club": {
-        "name": "IFK Göteborg",
+        "name": "IFK G\u00f6teborg",
         "league": "Sweden. Allsvenskan",
         "country": "Sweden"
       },
       "market": {
         "market_value_eur": 2200000,
-        "market_value_display": "€2.2M",
+        "market_value_display": "\u20ac2.2M",
         "contract_expires": "2027-06-30",
         "contract_year": "2027",
         "source": "transfermarkt",
@@ -2548,7 +2905,7 @@
         "pos_group": "CF",
         "position_detail": "CF",
         "has_detailed_dashboard": false,
-        "bio": "24-årig dansk spiss nå i IFK Göteborg. Solid volumscorer. Aerialwin 57% er over benchmark."
+        "bio": "24-\u00e5rig dansk spiss n\u00e5 i IFK G\u00f6teborg. Solid volumscorer. Aerialwin 57% er over benchmark."
       },
       "aggregates": {
         "all": {
@@ -2665,10 +3022,31 @@
       "verdict": {
         "recommendation": "MONITOR",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "key_reason": "M\u00f8ter 1/3 terskler \u2014 trenger mer data eller utvikling",
         "computed_at": "2026-03-22T15:45:30.085530Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "MONITOR"
+      },
+      "fullName": "Max Fenger",
+      "name": "M. Fenger",
+      "age": 24,
+      "nationality": "Denmark",
+      "flag": "\ud83c\udde9\ud83c\uddf0",
+      "goals": 0.395,
+      "xG": 0.378,
+      "shots": 1.951,
+      "shotsOT": 0.914,
+      "passAcc": 77.5,
+      "longPassAcc": 63.6,
+      "dribbleSucc": 38.9,
+      "dribbles": 1.778,
+      "duelWin": 37.1,
+      "aerialWin": 38.5,
+      "interceptions": 1.704,
+      "recoveriesOpp": 1.852,
+      "touchesPenArea": 3.408,
+      "progRuns": 0.988,
+      "shotAssists": 0.617
     },
     {
       "id": "kilen",
@@ -2679,7 +3057,7 @@
         "date_of_birth": "2005-01-01",
         "age": 20,
         "nationality": "Norway",
-        "flag": "🇳🇴",
+        "flag": "\ud83c\uddf3\ud83c\uddf4",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -2690,7 +3068,7 @@
       },
       "market": {
         "market_value_eur": 1500000,
-        "market_value_display": "€1.5M",
+        "market_value_display": "\u20ac1.5M",
         "contract_expires": "2028-06-30",
         "contract_year": "2028",
         "source": "transfermarkt",
@@ -2700,7 +3078,7 @@
         "pos_group": "WING",
         "position_detail": "LWF",
         "has_detailed_dashboard": true,
-        "bio": "20-årig norsk venstrekant med ekstraordinær dribling. Ligaleder i progressive runs og dribbles/90 i Eliteserien 2025. HIGH POTENTIAL-profil."
+        "bio": "20-\u00e5rig norsk venstrekant med ekstraordin\u00e6r dribling. Ligaleder i progressive runs og dribbles/90 i Eliteserien 2025. HIGH POTENTIAL-profil."
       },
       "aggregates": {
         "all": {
@@ -2806,7 +3184,7 @@
           "adaptation": {
             "score": 10,
             "factors": [
-              "Ung (20 år)"
+              "Ung (20 \u00e5r)"
             ]
           },
           "availability": {
@@ -2818,21 +3196,42 @@
       "verdict": {
         "recommendation": "MONITOR",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "key_reason": "M\u00f8ter 1/3 terskler \u2014 trenger mer data eller utvikling",
         "computed_at": "2026-03-22T15:45:30.119578Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "MONITOR"
+      },
+      "fullName": "Sander Kilen",
+      "name": "S. Kilen",
+      "age": 20,
+      "nationality": "Norway",
+      "flag": "\ud83c\uddf3\ud83c\uddf4",
+      "goals": 0.304,
+      "xG": 0.29,
+      "shots": 1.634,
+      "shotsOT": 0.874,
+      "passAcc": 72.1,
+      "longPassAcc": 44.7,
+      "dribbleSucc": 48.7,
+      "dribbles": 4.293,
+      "duelWin": 37.2,
+      "aerialWin": 27.9,
+      "interceptions": 1.634,
+      "recoveriesOpp": 1.026,
+      "touchesPenArea": 2.887,
+      "progRuns": 2.393,
+      "shotAssists": 0.684
     },
     {
       "id": "bjerkebo",
       "schema_version": "2.0.0",
       "identity": {
-        "full_name": "Isak Bjerkebø",
-        "short_name": "I. Bjerkebø",
+        "full_name": "Isak Bjerkeb\u00f8",
+        "short_name": "I. Bjerkeb\u00f8",
         "date_of_birth": "2002-01-01",
         "age": 23,
         "nationality": "Sweden",
-        "flag": "🇸🇪",
+        "flag": "\ud83c\uddf8\ud83c\uddea",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -2843,7 +3242,7 @@
       },
       "market": {
         "market_value_eur": 700000,
-        "market_value_display": "€700k",
+        "market_value_display": "\u20ac700k",
         "contract_expires": "2029-06-30",
         "contract_year": "2029",
         "source": "transfermarkt",
@@ -2853,7 +3252,7 @@
         "pos_group": "WING",
         "position_detail": "LW",
         "has_detailed_dashboard": false,
-        "bio": "23-årig svensk venstrekant med god toveis bidragsbalanse. Aktiv presser. Allsvenskan gir god ligavaliditet."
+        "bio": "23-\u00e5rig svensk venstrekant med god toveis bidragsbalanse. Aktiv presser. Allsvenskan gir god ligavaliditet."
       },
       "aggregates": {
         "all": {
@@ -2969,10 +3368,31 @@
       "verdict": {
         "recommendation": "MONITOR",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "key_reason": "M\u00f8ter 1/3 terskler \u2014 trenger mer data eller utvikling",
         "computed_at": "2026-03-22T15:45:30.139152Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "MONITOR"
+      },
+      "fullName": "Isak Bjerkeb\u00f8",
+      "name": "I. Bjerkeb\u00f8",
+      "age": 23,
+      "nationality": "Sweden",
+      "flag": "\ud83c\uddf8\ud83c\uddea",
+      "goals": 0.332,
+      "xG": 0.292,
+      "shots": 2.511,
+      "shotsOT": 1.071,
+      "passAcc": 77.5,
+      "longPassAcc": 41.0,
+      "dribbleSucc": 54.6,
+      "dribbles": 4.801,
+      "duelWin": 40.4,
+      "aerialWin": 25.0,
+      "interceptions": 1.44,
+      "recoveriesOpp": 2.29,
+      "touchesPenArea": 5.946,
+      "progRuns": 2.511,
+      "shotAssists": 1.81
     },
     {
       "id": "heintz",
@@ -2983,18 +3403,18 @@
         "date_of_birth": "1998-01-01",
         "age": 27,
         "nationality": "Norway",
-        "flag": "🇳🇴",
+        "flag": "\ud83c\uddf3\ud83c\uddf4",
         "height_cm": null,
         "preferred_foot": null
       },
       "current_club": {
-        "name": "IFK Göteborg",
+        "name": "IFK G\u00f6teborg",
         "league": "Sweden. Allsvenskan",
         "country": "Sweden"
       },
       "market": {
         "market_value_eur": 2200000,
-        "market_value_display": "€2.2M",
+        "market_value_display": "\u20ac2.2M",
         "contract_expires": "2027-06-30",
         "contract_year": "2027",
         "source": "transfermarkt",
@@ -3004,7 +3424,7 @@
         "pos_group": "WING",
         "position_detail": "LWF",
         "has_detailed_dashboard": false,
-        "bio": "27-årig norsk venstrekant nå i IFK Göteborg. Allsvenskan gir best ligakontekst blant wing-kandidatene. Konservativ spiller."
+        "bio": "27-\u00e5rig norsk venstrekant n\u00e5 i IFK G\u00f6teborg. Allsvenskan gir best ligakontekst blant wing-kandidatene. Konservativ spiller."
       },
       "aggregates": {
         "all": {
@@ -3100,7 +3520,7 @@
           "sporting": {
             "score": 25,
             "factors": [
-              "Lav pasningsnøyaktighet: 70.9%"
+              "Lav pasningsn\u00f8yaktighet: 70.9%"
             ]
           },
           "economic": {
@@ -3120,10 +3540,31 @@
       "verdict": {
         "recommendation": "MONITOR",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "key_reason": "M\u00f8ter 1/3 terskler \u2014 trenger mer data eller utvikling",
         "computed_at": "2026-03-22T15:45:30.176664Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "MONITOR"
+      },
+      "fullName": "Tobias Heintz",
+      "name": "T. Heintz",
+      "age": 27,
+      "nationality": "Norway",
+      "flag": "\ud83c\uddf3\ud83c\uddf4",
+      "goals": 0.318,
+      "xG": 0.24,
+      "shots": 2.998,
+      "shotsOT": 1.114,
+      "passAcc": 70.9,
+      "longPassAcc": 49.0,
+      "dribbleSucc": 48.2,
+      "dribbles": 3.741,
+      "duelWin": 45.1,
+      "aerialWin": 32.1,
+      "interceptions": 1.698,
+      "recoveriesOpp": 2.547,
+      "touchesPenArea": 3.953,
+      "progRuns": 1.565,
+      "shotAssists": 1.831
     },
     {
       "id": "mccowatt",
@@ -3134,7 +3575,7 @@
         "date_of_birth": "1999-01-01",
         "age": 26,
         "nationality": "New Zealand",
-        "flag": "🇳🇿",
+        "flag": "\ud83c\uddf3\ud83c\uddff",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -3145,7 +3586,7 @@
       },
       "market": {
         "market_value_eur": 2000000,
-        "market_value_display": "€2.0M",
+        "market_value_display": "\u20ac2.0M",
         "contract_expires": "2027-06-30",
         "contract_year": "2027",
         "source": "transfermarkt",
@@ -3155,7 +3596,7 @@
         "pos_group": "CM",
         "position_detail": "AMF",
         "has_detailed_dashboard": false,
-        "bio": "26-årig newzealandsk AMF nå i Silkeborg. Solid bidragsbalanse. Begrenset oppsidepotensial."
+        "bio": "26-\u00e5rig newzealandsk AMF n\u00e5 i Silkeborg. Solid bidragsbalanse. Begrenset oppsidepotensial."
       },
       "aggregates": {
         "all": {
@@ -3257,10 +3698,31 @@
       "verdict": {
         "recommendation": "MONITOR",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "key_reason": "M\u00f8ter 1/3 terskler \u2014 trenger mer data eller utvikling",
         "computed_at": "2026-03-22T15:45:30.211818Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "MONITOR"
+      },
+      "fullName": "Callum McCowatt",
+      "name": "C. McCowatt",
+      "age": 26,
+      "nationality": "New Zealand",
+      "flag": "\ud83c\uddf3\ud83c\uddff",
+      "goals": 0.384,
+      "xG": 0.295,
+      "shots": 2.783,
+      "shotsOT": 1.391,
+      "passAcc": 81.2,
+      "longPassAcc": 58.1,
+      "dribbleSucc": 54.1,
+      "dribbles": 1.775,
+      "duelWin": 44.3,
+      "aerialWin": 45.1,
+      "interceptions": 1.583,
+      "recoveriesOpp": 1.727,
+      "touchesPenArea": 3.502,
+      "progRuns": 2.015,
+      "shotAssists": 0.959
     },
     {
       "id": "amundsen",
@@ -3271,7 +3733,7 @@
         "date_of_birth": "2005-01-01",
         "age": 20,
         "nationality": "Norway",
-        "flag": "🇳🇴",
+        "flag": "\ud83c\uddf3\ud83c\uddf4",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -3282,7 +3744,7 @@
       },
       "market": {
         "market_value_eur": 900000,
-        "market_value_display": "€900k",
+        "market_value_display": "\u20ac900k",
         "contract_expires": "2029-06-30",
         "contract_year": "2029",
         "source": "transfermarkt",
@@ -3292,7 +3754,7 @@
         "pos_group": "CB",
         "position_detail": "CB",
         "has_detailed_dashboard": false,
-        "bio": "20-årig norsk CB i Eliteserien. Stabil defensiv profil. LongPass% 47% er svak. Rom for utvikling."
+        "bio": "20-\u00e5rig norsk CB i Eliteserien. Stabil defensiv profil. LongPass% 47% er svak. Rom for utvikling."
       },
       "aggregates": {
         "all": {
@@ -3382,7 +3844,7 @@
           "adaptation": {
             "score": 10,
             "factors": [
-              "Ung (20 år)"
+              "Ung (20 \u00e5r)"
             ]
           },
           "availability": {
@@ -3396,21 +3858,42 @@
       "verdict": {
         "recommendation": "MONITOR",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "key_reason": "M\u00f8ter 1/3 terskler \u2014 trenger mer data eller utvikling",
         "computed_at": "2026-03-22T15:45:30.291794Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "MONITOR"
+      },
+      "fullName": "Ethan Amundsen-Day",
+      "name": "E. Amundsen-Day",
+      "age": 20,
+      "nationality": "Norway",
+      "flag": "\ud83c\uddf3\ud83c\uddf4",
+      "goals": 0.095,
+      "xG": 0.056,
+      "shots": 0.57,
+      "shotsOT": 0.19,
+      "passAcc": 86.2,
+      "longPassAcc": 57.1,
+      "dribbleSucc": 0.0,
+      "dribbles": 0.19,
+      "duelWin": 59.4,
+      "aerialWin": 60.4,
+      "interceptions": 3.516,
+      "recoveriesOpp": 2.376,
+      "touchesPenArea": 0.76,
+      "progRuns": 0.95,
+      "shotAssists": 0.19
     },
     {
       "id": "smajlovic",
       "schema_version": "2.0.0",
       "identity": {
-        "full_name": "Zinedin Smajlović",
-        "short_name": "Z. Smajlović",
+        "full_name": "Zinedin Smajlovi\u0107",
+        "short_name": "Z. Smajlovi\u0107",
         "date_of_birth": "2003-01-01",
         "age": 22,
         "nationality": "Sweden",
-        "flag": "🇸🇪",
+        "flag": "\ud83c\uddf8\ud83c\uddea",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -3421,7 +3904,7 @@
       },
       "market": {
         "market_value_eur": 1500000,
-        "market_value_display": "€1.5M",
+        "market_value_display": "\u20ac1.5M",
         "contract_expires": "2028-06-30",
         "contract_year": "2028",
         "source": "transfermarkt",
@@ -3431,7 +3914,7 @@
         "pos_group": "CB",
         "position_detail": "CB",
         "has_detailed_dashboard": false,
-        "bio": "22-årig svenske CB i Sandefjord. Allerede i Eliteserien — ingen skaleringsrisiko. Pass% 85.6% og Int/90 5.37 er over benchmark."
+        "bio": "22-\u00e5rig svenske CB i Sandefjord. Allerede i Eliteserien \u2014 ingen skaleringsrisiko. Pass% 85.6% og Int/90 5.37 er over benchmark."
       },
       "aggregates": {
         "all": {
@@ -3498,10 +3981,10 @@
       "provenance": {
         "performance_source": "wyscout",
         "performance_files": [
-          "Player stats Z. Smajlović.xlsx",
-          "Player stats Z. Smajlović (1).xlsx",
-          "Player stats Z. Smajlović (2).xlsx",
-          "Player stats Z. Smajlović (3).xlsx"
+          "Player stats Z. Smajlovi\u0107.xlsx",
+          "Player stats Z. Smajlovi\u0107 (1).xlsx",
+          "Player stats Z. Smajlovi\u0107 (2).xlsx",
+          "Player stats Z. Smajlovi\u0107 (3).xlsx"
         ],
         "market_source": "transfermarkt",
         "market_file": "smajlovic.json",
@@ -3545,21 +4028,42 @@
       "verdict": {
         "recommendation": "MONITOR",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "key_reason": "M\u00f8ter 1/3 terskler \u2014 trenger mer data eller utvikling",
         "computed_at": "2026-03-22T15:45:30.390291Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "MONITOR"
+      },
+      "fullName": "Zinedin Smajlovi\u0107",
+      "name": "Z. Smajlovi\u0107",
+      "age": 22,
+      "nationality": "Sweden",
+      "flag": "\ud83c\uddf8\ud83c\uddea",
+      "goals": 0.069,
+      "xG": 0.093,
+      "shots": 0.86,
+      "shotsOT": 0.241,
+      "passAcc": 85.6,
+      "longPassAcc": 50.6,
+      "dribbleSucc": 75.8,
+      "dribbles": 1.136,
+      "duelWin": 59.5,
+      "aerialWin": 56.2,
+      "interceptions": 5.369,
+      "recoveriesOpp": 2.272,
+      "touchesPenArea": 0.826,
+      "progRuns": 0.826,
+      "shotAssists": 0.172
     },
     {
       "id": "stojakovic",
       "schema_version": "2.0.0",
       "identity": {
-        "full_name": "Aleks Stojaković",
-        "short_name": "A. Stojaković",
+        "full_name": "Aleks Stojakovi\u0107",
+        "short_name": "A. Stojakovi\u0107",
         "date_of_birth": "2004-01-01",
         "age": 21,
         "nationality": "Slovenia",
-        "flag": "🇸🇮",
+        "flag": "\ud83c\uddf8\ud83c\uddee",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -3570,7 +4074,7 @@
       },
       "market": {
         "market_value_eur": 125000,
-        "market_value_display": "€125k",
+        "market_value_display": "\u20ac125k",
         "contract_expires": "2027-06-30",
         "contract_year": "2027",
         "source": "transfermarkt",
@@ -3580,7 +4084,7 @@
         "pos_group": "CF",
         "position_detail": "CF",
         "has_detailed_dashboard": false,
-        "bio": "21-årig slovensk spiss i Croatia HNL. TouchesPenArea 3.26 og shotsOT 0.84 er over benchmark. Lavpris-profil med potensial."
+        "bio": "21-\u00e5rig slovensk spiss i Croatia HNL. TouchesPenArea 3.26 og shotsOT 0.84 er over benchmark. Lavpris-profil med potensial."
       },
       "aggregates": {
         "all": {
@@ -3674,7 +4178,7 @@
             "score": 30,
             "factors": [
               "Svak liga (koeff 0.77)",
-              "Ung (21 år)"
+              "Ung (21 \u00e5r)"
             ]
           },
           "availability": {
@@ -3686,21 +4190,42 @@
       "verdict": {
         "recommendation": "MONITOR",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "key_reason": "M\u00f8ter 1/3 terskler \u2014 trenger mer data eller utvikling",
         "computed_at": "2026-03-22T15:45:30.536306Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "MONITOR"
+      },
+      "fullName": "Aleks Stojakovi\u0107",
+      "name": "A. Stojakovi\u0107",
+      "age": 21,
+      "nationality": "Slovenia",
+      "flag": "\ud83c\uddf8\ud83c\uddee",
+      "goals": 0.293,
+      "xG": 0.345,
+      "shots": 2.008,
+      "shotsOT": 0.837,
+      "passAcc": 74.0,
+      "longPassAcc": 47.8,
+      "dribbleSucc": 51.2,
+      "dribbles": 1.715,
+      "duelWin": 34.4,
+      "aerialWin": 33.6,
+      "interceptions": 1.548,
+      "recoveriesOpp": 1.548,
+      "touchesPenArea": 3.264,
+      "progRuns": 1.13,
+      "shotAssists": 0.335
     },
     {
       "id": "moller",
       "schema_version": "2.0.0",
       "identity": {
-        "full_name": "Valdemar Møller",
-        "short_name": "V. Møller",
+        "full_name": "Valdemar M\u00f8ller",
+        "short_name": "V. M\u00f8ller",
         "date_of_birth": "2007-01-01",
         "age": 18,
         "nationality": "Denmark",
-        "flag": "🇩🇰",
+        "flag": "\ud83c\udde9\ud83c\uddf0",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -3711,7 +4236,7 @@
       },
       "market": {
         "market_value_eur": 25000,
-        "market_value_display": "€25k",
+        "market_value_display": "\u20ac25k",
         "contract_expires": "2027-06-30",
         "contract_year": "2027",
         "source": "transfermarkt",
@@ -3721,7 +4246,7 @@
         "pos_group": "CM",
         "position_detail": "CM",
         "has_detailed_dashboard": false,
-        "bio": "18-årig dansk CM i AaB. Pass% 81.2% over benchmark. Begrenset spilletid (1091 min). HIGH POTENTIAL med stor nedsiderisiko."
+        "bio": "18-\u00e5rig dansk CM i AaB. Pass% 81.2% over benchmark. Begrenset spilletid (1091 min). HIGH POTENTIAL med stor nedsiderisiko."
       },
       "aggregates": {
         "all": {
@@ -3788,10 +4313,10 @@
       "provenance": {
         "performance_source": "wyscout",
         "performance_files": [
-          "Player stats V. Møller.xlsx",
-          "Player stats V. Møller (1).xlsx",
-          "Player stats V. Møller (2).xlsx",
-          "Player stats V. Møller (3).xlsx"
+          "Player stats V. M\u00f8ller.xlsx",
+          "Player stats V. M\u00f8ller (1).xlsx",
+          "Player stats V. M\u00f8ller (2).xlsx",
+          "Player stats V. M\u00f8ller (3).xlsx"
         ],
         "market_source": "transfermarkt",
         "market_file": "moller.json",
@@ -3827,7 +4352,7 @@
           "adaptation": {
             "score": 30,
             "factors": [
-              "Svært ung (18 år)"
+              "Sv\u00e6rt ung (18 \u00e5r)"
             ]
           },
           "availability": {
@@ -3839,10 +4364,31 @@
       "verdict": {
         "recommendation": "MONITOR",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "key_reason": "M\u00f8ter 1/3 terskler \u2014 trenger mer data eller utvikling",
         "computed_at": "2026-03-22T15:45:30.570728Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "MONITOR"
+      },
+      "fullName": "Valdemar M\u00f8ller",
+      "name": "V. M\u00f8ller",
+      "age": 18,
+      "nationality": "Denmark",
+      "flag": "\ud83c\udde9\ud83c\uddf0",
+      "goals": 0.234,
+      "xG": 0.244,
+      "shots": 1.713,
+      "shotsOT": 0.701,
+      "passAcc": 81.4,
+      "longPassAcc": 31.6,
+      "dribbleSucc": 45.8,
+      "dribbles": 1.869,
+      "duelWin": 42.2,
+      "aerialWin": 37.1,
+      "interceptions": 1.791,
+      "recoveriesOpp": 1.791,
+      "touchesPenArea": 2.18,
+      "progRuns": 1.324,
+      "shotAssists": 1.09
     },
     {
       "id": "gonstad",
@@ -3853,7 +4399,7 @@
         "date_of_birth": "2006-01-01",
         "age": 19,
         "nationality": "Norway",
-        "flag": "🇳🇴",
+        "flag": "\ud83c\uddf3\ud83c\uddf4",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -3864,7 +4410,7 @@
       },
       "market": {
         "market_value_eur": 700000,
-        "market_value_display": "€700k",
+        "market_value_display": "\u20ac700k",
         "contract_expires": "2028-06-30",
         "contract_year": "2028",
         "source": "transfermarkt",
@@ -3874,7 +4420,7 @@
         "pos_group": "CF",
         "position_detail": "CF",
         "has_detailed_dashboard": false,
-        "bio": "19-årig norsk spiss i Eliteserien. Begrenset data — MONITOR inntil mer spilletid foreligger."
+        "bio": "19-\u00e5rig norsk spiss i Eliteserien. Begrenset data \u2014 MONITOR inntil mer spilletid foreligger."
       },
       "aggregates": {
         "all": {
@@ -3958,7 +4504,7 @@
             "score": 45,
             "factors": [
               "Lav duellvinnprosent: 37.9%",
-              "Lav pasningsnøyaktighet: 71.6%",
+              "Lav pasningsn\u00f8yaktighet: 71.6%",
               "Svak i luftdueller: 21.1%"
             ]
           },
@@ -3969,7 +4515,7 @@
           "adaptation": {
             "score": 20,
             "factors": [
-              "Svært ung (19 år)"
+              "Sv\u00e6rt ung (19 \u00e5r)"
             ]
           },
           "availability": {
@@ -3981,10 +4527,31 @@
       "verdict": {
         "recommendation": "PASS",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter kun 0/3 terskler eller for høy risiko (22)",
+        "key_reason": "M\u00f8ter kun 0/3 terskler eller for h\u00f8y risiko (22)",
         "computed_at": "2026-03-22T15:45:30.065759Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "PASS"
+      },
+      "fullName": "Julian Gonstad",
+      "name": "J. Gonstad",
+      "age": 19,
+      "nationality": "Norway",
+      "flag": "\ud83c\uddf3\ud83c\uddf4",
+      "goals": 0.304,
+      "xG": 0.245,
+      "shots": 1.824,
+      "shotsOT": 0.76,
+      "passAcc": 71.6,
+      "longPassAcc": 55.6,
+      "dribbleSucc": 51.9,
+      "dribbles": 2.052,
+      "duelWin": 37.9,
+      "aerialWin": 21.1,
+      "interceptions": 1.216,
+      "recoveriesOpp": 1.596,
+      "touchesPenArea": 3.193,
+      "progRuns": 1.292,
+      "shotAssists": 0.456
     },
     {
       "id": "yapi",
@@ -3995,7 +4562,7 @@
         "date_of_birth": "2004-01-01",
         "age": 21,
         "nationality": "USA",
-        "flag": "🇺🇸",
+        "flag": "\ud83c\uddfa\ud83c\uddf8",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -4006,7 +4573,7 @@
       },
       "market": {
         "market_value_eur": 2500000,
-        "market_value_display": "€2.5M",
+        "market_value_display": "\u20ac2.5M",
         "contract_expires": "2026-12-31",
         "contract_year": "2026",
         "source": "transfermarkt",
@@ -4016,7 +4583,7 @@
         "pos_group": "WING",
         "position_detail": "LWF",
         "has_detailed_dashboard": false,
-        "bio": "21-årig amerikansk-ivorisk venstrekant med høyt scoringsvolum i MLS. Ligakoeff. 0.65 gir betydelig skaleringsrisiko."
+        "bio": "21-\u00e5rig amerikansk-ivorisk venstrekant med h\u00f8yt scoringsvolum i MLS. Ligakoeff. 0.65 gir betydelig skaleringsrisiko."
       },
       "aggregates": {
         "all": {
@@ -4106,14 +4673,14 @@
           "economic": {
             "score": 15,
             "factors": [
-              "Kontrakt utløper < 12 mnd"
+              "Kontrakt utl\u00f8per < 12 mnd"
             ]
           },
           "adaptation": {
             "score": 45,
             "factors": [
-              "Svært svak liga (koeff 0.65)",
-              "Ung (21 år)"
+              "Sv\u00e6rt svak liga (koeff 0.65)",
+              "Ung (21 \u00e5r)"
             ]
           },
           "availability": {
@@ -4125,10 +4692,31 @@
       "verdict": {
         "recommendation": "PASS",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter kun 0/3 terskler eller for høy risiko (22)",
+        "key_reason": "M\u00f8ter kun 0/3 terskler eller for h\u00f8y risiko (22)",
         "computed_at": "2026-03-22T15:45:30.483694Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "PASS"
+      },
+      "fullName": "Darren Yapi",
+      "name": "D. Yapi",
+      "age": 21,
+      "nationality": "USA",
+      "flag": "\ud83c\uddfa\ud83c\uddf8",
+      "goals": 0.262,
+      "xG": 0.215,
+      "shots": 1.213,
+      "shotsOT": 0.618,
+      "passAcc": 74.2,
+      "longPassAcc": 20.0,
+      "dribbleSucc": 50.0,
+      "dribbles": 3.14,
+      "duelWin": 34.9,
+      "aerialWin": 35.7,
+      "interceptions": 1.594,
+      "recoveriesOpp": 1.974,
+      "touchesPenArea": 2.474,
+      "progRuns": 1.118,
+      "shotAssists": 0.595
     },
     {
       "id": "dobson",
@@ -4139,7 +4727,7 @@
         "date_of_birth": "2007-01-01",
         "age": 18,
         "nationality": "Australia",
-        "flag": "🇦🇺",
+        "flag": "\ud83c\udde6\ud83c\uddfa",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -4150,7 +4738,7 @@
       },
       "market": {
         "market_value_eur": 350000,
-        "market_value_display": "€350k",
+        "market_value_display": "\u20ac350k",
         "contract_expires": "2026-06-30",
         "contract_year": "2026",
         "source": "transfermarkt",
@@ -4160,7 +4748,7 @@
         "pos_group": "CM",
         "position_detail": "CM",
         "has_detailed_dashboard": false,
-        "bio": "18-årig australsk CM — ekstraordinært ung for A-League-nivå. HIGH POTENTIAL med stor usikkerhet. A-League koeff. 0.65."
+        "bio": "18-\u00e5rig australsk CM \u2014 ekstraordin\u00e6rt ung for A-League-niv\u00e5. HIGH POTENTIAL med stor usikkerhet. A-League koeff. 0.65."
       },
       "aggregates": {
         "all": {
@@ -4264,14 +4852,14 @@
           "economic": {
             "score": 30,
             "factors": [
-              "Kontrakt utløper < 6 mnd"
+              "Kontrakt utl\u00f8per < 6 mnd"
             ]
           },
           "adaptation": {
             "score": 55,
             "factors": [
-              "Svært svak liga (koeff 0.65)",
-              "Svært ung (18 år)"
+              "Sv\u00e6rt svak liga (koeff 0.65)",
+              "Sv\u00e6rt ung (18 \u00e5r)"
             ]
           },
           "availability": {
@@ -4283,10 +4871,31 @@
       "verdict": {
         "recommendation": "PASS",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter kun 0/3 terskler eller for høy risiko (28)",
+        "key_reason": "M\u00f8ter kun 0/3 terskler eller for h\u00f8y risiko (28)",
         "computed_at": "2026-03-22T15:45:30.502794Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "PASS"
+      },
+      "fullName": "Will Dobson",
+      "name": "W. Dobson",
+      "age": 18,
+      "nationality": "Australia",
+      "flag": "\ud83c\udde6\ud83c\uddfa",
+      "goals": 0.191,
+      "xG": 0.273,
+      "shots": 1.858,
+      "shotsOT": 0.81,
+      "passAcc": 76.1,
+      "longPassAcc": 25.0,
+      "dribbleSucc": 47.3,
+      "dribbles": 4.336,
+      "duelWin": 42.0,
+      "aerialWin": 30.8,
+      "interceptions": 2.049,
+      "recoveriesOpp": 2.287,
+      "touchesPenArea": 3.383,
+      "progRuns": 1.763,
+      "shotAssists": 1.001
     },
     {
       "id": "fraulo",
@@ -4297,7 +4906,7 @@
         "date_of_birth": "2005-01-01",
         "age": 20,
         "nationality": "Denmark",
-        "flag": "🇩🇰",
+        "flag": "\ud83c\udde9\ud83c\uddf0",
         "height_cm": null,
         "preferred_foot": null
       },
@@ -4308,7 +4917,7 @@
       },
       "market": {
         "market_value_eur": 550000,
-        "market_value_display": "€550k",
+        "market_value_display": "\u20ac550k",
         "contract_expires": "2028-06-30",
         "contract_year": "2028",
         "source": "transfermarkt",
@@ -4318,7 +4927,7 @@
         "pos_group": "WING",
         "position_detail": "RW",
         "has_detailed_dashboard": false,
-        "bio": "20-årig dansk høyrekant i Lyngby. ShotAss 1.61/90 er høyest i WING-porteføljen. Kreativ profil med sterk assistpotensial."
+        "bio": "20-\u00e5rig dansk h\u00f8yrekant i Lyngby. ShotAss 1.61/90 er h\u00f8yest i WING-portef\u00f8ljen. Kreativ profil med sterk assistpotensial."
       },
       "aggregates": {
         "all": {
@@ -4422,7 +5031,7 @@
           "adaptation": {
             "score": 20,
             "factors": [
-              "Ung (20 år)"
+              "Ung (20 \u00e5r)"
             ]
           },
           "availability": {
@@ -4434,10 +5043,31 @@
       "verdict": {
         "recommendation": "PASS",
         "confidence_in_verdict": "high",
-        "key_reason": "Møter kun 0/3 terskler eller for høy risiko (8)",
+        "key_reason": "M\u00f8ter kun 0/3 terskler eller for h\u00f8y risiko (8)",
         "computed_at": "2026-03-22T15:45:30.554981Z",
-        "threshold_version": "2.0.0"
-      }
+        "threshold_version": "2.0.0",
+        "label": "PASS"
+      },
+      "fullName": "Gustav Fraulo",
+      "name": "G. Fraulo",
+      "age": 20,
+      "nationality": "Denmark",
+      "flag": "\ud83c\udde9\ud83c\uddf0",
+      "goals": 0.15,
+      "xG": 0.148,
+      "shots": 1.449,
+      "shotsOT": 0.65,
+      "passAcc": 79.3,
+      "longPassAcc": 40.4,
+      "dribbleSucc": 52.8,
+      "dribbles": 1.799,
+      "duelWin": 46.1,
+      "aerialWin": 23.3,
+      "interceptions": 3.048,
+      "recoveriesOpp": 3.598,
+      "touchesPenArea": 2.099,
+      "progRuns": 2.199,
+      "shotAssists": 1.699
     }
   ]
 }
