@@ -246,7 +246,7 @@ export default function App(){
             gap:10,
           }}>
             {sortedCards.map(player => {
-              const verdict = player.verdict;
+              const verdict = player.verdict.label;
               const vs = VERDICT_STYLE[verdict];
               const bench = benchmarks[player.posGroup];
               const rating = getOverallRating(player);
@@ -337,7 +337,7 @@ export default function App(){
                 <tbody>
                   {sortedTable.map(player => {
                     const bench  = benchmarks[player.posGroup];
-                    const verdict = player.verdict;
+                    const verdict = player.verdict.label;
                     const vs = VERDICT_STYLE[verdict];
                     return (
                       <tr key={player.id} onClick={()=>setSel(player)}

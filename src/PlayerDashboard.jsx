@@ -412,7 +412,7 @@ export default function PlayerDashboard({ player }) {
     "MONITOR":    CAMBER,
     "PASS":       CRED,
   }
-  const verdictLabel = player.verdict ?? "MONITOR"
+  const verdictLabel = player.verdict.label ?? "MONITOR"
   const fitLabel = { label: verdictLabel, color: VERDICT_COLORS[verdictLabel] ?? CAMBER }
 
   const tabs = [
