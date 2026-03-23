@@ -1,0 +1,197 @@
+{
+  "$schema": "ask-scouting-methodology-v2",
+  "version": "2.0.0",
+  "last_updated": "2026-03-21",
+  "author": "Ask Christiansen",
+
+  "data_sources": {
+    "performance": {
+      "name": "Wyscout",
+      "type": "manual_export",
+      "format": "xlsx",
+      "update_frequency": "manual — ved ny sesong eller signifikant spilletid",
+      "notes": "Eksportert per spiller, 4 filer per spiller (general/defensive/offensive/passing)"
+    },
+    "market": {
+      "name": "Transfermarkt",
+      "type": "manual_export",
+      "format": "json/csv",
+      "update_frequency": "manual — ved kontraktsoppdatering eller verdiendring",
+      "notes": "Markedsverdi, kontrakt, alder, nasjonalitet"
+    }
+  },
+
+  "hard_filters": {
+    "$comment": "Spiller MÅ møte alle disse for å få aktiv anbefaling (ikke PASS)",
+    "min_minutes": 500,
+    "max_age_by_role": {
+      "CF": 27,
+      "WING": 26,
+      "CM": 27,
+      "CB": 27,
+      "BACK": 27
+    },
+    "min_contract_months_remaining": 6,
+    "min_confidence_score": 30
+  },
+
+  "league_coefficients": {
+    "$comment": "Skaleringskoeffisient mot Eliteserien. 1.0 = Eliteserien-nivå.",
+    "Norway. Eliteserien": 1.00,
+    "Norway. 1. divisjon": 0.82,
+    "Sweden. Allsvenskan": 0.95,
+    "Sweden. Superettan": 0.80,
+    "Denmark. Superliga": 0.90,
+    "Denmark. 1st Division": 0.80,
+    "England. League One": 0.85,
+    "Scotland. Premiership": 0.88,
+    "Finland. Veikkausliiga": 0.78,
+    "Netherlands. Eredivisie": 1.05,
+    "Netherlands. Eerste Divisie": 0.82,
+    "Bulgaria. First League": 0.72,
+    "Hungary. NB I": 0.70,
+    "Lithuania. A Lyga": 0.68,
+    "Slovenia. Prva Liga": 0.75,
+    "Croatia. SuperSport HNL": 0.77,
+    "United States. MLS": 0.65,
+    "Australia. A-League": 0.65
+  },
+
+  "confidence_scoring": {
+    "$comment": "Maks 100 poeng fordelt på 4 komponenter",
+    "minutes": {
+      "weight": 25,
+      "thresholds": {
+        "0": 0,
+        "500": 8,
+        "1000": 15,
+        "1500": 20,
+        "2000": 23,
+        "2500": 25
+      }
+    },
+    "completeness": {
+      "weight": 25,
+      "key_fields": [
+        "goals_p90", "assists_p90", "xg_p90",
+        "pass_accuracy_pct", "duel_win_pct", "aerial_win_pct",
+        "interceptions_p90", "progressive_runs_p90"
+      ],
+      "notes": "Score = (antall felter med verdi / totalt) * 25"
+    },
+    "league_quality": {
+      "weight": 25,
+      "notes": "Score = league_coefficient * 25"
+    },
+    "recency": {
+      "weight": 25,
+      "thresholds": {
+        "current_season": 25,
+        "1_season_old": 18,
+        "2_seasons_old": 10,
+        "older": 5
+      }
+    },
+    "tiers": {
+      "high": { "min": 70, "label": "Høy" },
+      "medium": { "min": 45, "label": "Middels" },
+      "low": { "min": 0, "label": "Lav" }
+    }
+  },
+
+  "risk_scoring": {
+    "components": {
+      "sporting": {
+        "weight": 0.35,
+        "factors": {
+          "xg_overperformance": "G - xG > 0.15/90 → +20 risiko",
+          "low_duel_win": "Duell% < benchmark - 15% → +15 risiko",
+          "low_pass_accuracy": "Pass% < 72 → +10 risiko",
+          "low_aerial_win": "Aerial% < 40 (CF/CB) → +10 risiko"
+        }
+      },
+      "economic": {
+        "weight": 0.25,
+        "factors": {
+          "high_market_value": "> €3M → +20 risiko",
+          "contract_expiry_soon": "< 12 mnd → +15 risiko",
+          "no_contract_data": "Ukjent kontrakt → +10 risiko"
+        }
+      },
+      "adaptation": {
+        "weight": 0.25,
+        "factors": {
+          "weak_league": "Koeff < 0.75 → +25 risiko",
+          "very_young": "Alder < 20 → +15 risiko",
+          "multiple_clubs": "3+ klubber siste 3 år → +10 risiko"
+        }
+      },
+      "availability": {
+        "weight": 0.15,
+        "factors": {
+          "low_minutes": "< 1000 min → +20 risiko",
+          "short_contract": "< 6 mnd → +15 risiko"
+        }
+      }
+    },
+    "tiers": {
+      "low": { "max": 35 },
+      "medium": { "max": 60 },
+      "high": { "min": 60 }
+    }
+  },
+
+  "verdict_thresholds": {
+    "$comment": "Posisjonsspesifikke krav for anbefaling",
+    "CF": {
+      "key_metrics": ["goals_p90", "xg_p90", "duel_win_pct"],
+      "thresholds": { "goals_p90": 0.40, "xg_p90": 0.30, "duel_win_pct": 48 },
+      "benchmark_player": "Peter Christiansen"
+    },
+    "WING": {
+      "key_metrics": ["goals_p90", "dribble_success_pct", "progressive_runs_p90"],
+      "thresholds": { "goals_p90": 0.30, "dribble_success_pct": 55, "progressive_runs_p90": 3.5 },
+      "benchmark_player": "Edvin Austbø"
+    },
+    "CM": {
+      "key_metrics": ["pass_accuracy_pct", "interceptions_p90", "duel_win_pct"],
+      "thresholds": { "pass_accuracy_pct": 78, "interceptions_p90": 3.0, "duel_win_pct": 46 },
+      "benchmark_player": "Kristoffer Askildsen"
+    },
+    "CB": {
+      "key_metrics": ["duel_win_pct", "aerial_win_pct", "interceptions_p90"],
+      "thresholds": { "duel_win_pct": 60, "aerial_win_pct": 58, "interceptions_p90": 4.0 },
+      "benchmark_player": "Henrik Falchener"
+    },
+    "BACK": {
+      "key_metrics": ["duel_win_pct", "pass_accuracy_pct", "progressive_runs_p90"],
+      "thresholds": { "duel_win_pct": 50, "pass_accuracy_pct": 76, "progressive_runs_p90": 1.0 },
+      "benchmark_player": "Kristoffer Haugen"
+    },
+    "verdict_rules": {
+      "STRONG BUY": "møter alle terskler + risiko < 35 + konfidenskoeff >= 0.85",
+      "BUY": "møter >= 2/3 terskler + risiko < 50",
+      "MONITOR": "møter >= 1/3 terskler + risiko < 65",
+      "PASS": "møter < 1/3 terskler ELLER risiko >= 65 ELLER confidence < 30"
+    }
+  },
+
+  "changelog": [
+    {
+      "version": "2.0.0",
+      "date": "2026-03-21",
+      "changes": [
+        "Ny datapipeline med by_competition-aggregering",
+        "Confidence score implementert",
+        "4-komponent risk score",
+        "Metodeside publisert",
+        "Hard filters implementert"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "date": "2026-03-01",
+      "changes": ["Initial versjon med 25 spillere og posisjonsspesifikke benchmarks"]
+    }
+  ]
+}
