@@ -1,0 +1,4443 @@
+{
+  "generated_at": "2026-03-22T15:45:30.570763Z",
+  "pipeline_version": "1.0.0",
+  "schema_version": "2.0.0",
+  "player_count": 30,
+  "skipped": [
+    "paananen",
+    "diarra"
+  ],
+  "players": [
+    {
+      "id": "ejdum",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Max Ejdum",
+        "short_name": "M. Ejdum",
+        "date_of_birth": "2004-01-01",
+        "age": 21,
+        "nationality": "Denmark",
+        "flag": "🇩🇰",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Odense BK",
+        "league": "Denmark. Superliga",
+        "country": "Denmark"
+      },
+      "market": {
+        "market_value_eur": 1700000,
+        "market_value_display": "€1.7M",
+        "contract_expires": "2028-06-30",
+        "contract_year": "2028",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CM",
+        "position_detail": "CM / RW",
+        "has_detailed_dashboard": false,
+        "bio": "21-årig dansk midtbanespiller i Odense BK med svært høy pasningsnøyaktighet (84.8%). Taktisk fleksibel profil."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 1908,
+          "matches": 26,
+          "goals_p90": 0.094,
+          "assists_p90": 0.142,
+          "xg_p90": 0.064,
+          "shots_p90": 0.802,
+          "shots_on_target_p90": 0.33,
+          "pass_accuracy_pct": 84.9,
+          "long_pass_accuracy_pct": 29.6,
+          "dribble_success_pct": 58.8,
+          "dribbles_p90": 1.604,
+          "duel_win_pct": 50.7,
+          "aerial_win_pct": 52.8,
+          "interceptions_p90": 3.585,
+          "recoveries_opp_half_p90": 4.387,
+          "shot_assists_p90": 0.755,
+          "touches_pen_area_p90": 2.075,
+          "progressive_runs_p90": 1.368
+        },
+        "by_competition": [
+          {
+            "competition": "Denmark. Superliga",
+            "competition_type": "league",
+            "matches": 26,
+            "minutes": 1908,
+            "goals_p90": 0.094,
+            "assists_p90": 0.142,
+            "xg_p90": 0.064,
+            "pass_accuracy_pct": 84.9,
+            "duel_win_pct": 50.7,
+            "interceptions_p90": 3.585,
+            "progressive_runs_p90": 1.368
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 1908,
+        "total_matches": 26,
+        "date_range_from": "2023-05-21",
+        "date_range_to": "2026-03-15",
+        "competitions_included": [
+          "Denmark. Superliga"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats M. Ejdum.xlsx",
+          "Player stats M. Ejdum (1).xlsx",
+          "Player stats M. Ejdum (2).xlsx",
+          "Player stats M. Ejdum (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "ejdum.json",
+        "processed_at": "2026-03-22T15:45:30.156726Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 92,
+        "tier": "high",
+        "components": {
+          "minutes_score": 20,
+          "completeness_score": 25,
+          "league_quality_score": 22,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 2,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 0,
+            "factors": []
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 10,
+            "factors": [
+              "Ung (21 år)"
+            ]
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "STRONG BUY",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter alle 3 terskler, lav risiko (2), sterk ligakontekst",
+        "computed_at": "2026-03-22T15:45:30.156708Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "jorgensen",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Thomas Jørgensen",
+        "short_name": "T. Jørgensen",
+        "date_of_birth": "2005-01-01",
+        "age": 20,
+        "nationality": "Denmark",
+        "flag": "🇩🇰",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Viborg FF",
+        "league": "Denmark. Superliga",
+        "country": "Denmark"
+      },
+      "market": {
+        "market_value_eur": 4000000,
+        "market_value_display": "€4.0M",
+        "contract_expires": "2028-06-30",
+        "contract_year": "2028",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CM",
+        "position_detail": "CM / AMF",
+        "has_detailed_dashboard": false,
+        "bio": "20-årig dansk CM/AMF i Viborg med imponerende allround-tall. 3.65 ProgRuns og 3.19 Int/90. Taktisk fleksibel. €4.0M markedsverdi."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 2564,
+          "matches": 31,
+          "goals_p90": 0.14,
+          "assists_p90": 0.211,
+          "xg_p90": 0.172,
+          "shots_p90": 2.036,
+          "shots_on_target_p90": 0.772,
+          "pass_accuracy_pct": 79.7,
+          "long_pass_accuracy_pct": 59.7,
+          "dribble_success_pct": 55.6,
+          "dribbles_p90": 2.527,
+          "duel_win_pct": 49.8,
+          "aerial_win_pct": 47.7,
+          "interceptions_p90": 3.194,
+          "recoveries_opp_half_p90": 3.721,
+          "shot_assists_p90": 1.439,
+          "touches_pen_area_p90": 1.79,
+          "progressive_runs_p90": 3.651
+        },
+        "by_competition": [
+          {
+            "competition": "Denmark. Superliga",
+            "competition_type": "league",
+            "matches": 22,
+            "minutes": 1915,
+            "goals_p90": 0.141,
+            "assists_p90": 0.235,
+            "xg_p90": 0.184,
+            "pass_accuracy_pct": 79.7,
+            "duel_win_pct": 50.8,
+            "interceptions_p90": 3.337,
+            "progressive_runs_p90": 3.337
+          },
+          {
+            "competition": "Denmark. DBU Pokalen",
+            "competition_type": "cup",
+            "matches": 5,
+            "minutes": 400,
+            "goals_p90": 0.0,
+            "assists_p90": 0.225,
+            "xg_p90": 0.148,
+            "pass_accuracy_pct": 81.3,
+            "duel_win_pct": 46.9,
+            "interceptions_p90": 3.6,
+            "progressive_runs_p90": 6.3
+          },
+          {
+            "competition": "Europe. UEFA U21 Championship Qualification",
+            "competition_type": "league",
+            "matches": 4,
+            "minutes": 249,
+            "goals_p90": 0.361,
+            "assists_p90": 0.0,
+            "xg_p90": 0.119,
+            "pass_accuracy_pct": 76.2,
+            "duel_win_pct": 47.8,
+            "interceptions_p90": 1.446,
+            "progressive_runs_p90": 1.807
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 2564,
+        "total_matches": 31,
+        "date_range_from": "2025-07-18",
+        "date_range_to": "2026-03-15",
+        "competitions_included": [
+          "Denmark. Superliga",
+          "Denmark. DBU Pokalen",
+          "Europe. UEFA U21 Championship Qualification"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats T. Jørgensen.xlsx",
+          "Player stats T. Jørgensen (1).xlsx",
+          "Player stats T. Jørgensen (2).xlsx",
+          "Player stats T. Jørgensen (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "jorgensen.json",
+        "processed_at": "2026-03-22T15:45:30.249664Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 97,
+        "tier": "high",
+        "components": {
+          "minutes_score": 25,
+          "completeness_score": 25,
+          "league_quality_score": 22,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 11,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 10,
+            "factors": []
+          },
+          "economic": {
+            "score": 20,
+            "factors": [
+              "Høy markedsverdi: €4.0M"
+            ]
+          },
+          "adaptation": {
+            "score": 10,
+            "factors": [
+              "Ung (20 år)"
+            ]
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "STRONG BUY",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter alle 3 terskler, lav risiko (11), sterk ligakontekst",
+        "computed_at": "2026-03-22T15:45:30.249648Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "askou",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Julius Berthel Askou",
+        "short_name": "J. Askou",
+        "date_of_birth": "2006-01-01",
+        "age": 19,
+        "nationality": "Denmark",
+        "flag": "🇩🇰",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Odense BK",
+        "league": "Denmark. Superliga",
+        "country": "Denmark"
+      },
+      "market": {
+        "market_value_eur": 1000000,
+        "market_value_display": "€1.0M",
+        "contract_expires": "2027-06-30",
+        "contract_year": "2027",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CB",
+        "position_detail": "CB",
+        "has_detailed_dashboard": false,
+        "bio": "19-årig dansk CB i Odense BK med eksepsjonell pasningsnøyaktighet (89.6%). Den teknisk sterkeste CB-kandidaten i porteføljen."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 1550,
+          "matches": 20,
+          "goals_p90": 0.058,
+          "assists_p90": 0.0,
+          "xg_p90": 0.035,
+          "shots_p90": 0.29,
+          "shots_on_target_p90": 0.116,
+          "pass_accuracy_pct": 89.6,
+          "long_pass_accuracy_pct": 54.9,
+          "dribble_success_pct": 100.0,
+          "dribbles_p90": 0.174,
+          "duel_win_pct": 63.2,
+          "aerial_win_pct": 62.8,
+          "interceptions_p90": 5.11,
+          "recoveries_opp_half_p90": 1.684,
+          "shot_assists_p90": 0.058,
+          "touches_pen_area_p90": 0.697,
+          "progressive_runs_p90": 0.406
+        },
+        "by_competition": [
+          {
+            "competition": "Denmark. Superliga",
+            "competition_type": "league",
+            "matches": 20,
+            "minutes": 1550,
+            "goals_p90": 0.058,
+            "assists_p90": 0.0,
+            "xg_p90": 0.035,
+            "pass_accuracy_pct": 89.6,
+            "duel_win_pct": 63.2,
+            "interceptions_p90": 5.11,
+            "progressive_runs_p90": 0.406
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 1550,
+        "total_matches": 20,
+        "date_range_from": "2025-07-20",
+        "date_range_to": "2026-03-15",
+        "competitions_included": [
+          "Denmark. Superliga"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats J. Askou.xlsx",
+          "Player stats J. Askou (1).xlsx",
+          "Player stats J. Askou (2).xlsx",
+          "Player stats J. Askou (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "askou.json",
+        "processed_at": "2026-03-22T15:45:30.310264Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 92,
+        "tier": "high",
+        "components": {
+          "minutes_score": 20,
+          "completeness_score": 25,
+          "league_quality_score": 22,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 5,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 0,
+            "factors": []
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 20,
+            "factors": [
+              "Svært ung (19 år)"
+            ]
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "STRONG BUY",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter alle 3 terskler, lav risiko (5), sterk ligakontekst",
+        "computed_at": "2026-03-22T15:45:30.310247Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "graham",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Luke Graham",
+        "short_name": "L. Graham",
+        "date_of_birth": "2003-01-01",
+        "age": 22,
+        "nationality": "Scotland",
+        "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Dundee FC",
+        "league": "Scotland. Premiership",
+        "country": "Scotland"
+      },
+      "market": {
+        "market_value_eur": 1200000,
+        "market_value_display": "€1.2M",
+        "contract_expires": "2026-06-30",
+        "contract_year": "2026",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CB",
+        "position_detail": "CB",
+        "has_detailed_dashboard": false,
+        "bio": "22-årig skotsk CB i Dundee FC. Imponerende volum (3293 min). ProgRuns 1.42 er best i CB-gruppen. Ball-fremførende type."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 3293,
+          "matches": 35,
+          "goals_p90": 0.082,
+          "assists_p90": 0.027,
+          "xg_p90": 0.087,
+          "shots_p90": 0.492,
+          "shots_on_target_p90": 0.082,
+          "pass_accuracy_pct": 82.8,
+          "long_pass_accuracy_pct": 39.6,
+          "dribble_success_pct": 80.6,
+          "dribbles_p90": 0.847,
+          "duel_win_pct": 62.8,
+          "aerial_win_pct": 66.7,
+          "interceptions_p90": 4.455,
+          "recoveries_opp_half_p90": 1.722,
+          "shot_assists_p90": 0.219,
+          "touches_pen_area_p90": 0.765,
+          "progressive_runs_p90": 1.421
+        },
+        "by_competition": [
+          {
+            "competition": "Scotland. Premiership",
+            "competition_type": "league",
+            "matches": 29,
+            "minutes": 2804,
+            "goals_p90": 0.064,
+            "assists_p90": 0.032,
+            "xg_p90": 0.077,
+            "pass_accuracy_pct": 81.8,
+            "duel_win_pct": 62.0,
+            "interceptions_p90": 4.686,
+            "progressive_runs_p90": 1.155
+          },
+          {
+            "competition": "Scotland. FA Cup",
+            "competition_type": "cup",
+            "matches": 1,
+            "minutes": 96,
+            "goals_p90": 0.0,
+            "assists_p90": 0.0,
+            "xg_p90": 0.141,
+            "pass_accuracy_pct": 86.6,
+            "duel_win_pct": 67.7,
+            "interceptions_p90": 5.625,
+            "progressive_runs_p90": 4.688
+          },
+          {
+            "competition": "Europe. UEFA U21 Championship Qualification",
+            "competition_type": "league",
+            "matches": 5,
+            "minutes": 393,
+            "goals_p90": 0.229,
+            "assists_p90": 0.0,
+            "xg_p90": 0.142,
+            "pass_accuracy_pct": 86.1,
+            "duel_win_pct": 67.2,
+            "interceptions_p90": 2.519,
+            "progressive_runs_p90": 2.519
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 3293,
+        "total_matches": 35,
+        "date_range_from": "2025-08-03",
+        "date_range_to": "2026-03-15",
+        "competitions_included": [
+          "Scotland. Premiership",
+          "Scotland. FA Cup",
+          "Europe. UEFA U21 Championship Qualification"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025/26"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats Luke Graham.xlsx",
+          "Player stats Luke Graham (1).xlsx",
+          "Player stats Luke Graham (2).xlsx",
+          "Player stats Luke Graham (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "graham.json",
+        "processed_at": "2026-03-22T15:45:30.356356Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 97,
+        "tier": "high",
+        "components": {
+          "minutes_score": 25,
+          "completeness_score": 25,
+          "league_quality_score": 22,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 10,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 0,
+            "factors": []
+          },
+          "economic": {
+            "score": 30,
+            "factors": [
+              "Kontrakt utløper < 6 mnd"
+            ]
+          },
+          "adaptation": {
+            "score": 10,
+            "factors": []
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "STRONG BUY",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter alle 3 terskler, lav risiko (10), sterk ligakontekst",
+        "computed_at": "2026-03-22T15:45:30.356338Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "mohammed",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Rufai Mohammed",
+        "short_name": "R. Mohammed",
+        "date_of_birth": "2005-01-01",
+        "age": 20,
+        "nationality": "Ghana",
+        "flag": "🇬🇭",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "IF Elfsborg",
+        "league": "Sweden. Allsvenskan",
+        "country": "Sweden"
+      },
+      "market": {
+        "market_value_eur": 250000,
+        "market_value_display": "€250k",
+        "contract_expires": "2029-06-30",
+        "contract_year": "2029",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CB",
+        "position_detail": "CB",
+        "has_detailed_dashboard": false,
+        "bio": "20-årig ghanesisk CB i IF Elfsborg. Ekstraordinær interception-rate (8.41/90). Aerialwin 69.9% er høyest. Sterk Allsvenskan-kontekst."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 1513,
+          "matches": 17,
+          "goals_p90": 0.178,
+          "assists_p90": 0.0,
+          "xg_p90": 0.128,
+          "shots_p90": 0.654,
+          "shots_on_target_p90": 0.297,
+          "pass_accuracy_pct": 81.6,
+          "long_pass_accuracy_pct": 44.7,
+          "dribble_success_pct": 75.0,
+          "dribbles_p90": 0.238,
+          "duel_win_pct": 60.8,
+          "aerial_win_pct": 69.9,
+          "interceptions_p90": 8.447,
+          "recoveries_opp_half_p90": 1.904,
+          "shot_assists_p90": 0.297,
+          "touches_pen_area_p90": 0.773,
+          "progressive_runs_p90": 0.714
+        },
+        "by_competition": [
+          {
+            "competition": "Sweden. Svenska Cupen",
+            "competition_type": "cup",
+            "matches": 2,
+            "minutes": 125,
+            "goals_p90": 0.72,
+            "assists_p90": 0.0,
+            "xg_p90": 0.266,
+            "pass_accuracy_pct": 87.2,
+            "duel_win_pct": 66.7,
+            "interceptions_p90": 7.2,
+            "progressive_runs_p90": 0.0
+          },
+          {
+            "competition": "Sweden. Allsvenskan",
+            "competition_type": "league",
+            "matches": 15,
+            "minutes": 1388,
+            "goals_p90": 0.13,
+            "assists_p90": 0.0,
+            "xg_p90": 0.115,
+            "pass_accuracy_pct": 81.1,
+            "duel_win_pct": 60.4,
+            "interceptions_p90": 8.559,
+            "progressive_runs_p90": 0.778
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 1513,
+        "total_matches": 17,
+        "date_range_from": "2025-06-29",
+        "date_range_to": "2026-03-08",
+        "competitions_included": [
+          "Sweden. Svenska Cupen",
+          "Sweden. Allsvenskan"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats R. Mohammed.xlsx",
+          "Player stats R. Mohammed (1).xlsx",
+          "Player stats R. Mohammed (2).xlsx",
+          "Player stats R. Mohammed (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "mohammed.json",
+        "processed_at": "2026-03-22T15:45:30.372713Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 94,
+        "tier": "high",
+        "components": {
+          "minutes_score": 20,
+          "completeness_score": 25,
+          "league_quality_score": 24,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 2,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 0,
+            "factors": []
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 10,
+            "factors": [
+              "Ung (20 år)"
+            ]
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "STRONG BUY",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter alle 3 terskler, lav risiko (2), sterk ligakontekst",
+        "computed_at": "2026-03-22T15:45:30.372697Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "bagan",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Joel Bagan",
+        "short_name": "J. Bagan",
+        "date_of_birth": "2001-01-01",
+        "age": 24,
+        "nationality": "Ireland",
+        "flag": "🇮🇪",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Cardiff City",
+        "league": "England. League One",
+        "country": "England"
+      },
+      "market": {
+        "market_value_eur": 650000,
+        "market_value_display": "€650k",
+        "contract_expires": "2026-06-30",
+        "contract_year": "2026",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "BACK",
+        "position_detail": "LB",
+        "has_detailed_dashboard": false,
+        "bio": "24-årig irsk venstreback i Cardiff. 42 kamper gir godt datagrunnlag. Pass% 81.1% er over Haugen-benchmark. Forventes å øke offensive bidrag i Viking."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 3767,
+          "matches": 42,
+          "goals_p90": 0.024,
+          "assists_p90": 0.096,
+          "xg_p90": 0.049,
+          "shots_p90": 0.406,
+          "shots_on_target_p90": 0.119,
+          "pass_accuracy_pct": 81.1,
+          "long_pass_accuracy_pct": 45.7,
+          "dribble_success_pct": 47.4,
+          "dribbles_p90": 0.908,
+          "duel_win_pct": 51.8,
+          "aerial_win_pct": 46.7,
+          "interceptions_p90": 3.44,
+          "recoveries_opp_half_p90": 2.628,
+          "shot_assists_p90": 1.195,
+          "touches_pen_area_p90": 1.147,
+          "progressive_runs_p90": 1.625
+        },
+        "by_competition": [
+          {
+            "competition": "England. League One",
+            "competition_type": "league",
+            "matches": 37,
+            "minutes": 3320,
+            "goals_p90": 0.027,
+            "assists_p90": 0.081,
+            "xg_p90": 0.038,
+            "pass_accuracy_pct": 80.3,
+            "duel_win_pct": 52.7,
+            "interceptions_p90": 3.443,
+            "progressive_runs_p90": 1.518
+          },
+          {
+            "competition": "England. Carabao Cup",
+            "competition_type": "cup",
+            "matches": 5,
+            "minutes": 447,
+            "goals_p90": 0.0,
+            "assists_p90": 0.201,
+            "xg_p90": 0.131,
+            "pass_accuracy_pct": 86.6,
+            "duel_win_pct": 44.8,
+            "interceptions_p90": 3.423,
+            "progressive_runs_p90": 2.416
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 3767,
+        "total_matches": 42,
+        "date_range_from": "2025-08-02",
+        "date_range_to": "2026-03-17",
+        "competitions_included": [
+          "England. League One",
+          "England. Carabao Cup"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025/26"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats J. Bagan.xlsx",
+          "Player stats J. Bagan (1).xlsx",
+          "Player stats J. Bagan (2).xlsx",
+          "Player stats J. Bagan (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "bagan.json",
+        "processed_at": "2026-03-22T15:45:30.426832Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 96,
+        "tier": "high",
+        "components": {
+          "minutes_score": 25,
+          "completeness_score": 25,
+          "league_quality_score": 21,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 10,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 0,
+            "factors": []
+          },
+          "economic": {
+            "score": 30,
+            "factors": [
+              "Kontrakt utløper < 6 mnd"
+            ]
+          },
+          "adaptation": {
+            "score": 10,
+            "factors": []
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "STRONG BUY",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter alle 3 terskler, lav risiko (10), sterk ligakontekst",
+        "computed_at": "2026-03-22T15:45:30.426816Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "braude",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Oliver Braude",
+        "short_name": "O. Braude",
+        "date_of_birth": "2004-02-21",
+        "age": 21,
+        "nationality": "Norway",
+        "flag": "🇳🇴",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "SC Heerenveen",
+        "league": "Netherlands. Eredivisie",
+        "country": "Netherlands"
+      },
+      "market": {
+        "market_value_eur": 4500000,
+        "market_value_display": "€4.5M",
+        "contract_expires": "2027-06-30",
+        "contract_year": "2027",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "BACK",
+        "position_detail": "RB",
+        "has_detailed_dashboard": false,
+        "bio": "21-årig norsk høyreback i Eredivisie. Duelwin 53.1% og aerialwin 52.3% over Haugen-benchmark. Markedsverdi €4.5M reflekterer ligakvaliteten."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 2848,
+          "matches": 30,
+          "goals_p90": 0.032,
+          "assists_p90": 0.126,
+          "xg_p90": 0.053,
+          "shots_p90": 0.537,
+          "shots_on_target_p90": 0.158,
+          "pass_accuracy_pct": 78.0,
+          "long_pass_accuracy_pct": 41.5,
+          "dribble_success_pct": 70.6,
+          "dribbles_p90": 1.074,
+          "duel_win_pct": 53.1,
+          "aerial_win_pct": 52.3,
+          "interceptions_p90": 3.919,
+          "recoveries_opp_half_p90": 2.496,
+          "shot_assists_p90": 0.442,
+          "touches_pen_area_p90": 1.485,
+          "progressive_runs_p90": 1.074
+        },
+        "by_competition": [
+          {
+            "competition": "Netherlands. Eredivisie",
+            "competition_type": "league",
+            "matches": 26,
+            "minutes": 2487,
+            "goals_p90": 0.0,
+            "assists_p90": 0.145,
+            "xg_p90": 0.05,
+            "pass_accuracy_pct": 77.5,
+            "duel_win_pct": 53.4,
+            "interceptions_p90": 3.727,
+            "progressive_runs_p90": 1.086
+          },
+          {
+            "competition": "Netherlands. KNVB Beker",
+            "competition_type": "league",
+            "matches": 4,
+            "minutes": 361,
+            "goals_p90": 0.249,
+            "assists_p90": 0.0,
+            "xg_p90": 0.077,
+            "pass_accuracy_pct": 81.5,
+            "duel_win_pct": 51.4,
+            "interceptions_p90": 5.235,
+            "progressive_runs_p90": 0.997
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 2848,
+        "total_matches": 30,
+        "date_range_from": "2025-08-16",
+        "date_range_to": "2026-03-14",
+        "competitions_included": [
+          "Netherlands. Eredivisie",
+          "Netherlands. KNVB Beker"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025/26"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats O. Braude.xlsx",
+          "Player stats O. Braude (1).xlsx",
+          "Player stats O. Braude (2).xlsx",
+          "Player stats O. Braude (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "braude.json",
+        "processed_at": "2026-03-22T15:45:30.445427Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 101,
+        "tier": "high",
+        "components": {
+          "minutes_score": 25,
+          "completeness_score": 25,
+          "league_quality_score": 26,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 8,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 0,
+            "factors": []
+          },
+          "economic": {
+            "score": 20,
+            "factors": [
+              "Høy markedsverdi: €4.5M"
+            ]
+          },
+          "adaptation": {
+            "score": 10,
+            "factors": [
+              "Ung (21 år)"
+            ]
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "STRONG BUY",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter alle 3 terskler, lav risiko (8), sterk ligakontekst",
+        "computed_at": "2026-03-22T15:45:30.445410Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "kucys",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Armandas Kučys",
+        "short_name": "A. Kučys",
+        "date_of_birth": "2002-01-01",
+        "age": 23,
+        "nationality": "Lithuania",
+        "flag": "🇱🇹",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "NK Celje",
+        "league": "Slovenia. Prva Liga",
+        "country": "Slovenia"
+      },
+      "market": {
+        "market_value_eur": 700000,
+        "market_value_display": "€700k",
+        "contract_expires": "2028-06-30",
+        "contract_year": "2028",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CF",
+        "position_detail": "CF",
+        "has_detailed_dashboard": false,
+        "bio": "23-årig litauisk spiss med høyt scoringsvolum. Nå i slovenisk Prva Liga. Ligakoeff. 0.75 gir moderat skaleringsrisiko."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 3187,
+          "matches": 43,
+          "goals_p90": 0.734,
+          "assists_p90": 0.113,
+          "xg_p90": 0.564,
+          "shots_p90": 2.287,
+          "shots_on_target_p90": 1.299,
+          "pass_accuracy_pct": 75.4,
+          "long_pass_accuracy_pct": 50.0,
+          "dribble_success_pct": 44.4,
+          "dribbles_p90": 1.017,
+          "duel_win_pct": 41.4,
+          "aerial_win_pct": 50.7,
+          "interceptions_p90": 1.92,
+          "recoveries_opp_half_p90": 1.186,
+          "shot_assists_p90": 0.819,
+          "touches_pen_area_p90": 3.897,
+          "progressive_runs_p90": 0.565
+        },
+        "by_competition": [
+          {
+            "competition": "Europe. UEFA Europa Conference League",
+            "competition_type": "european",
+            "matches": 12,
+            "minutes": 939,
+            "goals_p90": 0.863,
+            "assists_p90": 0.288,
+            "xg_p90": 0.518,
+            "pass_accuracy_pct": 72.6,
+            "duel_win_pct": 39.8,
+            "interceptions_p90": 2.013,
+            "progressive_runs_p90": 0.767
+          },
+          {
+            "competition": "Slovenia. 1. SNL",
+            "competition_type": "league",
+            "matches": 21,
+            "minutes": 1455,
+            "goals_p90": 0.866,
+            "assists_p90": 0.062,
+            "xg_p90": 0.598,
+            "pass_accuracy_pct": 76.2,
+            "duel_win_pct": 44.1,
+            "interceptions_p90": 1.856,
+            "progressive_runs_p90": 0.557
+          },
+          {
+            "competition": "Europe. UEFA Nations League - League C",
+            "competition_type": "league",
+            "matches": 6,
+            "minutes": 475,
+            "goals_p90": 0.568,
+            "assists_p90": 0.0,
+            "xg_p90": 0.481,
+            "pass_accuracy_pct": 75.5,
+            "duel_win_pct": 43.8,
+            "interceptions_p90": 2.463,
+            "progressive_runs_p90": 0.379
+          },
+          {
+            "competition": "Europe. UEFA Champions League",
+            "competition_type": "european",
+            "matches": 4,
+            "minutes": 318,
+            "goals_p90": 0.0,
+            "assists_p90": 0.0,
+            "xg_p90": 0.665,
+            "pass_accuracy_pct": 80.0,
+            "duel_win_pct": 28.6,
+            "interceptions_p90": 1.132,
+            "progressive_runs_p90": 0.283
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 3187,
+        "total_matches": 43,
+        "date_range_from": "2023-07-27",
+        "date_range_to": "2026-03-12",
+        "competitions_included": [
+          "Europe. UEFA Europa Conference League",
+          "Slovenia. 1. SNL",
+          "Europe. UEFA Nations League - League C",
+          "Europe. UEFA Champions League"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025/26"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats A. Kučys.xlsx",
+          "Player stats A. Kučys (1).xlsx",
+          "Player stats A. Kučys (2).xlsx",
+          "Player stats A. Kučys (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "kucys.json",
+        "processed_at": "2026-03-22T15:45:30.048531Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 94,
+        "tier": "high",
+        "components": {
+          "minutes_score": 25,
+          "completeness_score": 25,
+          "league_quality_score": 19,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 19,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 40,
+            "factors": [
+              "xG overperformance: +0.17/90",
+              "Lav duellvinnprosent: 41.4%"
+            ]
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 20,
+            "factors": [
+              "Svak liga (koeff 0.75)"
+            ]
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "BUY",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 2/3 terskler med moderat risiko (19)",
+        "computed_at": "2026-03-22T15:45:30.048506Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "ladefoged",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Mikkel Ladefoged",
+        "short_name": "M. Ladefoged",
+        "date_of_birth": "2003-01-01",
+        "age": 22,
+        "nationality": "Denmark",
+        "flag": "🇩🇰",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Västerås SK",
+        "league": "Sweden. Allsvenskan",
+        "country": "Sweden"
+      },
+      "market": {
+        "market_value_eur": 500000,
+        "market_value_display": "€500k",
+        "contract_expires": "2028-06-30",
+        "contract_year": "2028",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CF",
+        "position_detail": "CF",
+        "has_detailed_dashboard": false,
+        "bio": "22-årig dansk spiss i Västerås SK. Begrenset spilletid — sample size er for lav for sikker vurdering."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 827,
+          "matches": 13,
+          "goals_p90": 1.088,
+          "assists_p90": 0.109,
+          "xg_p90": 0.728,
+          "shots_p90": 3.156,
+          "shots_on_target_p90": 1.959,
+          "pass_accuracy_pct": 76.4,
+          "long_pass_accuracy_pct": 66.7,
+          "dribble_success_pct": 62.5,
+          "dribbles_p90": 0.871,
+          "duel_win_pct": 32.5,
+          "aerial_win_pct": 48.1,
+          "interceptions_p90": 1.959,
+          "recoveries_opp_half_p90": 1.524,
+          "shot_assists_p90": 0.979,
+          "touches_pen_area_p90": 5.985,
+          "progressive_runs_p90": 0.218
+        },
+        "by_competition": [
+          {
+            "competition": "Sweden. Superettan",
+            "competition_type": "league",
+            "matches": 13,
+            "minutes": 827,
+            "goals_p90": 1.088,
+            "assists_p90": 0.109,
+            "xg_p90": 0.728,
+            "pass_accuracy_pct": 76.4,
+            "duel_win_pct": 32.5,
+            "interceptions_p90": 1.959,
+            "progressive_runs_p90": 0.218
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 827,
+        "total_matches": 13,
+        "date_range_from": "2025-07-19",
+        "date_range_to": "2025-11-08",
+        "competitions_included": [
+          "Sweden. Superettan"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats M. Ladefoged.xlsx",
+          "Player stats M. Ladefoged (1).xlsx",
+          "Player stats M. Ladefoged (2).xlsx",
+          "Player stats M. Ladefoged (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "ladefoged.json",
+        "processed_at": "2026-03-22T15:45:30.098548Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 82,
+        "tier": "high",
+        "components": {
+          "minutes_score": 8,
+          "completeness_score": 25,
+          "league_quality_score": 24,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 18,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 40,
+            "factors": [
+              "xG overperformance: +0.36/90",
+              "Lav duellvinnprosent: 32.5%"
+            ]
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 0,
+            "factors": []
+          },
+          "availability": {
+            "score": 25,
+            "factors": [
+              "Lav spilletid (827 min)"
+            ]
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "BUY",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 2/3 terskler med moderat risiko (18)",
+        "computed_at": "2026-03-22T15:45:30.098532Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "balov",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Kristiyan Balov",
+        "short_name": "K. Balov",
+        "date_of_birth": "2006-01-01",
+        "age": 19,
+        "nationality": "Bulgaria",
+        "flag": "🇧🇬",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Slavia Sofia",
+        "league": "Bulgaria. First League",
+        "country": "Bulgaria"
+      },
+      "market": {
+        "market_value_eur": 500000,
+        "market_value_display": "€500k",
+        "contract_expires": "2027-06-30",
+        "contract_year": "2027",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "WING",
+        "position_detail": "LW",
+        "has_detailed_dashboard": false,
+        "bio": "19-årig bulgarsk venstrekant med høyt driblingsvolum men svak ligakontekst. Duelwin 38.3% er kritisk lavt."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 1875,
+          "matches": 25,
+          "goals_p90": 0.192,
+          "assists_p90": 0.192,
+          "xg_p90": 0.169,
+          "shots_p90": 1.632,
+          "shots_on_target_p90": 0.624,
+          "pass_accuracy_pct": 63.9,
+          "long_pass_accuracy_pct": 37.5,
+          "dribble_success_pct": 56.5,
+          "dribbles_p90": 5.952,
+          "duel_win_pct": 38.0,
+          "aerial_win_pct": 9.5,
+          "interceptions_p90": 2.832,
+          "recoveries_opp_half_p90": 1.968,
+          "shot_assists_p90": 1.152,
+          "touches_pen_area_p90": 3.216,
+          "progressive_runs_p90": 3.792
+        },
+        "by_competition": [
+          {
+            "competition": "Bulgaria. First League",
+            "competition_type": "league",
+            "matches": 25,
+            "minutes": 1875,
+            "goals_p90": 0.192,
+            "assists_p90": 0.192,
+            "xg_p90": 0.169,
+            "pass_accuracy_pct": 63.9,
+            "duel_win_pct": 38.0,
+            "interceptions_p90": 2.832,
+            "progressive_runs_p90": 3.792
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 1875,
+        "total_matches": 25,
+        "date_range_from": "2025-07-28",
+        "date_range_to": "2026-03-13",
+        "competitions_included": [
+          "Bulgaria. First League"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025/26"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats K. Balov.xlsx",
+          "Player stats K. Balov (1).xlsx",
+          "Player stats K. Balov (2).xlsx",
+          "Player stats K. Balov (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "balov.json",
+        "processed_at": "2026-03-22T15:45:30.193424Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 88,
+        "tier": "high",
+        "components": {
+          "minutes_score": 20,
+          "completeness_score": 25,
+          "league_quality_score": 18,
+          "recency_score": 25
+        },
+        "flags": [
+          "WEAK_LEAGUE"
+        ]
+      },
+      "risk": {
+        "overall_score": 22,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 35,
+            "factors": [
+              "Lav duellvinnprosent: 38.0%",
+              "Lav pasningsnøyaktighet: 63.9%"
+            ]
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 40,
+            "factors": [
+              "Svak liga (koeff 0.72)",
+              "Svært ung (19 år)"
+            ]
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "BUY",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 2/3 terskler med moderat risiko (22)",
+        "computed_at": "2026-03-22T15:45:30.193407Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "tahaui",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Adam Tahaui",
+        "short_name": "A. Tahaui",
+        "date_of_birth": "2005-01-01",
+        "age": 20,
+        "nationality": "Netherlands",
+        "flag": "🇳🇱",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Vitesse Arnhem",
+        "league": "Netherlands. Eerste Divisie",
+        "country": "Netherlands"
+      },
+      "market": {
+        "market_value_eur": 400000,
+        "market_value_display": "€400k",
+        "contract_expires": "2027-06-30",
+        "contract_year": "2027",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CM",
+        "position_detail": "AMF",
+        "has_detailed_dashboard": false,
+        "bio": "20-årig nederlandsk AMF med sterk teknisk profil. Dribble% 72.8% er eksepsjonelt. Vitesse i urolig periode."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 2518,
+          "matches": 32,
+          "goals_p90": 0.107,
+          "assists_p90": 0.322,
+          "xg_p90": 0.157,
+          "shots_p90": 2.216,
+          "shots_on_target_p90": 0.786,
+          "pass_accuracy_pct": 79.6,
+          "long_pass_accuracy_pct": 60.0,
+          "dribble_success_pct": 63.9,
+          "dribbles_p90": 3.467,
+          "duel_win_pct": 49.4,
+          "aerial_win_pct": 36.9,
+          "interceptions_p90": 2.645,
+          "recoveries_opp_half_p90": 3.967,
+          "shot_assists_p90": 1.501,
+          "touches_pen_area_p90": 2.252,
+          "progressive_runs_p90": 1.751
+        },
+        "by_competition": [
+          {
+            "competition": "Netherlands. Eerste Divisie",
+            "competition_type": "league",
+            "matches": 31,
+            "minutes": 2493,
+            "goals_p90": 0.108,
+            "assists_p90": 0.325,
+            "xg_p90": 0.159,
+            "pass_accuracy_pct": 79.6,
+            "duel_win_pct": 49.4,
+            "interceptions_p90": 2.671,
+            "progressive_runs_p90": 1.769
+          },
+          {
+            "competition": "Netherlands. KNVB Beker",
+            "competition_type": "league",
+            "matches": 1,
+            "minutes": 25,
+            "goals_p90": 0.0,
+            "assists_p90": 0.0,
+            "xg_p90": 0.0,
+            "pass_accuracy_pct": 75.0,
+            "duel_win_pct": 50.0,
+            "interceptions_p90": 0.0,
+            "progressive_runs_p90": 0.0
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 2518,
+        "total_matches": 32,
+        "date_range_from": "2025-09-12",
+        "date_range_to": "2026-03-16",
+        "competitions_included": [
+          "Netherlands. Eerste Divisie",
+          "Netherlands. KNVB Beker"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025/26"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats A. Tahaui.xlsx",
+          "Player stats A. Tahaui (1).xlsx",
+          "Player stats A. Tahaui (2).xlsx",
+          "Player stats A. Tahaui (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "tahaui.json",
+        "processed_at": "2026-03-22T15:45:30.231066Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 95,
+        "tier": "high",
+        "components": {
+          "minutes_score": 25,
+          "completeness_score": 25,
+          "league_quality_score": 20,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 8,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 10,
+            "factors": []
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 20,
+            "factors": [
+              "Ung (20 år)"
+            ]
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "BUY",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 2/3 terskler med moderat risiko (8)",
+        "computed_at": "2026-03-22T15:45:30.231048Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "popoola",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Ridwan Popoola",
+        "short_name": "R. Popoola",
+        "date_of_birth": "2006-01-01",
+        "age": 19,
+        "nationality": "Nigeria",
+        "flag": "🇳🇬",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Kisvárda FC",
+        "league": "Hungary. NB I",
+        "country": "Hungary"
+      },
+      "market": {
+        "market_value_eur": 500000,
+        "market_value_display": "€500k",
+        "contract_expires": "2026-06-30",
+        "contract_year": "2026",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CM",
+        "position_detail": "CM / DMF",
+        "has_detailed_dashboard": false,
+        "bio": "19-årig nigeriansk CM/DMF med ekstraordinær defensiv profil. 5.19 Int/90. NB I er svak liga — stor skaleringsrisiko."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 1787,
+          "matches": 22,
+          "goals_p90": 0.05,
+          "assists_p90": 0.0,
+          "xg_p90": 0.018,
+          "shots_p90": 0.907,
+          "shots_on_target_p90": 0.101,
+          "pass_accuracy_pct": 86.9,
+          "long_pass_accuracy_pct": 50.6,
+          "dribble_success_pct": 57.9,
+          "dribbles_p90": 0.957,
+          "duel_win_pct": 53.3,
+          "aerial_win_pct": 55.8,
+          "interceptions_p90": 5.187,
+          "recoveries_opp_half_p90": 5.238,
+          "shot_assists_p90": 0.554,
+          "touches_pen_area_p90": 0.252,
+          "progressive_runs_p90": 1.007
+        },
+        "by_competition": [
+          {
+            "competition": "Hungary. NB I",
+            "competition_type": "league",
+            "matches": 22,
+            "minutes": 1787,
+            "goals_p90": 0.05,
+            "assists_p90": 0.0,
+            "xg_p90": 0.018,
+            "pass_accuracy_pct": 86.9,
+            "duel_win_pct": 53.3,
+            "interceptions_p90": 5.187,
+            "progressive_runs_p90": 1.007
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 1787,
+        "total_matches": 22,
+        "date_range_from": "2025-07-27",
+        "date_range_to": "2026-03-14",
+        "competitions_included": [
+          "Hungary. NB I"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025/26"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats R. Popoola.xlsx",
+          "Player stats R. Popoola (1).xlsx",
+          "Player stats R. Popoola (2).xlsx",
+          "Player stats R. Popoola (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "popoola.json",
+        "processed_at": "2026-03-22T15:45:30.264446Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 88,
+        "tier": "high",
+        "components": {
+          "minutes_score": 20,
+          "completeness_score": 25,
+          "league_quality_score": 18,
+          "recency_score": 25
+        },
+        "flags": [
+          "WEAK_LEAGUE"
+        ]
+      },
+      "risk": {
+        "overall_score": 18,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 0,
+            "factors": []
+          },
+          "economic": {
+            "score": 30,
+            "factors": [
+              "Kontrakt utløper < 6 mnd"
+            ]
+          },
+          "adaptation": {
+            "score": 40,
+            "factors": [
+              "Svak liga (koeff 0.70)",
+              "Svært ung (19 år)"
+            ]
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "BUY",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 3/3 terskler med moderat risiko (18)",
+        "computed_at": "2026-03-22T15:45:30.264429Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "diop",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Cheikh Mbacke Diop",
+        "short_name": "C. Diop",
+        "date_of_birth": "2005-01-01",
+        "age": 20,
+        "nationality": "Senegal",
+        "flag": "🇸🇳",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "NK Lokomotiva Zagreb",
+        "league": "Croatia. SuperSport HNL",
+        "country": "Croatia"
+      },
+      "market": {
+        "market_value_eur": 1000000,
+        "market_value_display": "€1.0M",
+        "contract_expires": "2029-06-30",
+        "contract_year": "2029",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CB",
+        "position_detail": "CB",
+        "has_detailed_dashboard": false,
+        "bio": "20-årig senegalesisk CB nå i kroatisk HNL. Duelwin 60.2% og aerialwin 62% er solide. Interessant profil i sterkere liga enn Sogndal."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 1781,
+          "matches": 19,
+          "goals_p90": 0.051,
+          "assists_p90": 0.0,
+          "xg_p90": 0.053,
+          "shots_p90": 0.354,
+          "shots_on_target_p90": 0.051,
+          "pass_accuracy_pct": 84.2,
+          "long_pass_accuracy_pct": 47.3,
+          "dribble_success_pct": 80.0,
+          "dribbles_p90": 0.253,
+          "duel_win_pct": 60.5,
+          "aerial_win_pct": 53.7,
+          "interceptions_p90": 6.317,
+          "recoveries_opp_half_p90": 1.213,
+          "shot_assists_p90": 0.051,
+          "touches_pen_area_p90": 0.657,
+          "progressive_runs_p90": 0.96
+        },
+        "by_competition": [
+          {
+            "competition": "Croatia. Superleague",
+            "competition_type": "league",
+            "matches": 19,
+            "minutes": 1781,
+            "goals_p90": 0.051,
+            "assists_p90": 0.0,
+            "xg_p90": 0.053,
+            "pass_accuracy_pct": 84.2,
+            "duel_win_pct": 60.5,
+            "interceptions_p90": 6.317,
+            "progressive_runs_p90": 0.96
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 1781,
+        "total_matches": 19,
+        "date_range_from": "2025-08-01",
+        "date_range_to": "2026-02-06",
+        "competitions_included": [
+          "Croatia. Superleague"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025/26"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats C. Mbacke Diop.xlsx",
+          "Player stats C. Mbacke Diop (1).xlsx",
+          "Player stats C. Mbacke Diop (2).xlsx",
+          "Player stats C. Mbacke Diop (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "diop.json",
+        "processed_at": "2026-03-22T15:45:30.278974Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 89,
+        "tier": "high",
+        "components": {
+          "minutes_score": 20,
+          "completeness_score": 25,
+          "league_quality_score": 19,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 8,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 0,
+            "factors": []
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 30,
+            "factors": [
+              "Svak liga (koeff 0.77)",
+              "Ung (20 år)"
+            ]
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "BUY",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 2/3 terskler med moderat risiko (8)",
+        "computed_at": "2026-03-22T15:45:30.278958Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "markmann",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Noah Markmann",
+        "short_name": "N. Markmann",
+        "date_of_birth": "2006-01-01",
+        "age": 19,
+        "nationality": "Denmark",
+        "flag": "🇩🇰",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "FC Nordsjælland",
+        "league": "Denmark. Superliga",
+        "country": "Denmark"
+      },
+      "market": {
+        "market_value_eur": 2500000,
+        "market_value_display": "€2.5M",
+        "contract_expires": "2027-06-30",
+        "contract_year": "2027",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CB",
+        "position_detail": "CB",
+        "has_detailed_dashboard": false,
+        "bio": "19-årig dansk CB i FC Nordsjælland. Pass% 92.7% er høyest i datasettet. Int/90 5.50 er over benchmark. €2.5M markedsverdi."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 1679,
+          "matches": 18,
+          "goals_p90": 0.0,
+          "assists_p90": 0.0,
+          "xg_p90": 0.005,
+          "shots_p90": 0.107,
+          "shots_on_target_p90": 0.054,
+          "pass_accuracy_pct": 92.7,
+          "long_pass_accuracy_pct": 43.0,
+          "dribble_success_pct": 50.0,
+          "dribbles_p90": 0.322,
+          "duel_win_pct": 61.8,
+          "aerial_win_pct": 57.6,
+          "interceptions_p90": 4.235,
+          "recoveries_opp_half_p90": 1.983,
+          "shot_assists_p90": 0.107,
+          "touches_pen_area_p90": 0.054,
+          "progressive_runs_p90": 2.787
+        },
+        "by_competition": [
+          {
+            "competition": "Denmark. Superliga",
+            "competition_type": "league",
+            "matches": 18,
+            "minutes": 1679,
+            "goals_p90": 0.0,
+            "assists_p90": 0.0,
+            "xg_p90": 0.005,
+            "pass_accuracy_pct": 92.7,
+            "duel_win_pct": 61.8,
+            "interceptions_p90": 4.235,
+            "progressive_runs_p90": 2.787
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 1679,
+        "total_matches": 18,
+        "date_range_from": "2025-08-03",
+        "date_range_to": "2026-03-01",
+        "competitions_included": [
+          "Denmark. Superliga"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats N. Markmann.xlsx",
+          "Player stats N. Markmann (1).xlsx",
+          "Player stats N. Markmann (2).xlsx",
+          "Player stats N. Markmann (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "markmann.json",
+        "processed_at": "2026-03-22T15:45:30.324191Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 92,
+        "tier": "high",
+        "components": {
+          "minutes_score": 20,
+          "completeness_score": 25,
+          "league_quality_score": 22,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 5,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 0,
+            "factors": []
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 20,
+            "factors": [
+              "Svært ung (19 år)"
+            ]
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "BUY",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 2/3 terskler med moderat risiko (5)",
+        "computed_at": "2026-03-22T15:45:30.324179Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "coulibaly",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Souleymane Coulibaly",
+        "short_name": "S. Coulibaly",
+        "date_of_birth": "2001-01-01",
+        "age": 24,
+        "nationality": "Ivory Coast",
+        "flag": "🇨🇮",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "IFK Värnamo",
+        "league": "Sweden. Superettan",
+        "country": "Sweden"
+      },
+      "market": {
+        "market_value_eur": 150000,
+        "market_value_display": "€150k",
+        "contract_expires": "2027-06-30",
+        "contract_year": "2027",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CB",
+        "position_detail": "CB",
+        "has_detailed_dashboard": false,
+        "bio": "24-årig ivorisk CB i IFK Värnamo. Sterk aerialwin (70.5%) — høyest i CB-porteføljen. Superettan gir begrenset validitet."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 738,
+          "matches": 9,
+          "goals_p90": 0.0,
+          "assists_p90": 0.0,
+          "xg_p90": 0.01,
+          "shots_p90": 0.122,
+          "shots_on_target_p90": 0.0,
+          "pass_accuracy_pct": 89.4,
+          "long_pass_accuracy_pct": 57.1,
+          "dribble_success_pct": null,
+          "dribbles_p90": 0.0,
+          "duel_win_pct": 62.9,
+          "aerial_win_pct": 70.7,
+          "interceptions_p90": 6.707,
+          "recoveries_opp_half_p90": 1.22,
+          "shot_assists_p90": 0.0,
+          "touches_pen_area_p90": 0.122,
+          "progressive_runs_p90": 0.366
+        },
+        "by_competition": [
+          {
+            "competition": "Sweden. Allsvenskan",
+            "competition_type": "league",
+            "matches": 9,
+            "minutes": 738,
+            "goals_p90": 0.0,
+            "assists_p90": 0.0,
+            "xg_p90": 0.01,
+            "pass_accuracy_pct": 89.4,
+            "duel_win_pct": 62.9,
+            "interceptions_p90": 6.707,
+            "progressive_runs_p90": 0.366
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 738,
+        "total_matches": 9,
+        "date_range_from": "2025-07-13",
+        "date_range_to": "2025-11-03",
+        "competitions_included": [
+          "Sweden. Allsvenskan"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats S. Coulibaly.xlsx",
+          "Player stats S. Coulibaly (1).xlsx",
+          "Player stats S. Coulibaly (2).xlsx",
+          "Player stats S. Coulibaly (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "coulibaly.json",
+        "processed_at": "2026-03-22T15:45:30.336772Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 78,
+        "tier": "high",
+        "components": {
+          "minutes_score": 8,
+          "completeness_score": 25,
+          "league_quality_score": 20,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 6,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 0,
+            "factors": []
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 10,
+            "factors": []
+          },
+          "availability": {
+            "score": 25,
+            "factors": [
+              "Lav spilletid (738 min)"
+            ]
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "BUY",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 3/3 terskler med moderat risiko (6)",
+        "computed_at": "2026-03-22T15:45:30.336757Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "tape",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Christ Tapé",
+        "short_name": "C. Tapé",
+        "date_of_birth": "2005-01-01",
+        "age": 20,
+        "nationality": "Ivory Coast",
+        "flag": "🇨🇮",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "AC Horsens",
+        "league": "Denmark. 1st Division",
+        "country": "Denmark"
+      },
+      "market": {
+        "market_value_eur": 600000,
+        "market_value_display": "€600k",
+        "contract_expires": "2028-06-30",
+        "contract_year": "2028",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CB",
+        "position_detail": "CB",
+        "has_detailed_dashboard": false,
+        "bio": "20-årig ivorisk CB i AC Horsens. Sterk aerialwin (72.1%) og pasning (84.7%). Begrenset datagrunnlag (1473 min)."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 1473,
+          "matches": 17,
+          "goals_p90": 0.061,
+          "assists_p90": 0.0,
+          "xg_p90": 0.042,
+          "shots_p90": 0.428,
+          "shots_on_target_p90": 0.122,
+          "pass_accuracy_pct": 84.7,
+          "long_pass_accuracy_pct": 45.6,
+          "dribble_success_pct": 69.2,
+          "dribbles_p90": 0.794,
+          "duel_win_pct": 60.3,
+          "aerial_win_pct": 72.1,
+          "interceptions_p90": 4.644,
+          "recoveries_opp_half_p90": 1.894,
+          "shot_assists_p90": 0.183,
+          "touches_pen_area_p90": 0.55,
+          "progressive_runs_p90": 1.161
+        },
+        "by_competition": [
+          {
+            "competition": "Denmark. 1st Division",
+            "competition_type": "league",
+            "matches": 17,
+            "minutes": 1473,
+            "goals_p90": 0.061,
+            "assists_p90": 0.0,
+            "xg_p90": 0.042,
+            "pass_accuracy_pct": 84.7,
+            "duel_win_pct": 60.3,
+            "interceptions_p90": 4.644,
+            "progressive_runs_p90": 1.161
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 1473,
+        "total_matches": 17,
+        "date_range_from": "2025-07-25",
+        "date_range_to": "2026-03-14",
+        "competitions_included": [
+          "Denmark. 1st Division"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats C. Tape.xlsx",
+          "Player stats C. Tape (1).xlsx",
+          "Player stats C. Tape (2).xlsx",
+          "Player stats C. Tape (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "tape.json",
+        "processed_at": "2026-03-22T15:45:30.404693Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 85,
+        "tier": "high",
+        "components": {
+          "minutes_score": 15,
+          "completeness_score": 25,
+          "league_quality_score": 20,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 6,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 0,
+            "factors": []
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 20,
+            "factors": [
+              "Ung (20 år)"
+            ]
+          },
+          "availability": {
+            "score": 10,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "BUY",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 3/3 terskler med moderat risiko (6)",
+        "computed_at": "2026-03-22T15:45:30.404678Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "ballard",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Dom Ballard",
+        "short_name": "D. Ballard",
+        "date_of_birth": "2005-01-01",
+        "age": 20,
+        "nationality": "England",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Leyton Orient",
+        "league": "England. League One",
+        "country": "England"
+      },
+      "market": {
+        "market_value_eur": 800000,
+        "market_value_display": "€800k",
+        "contract_expires": "2028-06-30",
+        "contract_year": "2028",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CF",
+        "position_detail": "CF",
+        "has_detailed_dashboard": false,
+        "bio": "20-årig engelsk spiss fra Southampton-akademiet. 0.65 G/90 over 31 kamper er klart over Christiansen-benchmark. Duelwin 31.4% er svakt."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 2923,
+          "matches": 31,
+          "goals_p90": 0.647,
+          "assists_p90": 0.062,
+          "xg_p90": 0.458,
+          "shots_p90": 2.125,
+          "shots_on_target_p90": 0.985,
+          "pass_accuracy_pct": 70.0,
+          "long_pass_accuracy_pct": 29.6,
+          "dribble_success_pct": 53.5,
+          "dribbles_p90": 2.648,
+          "duel_win_pct": 31.4,
+          "aerial_win_pct": 23.0,
+          "interceptions_p90": 1.386,
+          "recoveries_opp_half_p90": 1.478,
+          "shot_assists_p90": 0.523,
+          "touches_pen_area_p90": 3.449,
+          "progressive_runs_p90": 1.201
+        },
+        "by_competition": [
+          {
+            "competition": "England. League One",
+            "competition_type": "league",
+            "matches": 31,
+            "minutes": 2923,
+            "goals_p90": 0.647,
+            "assists_p90": 0.062,
+            "xg_p90": 0.458,
+            "pass_accuracy_pct": 70.0,
+            "duel_win_pct": 31.4,
+            "interceptions_p90": 1.386,
+            "progressive_runs_p90": 1.201
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 2923,
+        "total_matches": 31,
+        "date_range_from": "2025-09-06",
+        "date_range_to": "2026-03-17",
+        "competitions_included": [
+          "England. League One"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025/26"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats D. Ballard.xlsx",
+          "Player stats D. Ballard (1).xlsx",
+          "Player stats D. Ballard (2).xlsx",
+          "Player stats D. Ballard (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "ballard.json",
+        "processed_at": "2026-03-22T15:45:30.520405Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 96,
+        "tier": "high",
+        "components": {
+          "minutes_score": 25,
+          "completeness_score": 25,
+          "league_quality_score": 21,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 28,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 65,
+            "factors": [
+              "xG overperformance: +0.19/90",
+              "Lav duellvinnprosent: 31.4%",
+              "Lav pasningsnøyaktighet: 70.0%",
+              "Svak i luftdueller: 23.0%"
+            ]
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 20,
+            "factors": [
+              "Ung (20 år)"
+            ]
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "BUY",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 2/3 terskler med moderat risiko (28)",
+        "computed_at": "2026-03-22T15:45:30.520389Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "fenger",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Max Fenger",
+        "short_name": "M. Fenger",
+        "date_of_birth": "2001-01-01",
+        "age": 24,
+        "nationality": "Denmark",
+        "flag": "🇩🇰",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "IFK Göteborg",
+        "league": "Sweden. Allsvenskan",
+        "country": "Sweden"
+      },
+      "market": {
+        "market_value_eur": 2200000,
+        "market_value_display": "€2.2M",
+        "contract_expires": "2027-06-30",
+        "contract_year": "2027",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CF",
+        "position_detail": "CF",
+        "has_detailed_dashboard": false,
+        "bio": "24-årig dansk spiss nå i IFK Göteborg. Solid volumscorer. Aerialwin 57% er over benchmark."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 3644,
+          "matches": 38,
+          "goals_p90": 0.395,
+          "assists_p90": 0.074,
+          "xg_p90": 0.378,
+          "shots_p90": 1.951,
+          "shots_on_target_p90": 0.914,
+          "pass_accuracy_pct": 77.5,
+          "long_pass_accuracy_pct": 63.6,
+          "dribble_success_pct": 38.9,
+          "dribbles_p90": 1.778,
+          "duel_win_pct": 37.1,
+          "aerial_win_pct": 38.5,
+          "interceptions_p90": 1.704,
+          "recoveries_opp_half_p90": 1.852,
+          "shot_assists_p90": 0.617,
+          "touches_pen_area_p90": 3.408,
+          "progressive_runs_p90": 0.988
+        },
+        "by_competition": [
+          {
+            "competition": "Sweden. Svenska Cupen",
+            "competition_type": "cup",
+            "matches": 8,
+            "minutes": 684,
+            "goals_p90": 0.526,
+            "assists_p90": 0.0,
+            "xg_p90": 0.366,
+            "pass_accuracy_pct": 74.7,
+            "duel_win_pct": 35.9,
+            "interceptions_p90": 1.579,
+            "progressive_runs_p90": 0.658
+          },
+          {
+            "competition": "Sweden. Allsvenskan",
+            "competition_type": "league",
+            "matches": 30,
+            "minutes": 2960,
+            "goals_p90": 0.365,
+            "assists_p90": 0.091,
+            "xg_p90": 0.38,
+            "pass_accuracy_pct": 78.0,
+            "duel_win_pct": 37.3,
+            "interceptions_p90": 1.733,
+            "progressive_runs_p90": 1.064
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 3644,
+        "total_matches": 38,
+        "date_range_from": "2025-02-22",
+        "date_range_to": "2026-03-15",
+        "competitions_included": [
+          "Sweden. Svenska Cupen",
+          "Sweden. Allsvenskan"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats M. Fenger.xlsx",
+          "Player stats M. Fenger (1).xlsx",
+          "Player stats M. Fenger (2).xlsx",
+          "Player stats M. Fenger (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "fenger.json",
+        "processed_at": "2026-03-22T15:45:30.085549Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 99,
+        "tier": "high",
+        "components": {
+          "minutes_score": 25,
+          "completeness_score": 25,
+          "league_quality_score": 24,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 10,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 30,
+            "factors": [
+              "Lav duellvinnprosent: 37.1%",
+              "Svak i luftdueller: 38.5%"
+            ]
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 0,
+            "factors": []
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "MONITOR",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "computed_at": "2026-03-22T15:45:30.085530Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "kilen",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Sander Kilen",
+        "short_name": "S. Kilen",
+        "date_of_birth": "2005-01-01",
+        "age": 20,
+        "nationality": "Norway",
+        "flag": "🇳🇴",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Kristiansund BK",
+        "league": "Norway. Eliteserien",
+        "country": "Norway"
+      },
+      "market": {
+        "market_value_eur": 1500000,
+        "market_value_display": "€1.5M",
+        "contract_expires": "2028-06-30",
+        "contract_year": "2028",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "WING",
+        "position_detail": "LWF",
+        "has_detailed_dashboard": true,
+        "bio": "20-årig norsk venstrekant med ekstraordinær dribling. Ligaleder i progressive runs og dribbles/90 i Eliteserien 2025. HIGH POTENTIAL-profil."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 2369,
+          "matches": 31,
+          "goals_p90": 0.304,
+          "assists_p90": 0.076,
+          "xg_p90": 0.29,
+          "shots_p90": 1.634,
+          "shots_on_target_p90": 0.874,
+          "pass_accuracy_pct": 72.1,
+          "long_pass_accuracy_pct": 44.7,
+          "dribble_success_pct": 48.7,
+          "dribbles_p90": 4.293,
+          "duel_win_pct": 37.2,
+          "aerial_win_pct": 27.9,
+          "interceptions_p90": 1.634,
+          "recoveries_opp_half_p90": 1.026,
+          "shot_assists_p90": 0.684,
+          "touches_pen_area_p90": 2.887,
+          "progressive_runs_p90": 2.393
+        },
+        "by_competition": [
+          {
+            "competition": "Norway. Eliteserien",
+            "competition_type": "league",
+            "matches": 30,
+            "minutes": 2252,
+            "goals_p90": 0.2,
+            "assists_p90": 0.08,
+            "xg_p90": 0.246,
+            "pass_accuracy_pct": 72.3,
+            "duel_win_pct": 36.9,
+            "interceptions_p90": 1.718,
+            "progressive_runs_p90": 2.398
+          },
+          {
+            "competition": "Norway. NM Cupen",
+            "competition_type": "cup",
+            "matches": 1,
+            "minutes": 117,
+            "goals_p90": 2.308,
+            "assists_p90": 0.0,
+            "xg_p90": 1.138,
+            "pass_accuracy_pct": 65.2,
+            "duel_win_pct": 42.4,
+            "interceptions_p90": 0.0,
+            "progressive_runs_p90": 2.308
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 2369,
+        "total_matches": 31,
+        "date_range_from": "2025-03-30",
+        "date_range_to": "2025-11-30",
+        "competitions_included": [
+          "Norway. Eliteserien",
+          "Norway. NM Cupen"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats S. Kilen.xlsx",
+          "Player stats S. Kilen (1).xlsx",
+          "Player stats S. Kilen (2).xlsx",
+          "Player stats S. Kilen (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "kilen.json",
+        "processed_at": "2026-03-22T15:45:30.119596Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 98,
+        "tier": "high",
+        "components": {
+          "minutes_score": 23,
+          "completeness_score": 25,
+          "league_quality_score": 25,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 10,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 20,
+            "factors": [
+              "Lav duellvinnprosent: 37.2%"
+            ]
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 10,
+            "factors": [
+              "Ung (20 år)"
+            ]
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "MONITOR",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "computed_at": "2026-03-22T15:45:30.119578Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "bjerkebo",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Isak Bjerkebø",
+        "short_name": "I. Bjerkebø",
+        "date_of_birth": "2002-01-01",
+        "age": 23,
+        "nationality": "Sweden",
+        "flag": "🇸🇪",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "IK Sirius",
+        "league": "Sweden. Allsvenskan",
+        "country": "Sweden"
+      },
+      "market": {
+        "market_value_eur": 700000,
+        "market_value_display": "€700k",
+        "contract_expires": "2029-06-30",
+        "contract_year": "2029",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "WING",
+        "position_detail": "LW",
+        "has_detailed_dashboard": false,
+        "bio": "23-årig svensk venstrekant med god toveis bidragsbalanse. Aktiv presser. Allsvenskan gir god ligavaliditet."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 2437,
+          "matches": 34,
+          "goals_p90": 0.332,
+          "assists_p90": 0.332,
+          "xg_p90": 0.292,
+          "shots_p90": 2.511,
+          "shots_on_target_p90": 1.071,
+          "pass_accuracy_pct": 77.5,
+          "long_pass_accuracy_pct": 41.0,
+          "dribble_success_pct": 54.6,
+          "dribbles_p90": 4.801,
+          "duel_win_pct": 40.4,
+          "aerial_win_pct": 25.0,
+          "interceptions_p90": 1.44,
+          "recoveries_opp_half_p90": 2.29,
+          "shot_assists_p90": 1.81,
+          "touches_pen_area_p90": 5.946,
+          "progressive_runs_p90": 2.511
+        },
+        "by_competition": [
+          {
+            "competition": "Sweden. Svenska Cupen",
+            "competition_type": "cup",
+            "matches": 6,
+            "minutes": 552,
+            "goals_p90": 0.326,
+            "assists_p90": 0.815,
+            "xg_p90": 0.295,
+            "pass_accuracy_pct": 80.5,
+            "duel_win_pct": 39.6,
+            "interceptions_p90": 2.446,
+            "progressive_runs_p90": 3.75
+          },
+          {
+            "competition": "Sweden. Allsvenskan",
+            "competition_type": "league",
+            "matches": 28,
+            "minutes": 1885,
+            "goals_p90": 0.334,
+            "assists_p90": 0.191,
+            "xg_p90": 0.291,
+            "pass_accuracy_pct": 76.3,
+            "duel_win_pct": 40.7,
+            "interceptions_p90": 1.146,
+            "progressive_runs_p90": 2.149
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 2437,
+        "total_matches": 34,
+        "date_range_from": "2025-02-15",
+        "date_range_to": "2026-03-15",
+        "competitions_included": [
+          "Sweden. Svenska Cupen",
+          "Sweden. Allsvenskan"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats I. Bjerkebo.xlsx",
+          "Player stats I. Bjerkebo (1).xlsx",
+          "Player stats I. Bjerkebo (2).xlsx",
+          "Player stats I. Bjerkebo (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "bjerkebo.json",
+        "processed_at": "2026-03-22T15:45:30.139168Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 97,
+        "tier": "high",
+        "components": {
+          "minutes_score": 23,
+          "completeness_score": 25,
+          "league_quality_score": 24,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 7,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 20,
+            "factors": [
+              "Lav duellvinnprosent: 40.4%"
+            ]
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 0,
+            "factors": []
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "MONITOR",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "computed_at": "2026-03-22T15:45:30.139152Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "heintz",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Tobias Heintz",
+        "short_name": "T. Heintz",
+        "date_of_birth": "1998-01-01",
+        "age": 27,
+        "nationality": "Norway",
+        "flag": "🇳🇴",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "IFK Göteborg",
+        "league": "Sweden. Allsvenskan",
+        "country": "Sweden"
+      },
+      "market": {
+        "market_value_eur": 2200000,
+        "market_value_display": "€2.2M",
+        "contract_expires": "2027-06-30",
+        "contract_year": "2027",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "WING",
+        "position_detail": "LWF",
+        "has_detailed_dashboard": false,
+        "bio": "27-årig norsk venstrekant nå i IFK Göteborg. Allsvenskan gir best ligakontekst blant wing-kandidatene. Konservativ spiller."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 3392,
+          "matches": 36,
+          "goals_p90": 0.318,
+          "assists_p90": 0.212,
+          "xg_p90": 0.24,
+          "shots_p90": 2.998,
+          "shots_on_target_p90": 1.114,
+          "pass_accuracy_pct": 70.9,
+          "long_pass_accuracy_pct": 49.0,
+          "dribble_success_pct": 48.2,
+          "dribbles_p90": 3.741,
+          "duel_win_pct": 45.1,
+          "aerial_win_pct": 32.1,
+          "interceptions_p90": 1.698,
+          "recoveries_opp_half_p90": 2.547,
+          "shot_assists_p90": 1.831,
+          "touches_pen_area_p90": 3.953,
+          "progressive_runs_p90": 1.565
+        },
+        "by_competition": [
+          {
+            "competition": "Sweden. Svenska Cupen",
+            "competition_type": "cup",
+            "matches": 7,
+            "minutes": 614,
+            "goals_p90": 0.586,
+            "assists_p90": 0.0,
+            "xg_p90": 0.193,
+            "pass_accuracy_pct": 71.0,
+            "duel_win_pct": 43.6,
+            "interceptions_p90": 1.906,
+            "progressive_runs_p90": 1.612
+          },
+          {
+            "competition": "Sweden. Allsvenskan",
+            "competition_type": "league",
+            "matches": 29,
+            "minutes": 2778,
+            "goals_p90": 0.259,
+            "assists_p90": 0.259,
+            "xg_p90": 0.251,
+            "pass_accuracy_pct": 70.9,
+            "duel_win_pct": 45.5,
+            "interceptions_p90": 1.652,
+            "progressive_runs_p90": 1.555
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 3392,
+        "total_matches": 36,
+        "date_range_from": "2025-02-16",
+        "date_range_to": "2026-03-15",
+        "competitions_included": [
+          "Sweden. Svenska Cupen",
+          "Sweden. Allsvenskan"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats T. Heintz.xlsx",
+          "Player stats T. Heintz (1).xlsx",
+          "Player stats T. Heintz (2).xlsx",
+          "Player stats T. Heintz (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "heintz.json",
+        "processed_at": "2026-03-22T15:45:30.176681Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 99,
+        "tier": "high",
+        "components": {
+          "minutes_score": 25,
+          "completeness_score": 25,
+          "league_quality_score": 24,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 9,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 25,
+            "factors": [
+              "Lav pasningsnøyaktighet: 70.9%"
+            ]
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 0,
+            "factors": []
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "MONITOR",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "computed_at": "2026-03-22T15:45:30.176664Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "mccowatt",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Callum McCowatt",
+        "short_name": "C. McCowatt",
+        "date_of_birth": "1999-01-01",
+        "age": 26,
+        "nationality": "New Zealand",
+        "flag": "🇳🇿",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Silkeborg IF",
+        "league": "Denmark. Superliga",
+        "country": "Denmark"
+      },
+      "market": {
+        "market_value_eur": 2000000,
+        "market_value_display": "€2.0M",
+        "contract_expires": "2027-06-30",
+        "contract_year": "2027",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CM",
+        "position_detail": "AMF",
+        "has_detailed_dashboard": false,
+        "bio": "26-årig newzealandsk AMF nå i Silkeborg. Solid bidragsbalanse. Begrenset oppsidepotensial."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 1876,
+          "matches": 23,
+          "goals_p90": 0.384,
+          "assists_p90": 0.096,
+          "xg_p90": 0.295,
+          "shots_p90": 2.783,
+          "shots_on_target_p90": 1.391,
+          "pass_accuracy_pct": 81.2,
+          "long_pass_accuracy_pct": 58.1,
+          "dribble_success_pct": 54.1,
+          "dribbles_p90": 1.775,
+          "duel_win_pct": 44.3,
+          "aerial_win_pct": 45.1,
+          "interceptions_p90": 1.583,
+          "recoveries_opp_half_p90": 1.727,
+          "shot_assists_p90": 0.959,
+          "touches_pen_area_p90": 3.502,
+          "progressive_runs_p90": 2.015
+        },
+        "by_competition": [
+          {
+            "competition": "Denmark. Superliga",
+            "competition_type": "league",
+            "matches": 23,
+            "minutes": 1876,
+            "goals_p90": 0.384,
+            "assists_p90": 0.096,
+            "xg_p90": 0.295,
+            "pass_accuracy_pct": 81.2,
+            "duel_win_pct": 44.3,
+            "interceptions_p90": 1.583,
+            "progressive_runs_p90": 2.015
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 1876,
+        "total_matches": 23,
+        "date_range_from": "2025-07-20",
+        "date_range_to": "2026-03-16",
+        "competitions_included": [
+          "Denmark. Superliga"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats C. McCowatt.xlsx",
+          "Player stats C. McCowatt (1).xlsx",
+          "Player stats C. McCowatt (2).xlsx",
+          "Player stats C. McCowatt (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "mccowatt.json",
+        "processed_at": "2026-03-22T15:45:30.211836Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 92,
+        "tier": "high",
+        "components": {
+          "minutes_score": 20,
+          "completeness_score": 25,
+          "league_quality_score": 22,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 7,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 20,
+            "factors": [
+              "Lav duellvinnprosent: 44.3%"
+            ]
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 0,
+            "factors": []
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "MONITOR",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "computed_at": "2026-03-22T15:45:30.211818Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "amundsen",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Ethan Amundsen-Day",
+        "short_name": "E. Amundsen-Day",
+        "date_of_birth": "2005-01-01",
+        "age": 20,
+        "nationality": "Norway",
+        "flag": "🇳🇴",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Hamarkameratene",
+        "league": "Norway. Eliteserien",
+        "country": "Norway"
+      },
+      "market": {
+        "market_value_eur": 900000,
+        "market_value_display": "€900k",
+        "contract_expires": "2029-06-30",
+        "contract_year": "2029",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CB",
+        "position_detail": "CB",
+        "has_detailed_dashboard": false,
+        "bio": "20-årig norsk CB i Eliteserien. Stabil defensiv profil. LongPass% 47% er svak. Rom for utvikling."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 947,
+          "matches": 10,
+          "goals_p90": 0.095,
+          "assists_p90": 0.0,
+          "xg_p90": 0.056,
+          "shots_p90": 0.57,
+          "shots_on_target_p90": 0.19,
+          "pass_accuracy_pct": 86.2,
+          "long_pass_accuracy_pct": 57.1,
+          "dribble_success_pct": 0.0,
+          "dribbles_p90": 0.19,
+          "duel_win_pct": 59.4,
+          "aerial_win_pct": 60.4,
+          "interceptions_p90": 3.516,
+          "recoveries_opp_half_p90": 2.376,
+          "shot_assists_p90": 0.19,
+          "touches_pen_area_p90": 0.76,
+          "progressive_runs_p90": 0.95
+        },
+        "by_competition": [
+          {
+            "competition": "Norway. Eliteserien",
+            "competition_type": "league",
+            "matches": 10,
+            "minutes": 947,
+            "goals_p90": 0.095,
+            "assists_p90": 0.0,
+            "xg_p90": 0.056,
+            "pass_accuracy_pct": 86.2,
+            "duel_win_pct": 59.4,
+            "interceptions_p90": 3.516,
+            "progressive_runs_p90": 0.95
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 947,
+        "total_matches": 10,
+        "date_range_from": "2025-08-31",
+        "date_range_to": "2025-11-23",
+        "competitions_included": [
+          "Norway. Eliteserien"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats E. Amundsen-Day.xlsx",
+          "Player stats E. Amundsen-Day (1).xlsx",
+          "Player stats E. Amundsen-Day (2).xlsx",
+          "Player stats E. Amundsen-Day (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "amundsen.json",
+        "processed_at": "2026-03-22T15:45:30.291810Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 83,
+        "tier": "high",
+        "components": {
+          "minutes_score": 8,
+          "completeness_score": 25,
+          "league_quality_score": 25,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 6,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 0,
+            "factors": []
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 10,
+            "factors": [
+              "Ung (20 år)"
+            ]
+          },
+          "availability": {
+            "score": 25,
+            "factors": [
+              "Lav spilletid (947 min)"
+            ]
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "MONITOR",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "computed_at": "2026-03-22T15:45:30.291794Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "smajlovic",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Zinedin Smajlović",
+        "short_name": "Z. Smajlović",
+        "date_of_birth": "2003-01-01",
+        "age": 22,
+        "nationality": "Sweden",
+        "flag": "🇸🇪",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Sandefjord Fotball",
+        "league": "Norway. Eliteserien",
+        "country": "Norway"
+      },
+      "market": {
+        "market_value_eur": 1500000,
+        "market_value_display": "€1.5M",
+        "contract_expires": "2028-06-30",
+        "contract_year": "2028",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CB",
+        "position_detail": "CB",
+        "has_detailed_dashboard": false,
+        "bio": "22-årig svenske CB i Sandefjord. Allerede i Eliteserien — ingen skaleringsrisiko. Pass% 85.6% og Int/90 5.37 er over benchmark."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 2615,
+          "matches": 27,
+          "goals_p90": 0.069,
+          "assists_p90": 0.0,
+          "xg_p90": 0.093,
+          "shots_p90": 0.86,
+          "shots_on_target_p90": 0.241,
+          "pass_accuracy_pct": 85.6,
+          "long_pass_accuracy_pct": 50.6,
+          "dribble_success_pct": 75.8,
+          "dribbles_p90": 1.136,
+          "duel_win_pct": 59.5,
+          "aerial_win_pct": 56.2,
+          "interceptions_p90": 5.369,
+          "recoveries_opp_half_p90": 2.272,
+          "shot_assists_p90": 0.172,
+          "touches_pen_area_p90": 0.826,
+          "progressive_runs_p90": 0.826
+        },
+        "by_competition": [
+          {
+            "competition": "Norway. Eliteserien",
+            "competition_type": "league",
+            "matches": 26,
+            "minutes": 2523,
+            "goals_p90": 0.071,
+            "assists_p90": 0.0,
+            "xg_p90": 0.096,
+            "pass_accuracy_pct": 85.5,
+            "duel_win_pct": 59.8,
+            "interceptions_p90": 5.493,
+            "progressive_runs_p90": 0.785
+          },
+          {
+            "competition": "Norway. NM Cupen",
+            "competition_type": "cup",
+            "matches": 1,
+            "minutes": 92,
+            "goals_p90": 0.0,
+            "assists_p90": 0.0,
+            "xg_p90": 0.0,
+            "pass_accuracy_pct": 88.1,
+            "duel_win_pct": 53.3,
+            "interceptions_p90": 1.957,
+            "progressive_runs_p90": 1.957
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 2615,
+        "total_matches": 27,
+        "date_range_from": "2025-04-21",
+        "date_range_to": "2025-11-30",
+        "competitions_included": [
+          "Norway. Eliteserien",
+          "Norway. NM Cupen"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats Z. Smajlović.xlsx",
+          "Player stats Z. Smajlović (1).xlsx",
+          "Player stats Z. Smajlović (2).xlsx",
+          "Player stats Z. Smajlović (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "smajlovic.json",
+        "processed_at": "2026-03-22T15:45:30.390308Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 100,
+        "tier": "high",
+        "components": {
+          "minutes_score": 25,
+          "completeness_score": 25,
+          "league_quality_score": 25,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 0,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 0,
+            "factors": []
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 0,
+            "factors": []
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "MONITOR",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "computed_at": "2026-03-22T15:45:30.390291Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "stojakovic",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Aleks Stojaković",
+        "short_name": "A. Stojaković",
+        "date_of_birth": "2004-01-01",
+        "age": 21,
+        "nationality": "Slovenia",
+        "flag": "🇸🇮",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "NK Lokomotiva Zagreb",
+        "league": "Croatia. SuperSport HNL",
+        "country": "Croatia"
+      },
+      "market": {
+        "market_value_eur": 125000,
+        "market_value_display": "€125k",
+        "contract_expires": "2027-06-30",
+        "contract_year": "2027",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CF",
+        "position_detail": "CF",
+        "has_detailed_dashboard": false,
+        "bio": "21-årig slovensk spiss i Croatia HNL. TouchesPenArea 3.26 og shotsOT 0.84 er over benchmark. Lavpris-profil med potensial."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 2151,
+          "matches": 24,
+          "goals_p90": 0.293,
+          "assists_p90": 0.042,
+          "xg_p90": 0.345,
+          "shots_p90": 2.008,
+          "shots_on_target_p90": 0.837,
+          "pass_accuracy_pct": 74.0,
+          "long_pass_accuracy_pct": 47.8,
+          "dribble_success_pct": 51.2,
+          "dribbles_p90": 1.715,
+          "duel_win_pct": 34.4,
+          "aerial_win_pct": 33.6,
+          "interceptions_p90": 1.548,
+          "recoveries_opp_half_p90": 1.548,
+          "shot_assists_p90": 0.335,
+          "touches_pen_area_p90": 3.264,
+          "progressive_runs_p90": 1.13
+        },
+        "by_competition": [
+          {
+            "competition": "Croatia. Superleague",
+            "competition_type": "league",
+            "matches": 24,
+            "minutes": 2151,
+            "goals_p90": 0.293,
+            "assists_p90": 0.042,
+            "xg_p90": 0.345,
+            "pass_accuracy_pct": 74.0,
+            "duel_win_pct": 34.4,
+            "interceptions_p90": 1.548,
+            "progressive_runs_p90": 1.13
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 2151,
+        "total_matches": 24,
+        "date_range_from": "2025-08-01",
+        "date_range_to": "2026-03-15",
+        "competitions_included": [
+          "Croatia. Superleague"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025/26"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats A. Stojakovic.xlsx",
+          "Player stats A. Stojakovic (1).xlsx",
+          "Player stats A. Stojakovic (2).xlsx",
+          "Player stats A. Stojakovic (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "stojakovic.json",
+        "processed_at": "2026-03-22T15:45:30.536319Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 92,
+        "tier": "high",
+        "components": {
+          "minutes_score": 23,
+          "completeness_score": 25,
+          "league_quality_score": 19,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 18,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 30,
+            "factors": [
+              "Lav duellvinnprosent: 34.4%",
+              "Svak i luftdueller: 33.6%"
+            ]
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 30,
+            "factors": [
+              "Svak liga (koeff 0.77)",
+              "Ung (21 år)"
+            ]
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "MONITOR",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "computed_at": "2026-03-22T15:45:30.536306Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "moller",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Valdemar Møller",
+        "short_name": "V. Møller",
+        "date_of_birth": "2007-01-01",
+        "age": 18,
+        "nationality": "Denmark",
+        "flag": "🇩🇰",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "AaB",
+        "league": "Denmark. 1st Division",
+        "country": "Denmark"
+      },
+      "market": {
+        "market_value_eur": 25000,
+        "market_value_display": "€25k",
+        "contract_expires": "2027-06-30",
+        "contract_year": "2027",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CM",
+        "position_detail": "CM",
+        "has_detailed_dashboard": false,
+        "bio": "18-årig dansk CM i AaB. Pass% 81.2% over benchmark. Begrenset spilletid (1091 min). HIGH POTENTIAL med stor nedsiderisiko."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 1156,
+          "matches": 20,
+          "goals_p90": 0.234,
+          "assists_p90": 0.234,
+          "xg_p90": 0.244,
+          "shots_p90": 1.713,
+          "shots_on_target_p90": 0.701,
+          "pass_accuracy_pct": 81.4,
+          "long_pass_accuracy_pct": 31.6,
+          "dribble_success_pct": 45.8,
+          "dribbles_p90": 1.869,
+          "duel_win_pct": 42.2,
+          "aerial_win_pct": 37.1,
+          "interceptions_p90": 1.791,
+          "recoveries_opp_half_p90": 1.791,
+          "shot_assists_p90": 1.09,
+          "touches_pen_area_p90": 2.18,
+          "progressive_runs_p90": 1.324
+        },
+        "by_competition": [
+          {
+            "competition": "Denmark. 1st Division",
+            "competition_type": "league",
+            "matches": 19,
+            "minutes": 1076,
+            "goals_p90": 0.251,
+            "assists_p90": 0.251,
+            "xg_p90": 0.261,
+            "pass_accuracy_pct": 81.3,
+            "duel_win_pct": 41.3,
+            "interceptions_p90": 1.924,
+            "progressive_runs_p90": 1.422
+          },
+          {
+            "competition": "Denmark. DBU Pokalen",
+            "competition_type": "cup",
+            "matches": 1,
+            "minutes": 80,
+            "goals_p90": 0.0,
+            "assists_p90": 0.0,
+            "xg_p90": 0.022,
+            "pass_accuracy_pct": 81.8,
+            "duel_win_pct": 66.7,
+            "interceptions_p90": 0.0,
+            "progressive_runs_p90": 0.0
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 1156,
+        "total_matches": 20,
+        "date_range_from": "2025-07-19",
+        "date_range_to": "2026-03-14",
+        "competitions_included": [
+          "Denmark. 1st Division",
+          "Denmark. DBU Pokalen"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats V. Møller.xlsx",
+          "Player stats V. Møller (1).xlsx",
+          "Player stats V. Møller (2).xlsx",
+          "Player stats V. Møller (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "moller.json",
+        "processed_at": "2026-03-22T15:45:30.570740Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 85,
+        "tier": "high",
+        "components": {
+          "minutes_score": 15,
+          "completeness_score": 25,
+          "league_quality_score": 20,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 16,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 20,
+            "factors": [
+              "Lav duellvinnprosent: 42.2%"
+            ]
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 30,
+            "factors": [
+              "Svært ung (18 år)"
+            ]
+          },
+          "availability": {
+            "score": 10,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "MONITOR",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter 1/3 terskler — trenger mer data eller utvikling",
+        "computed_at": "2026-03-22T15:45:30.570728Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "gonstad",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Julian Gonstad",
+        "short_name": "J. Gonstad",
+        "date_of_birth": "2006-01-01",
+        "age": 19,
+        "nationality": "Norway",
+        "flag": "🇳🇴",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Hamarkameratene",
+        "league": "Norway. Eliteserien",
+        "country": "Norway"
+      },
+      "market": {
+        "market_value_eur": 700000,
+        "market_value_display": "€700k",
+        "contract_expires": "2028-06-30",
+        "contract_year": "2028",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CF",
+        "position_detail": "CF",
+        "has_detailed_dashboard": false,
+        "bio": "19-årig norsk spiss i Eliteserien. Begrenset data — MONITOR inntil mer spilletid foreligger."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 1184,
+          "matches": 20,
+          "goals_p90": 0.304,
+          "assists_p90": 0.152,
+          "xg_p90": 0.245,
+          "shots_p90": 1.824,
+          "shots_on_target_p90": 0.76,
+          "pass_accuracy_pct": 71.6,
+          "long_pass_accuracy_pct": 55.6,
+          "dribble_success_pct": 51.9,
+          "dribbles_p90": 2.052,
+          "duel_win_pct": 37.9,
+          "aerial_win_pct": 21.1,
+          "interceptions_p90": 1.216,
+          "recoveries_opp_half_p90": 1.596,
+          "shot_assists_p90": 0.456,
+          "touches_pen_area_p90": 3.193,
+          "progressive_runs_p90": 1.292
+        },
+        "by_competition": [
+          {
+            "competition": "Norway. Eliteserien",
+            "competition_type": "league",
+            "matches": 20,
+            "minutes": 1184,
+            "goals_p90": 0.304,
+            "assists_p90": 0.152,
+            "xg_p90": 0.245,
+            "pass_accuracy_pct": 71.6,
+            "duel_win_pct": 37.9,
+            "interceptions_p90": 1.216,
+            "progressive_runs_p90": 1.292
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 1184,
+        "total_matches": 20,
+        "date_range_from": "2023-12-03",
+        "date_range_to": "2026-03-14",
+        "competitions_included": [
+          "Norway. Eliteserien"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats J. Gonstad.xlsx",
+          "Player stats J. Gonstad (1).xlsx",
+          "Player stats J. Gonstad (2).xlsx",
+          "Player stats J. Gonstad (3).xlsx",
+          "Player stats J. Gonstad (4).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "gonstad.json",
+        "processed_at": "2026-03-22T15:45:30.065777Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 90,
+        "tier": "high",
+        "components": {
+          "minutes_score": 15,
+          "completeness_score": 25,
+          "league_quality_score": 25,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 22,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 45,
+            "factors": [
+              "Lav duellvinnprosent: 37.9%",
+              "Lav pasningsnøyaktighet: 71.6%",
+              "Svak i luftdueller: 21.1%"
+            ]
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 20,
+            "factors": [
+              "Svært ung (19 år)"
+            ]
+          },
+          "availability": {
+            "score": 10,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "PASS",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter kun 0/3 terskler eller for høy risiko (22)",
+        "computed_at": "2026-03-22T15:45:30.065759Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "yapi",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Darren Yapi",
+        "short_name": "D. Yapi",
+        "date_of_birth": "2004-01-01",
+        "age": 21,
+        "nationality": "USA",
+        "flag": "🇺🇸",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Colorado Rapids",
+        "league": "United States. MLS",
+        "country": "United States"
+      },
+      "market": {
+        "market_value_eur": 2500000,
+        "market_value_display": "€2.5M",
+        "contract_expires": "2026-12-31",
+        "contract_year": "2026",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "WING",
+        "position_detail": "LWF",
+        "has_detailed_dashboard": false,
+        "bio": "21-årig amerikansk-ivorisk venstrekant med høyt scoringsvolum i MLS. Ligakoeff. 0.65 gir betydelig skaleringsrisiko."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 3784,
+          "matches": 70,
+          "goals_p90": 0.262,
+          "assists_p90": 0.095,
+          "xg_p90": 0.215,
+          "shots_p90": 1.213,
+          "shots_on_target_p90": 0.618,
+          "pass_accuracy_pct": 74.2,
+          "long_pass_accuracy_pct": 20.0,
+          "dribble_success_pct": 50.0,
+          "dribbles_p90": 3.14,
+          "duel_win_pct": 34.9,
+          "aerial_win_pct": 35.7,
+          "interceptions_p90": 1.594,
+          "recoveries_opp_half_p90": 1.974,
+          "shot_assists_p90": 0.595,
+          "touches_pen_area_p90": 2.474,
+          "progressive_runs_p90": 1.118
+        },
+        "by_competition": [
+          {
+            "competition": "United States. MLS",
+            "competition_type": "league",
+            "matches": 70,
+            "minutes": 3784,
+            "goals_p90": 0.262,
+            "assists_p90": 0.095,
+            "xg_p90": 0.215,
+            "pass_accuracy_pct": 74.2,
+            "duel_win_pct": 34.9,
+            "interceptions_p90": 1.594,
+            "progressive_runs_p90": 1.118
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 3784,
+        "total_matches": 70,
+        "date_range_from": "2022-08-28",
+        "date_range_to": "2026-03-15",
+        "competitions_included": [
+          "United States. MLS"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025/26"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats D. Yapi.xlsx",
+          "Player stats D. Yapi (1).xlsx",
+          "Player stats D. Yapi (2).xlsx",
+          "Player stats D. Yapi (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "yapi.json",
+        "processed_at": "2026-03-22T15:45:30.483711Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 91,
+        "tier": "high",
+        "components": {
+          "minutes_score": 25,
+          "completeness_score": 25,
+          "league_quality_score": 16,
+          "recency_score": 25
+        },
+        "flags": [
+          "WEAK_LEAGUE"
+        ]
+      },
+      "risk": {
+        "overall_score": 22,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 20,
+            "factors": [
+              "Lav duellvinnprosent: 34.9%"
+            ]
+          },
+          "economic": {
+            "score": 15,
+            "factors": [
+              "Kontrakt utløper < 12 mnd"
+            ]
+          },
+          "adaptation": {
+            "score": 45,
+            "factors": [
+              "Svært svak liga (koeff 0.65)",
+              "Ung (21 år)"
+            ]
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "PASS",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter kun 0/3 terskler eller for høy risiko (22)",
+        "computed_at": "2026-03-22T15:45:30.483694Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "dobson",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Will Dobson",
+        "short_name": "W. Dobson",
+        "date_of_birth": "2007-01-01",
+        "age": 18,
+        "nationality": "Australia",
+        "flag": "🇦🇺",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Newcastle Jets",
+        "league": "Australia. A-League",
+        "country": "Australia"
+      },
+      "market": {
+        "market_value_eur": 350000,
+        "market_value_display": "€350k",
+        "contract_expires": "2026-06-30",
+        "contract_year": "2026",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "CM",
+        "position_detail": "CM",
+        "has_detailed_dashboard": false,
+        "bio": "18-årig australsk CM — ekstraordinært ung for A-League-nivå. HIGH POTENTIAL med stor usikkerhet. A-League koeff. 0.65."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 1889,
+          "matches": 29,
+          "goals_p90": 0.191,
+          "assists_p90": 0.095,
+          "xg_p90": 0.273,
+          "shots_p90": 1.858,
+          "shots_on_target_p90": 0.81,
+          "pass_accuracy_pct": 76.1,
+          "long_pass_accuracy_pct": 25.0,
+          "dribble_success_pct": 47.3,
+          "dribbles_p90": 4.336,
+          "duel_win_pct": 42.0,
+          "aerial_win_pct": 30.8,
+          "interceptions_p90": 2.049,
+          "recoveries_opp_half_p90": 2.287,
+          "shot_assists_p90": 1.001,
+          "touches_pen_area_p90": 3.383,
+          "progressive_runs_p90": 1.763
+        },
+        "by_competition": [
+          {
+            "competition": "Australia. A-League",
+            "competition_type": "league",
+            "matches": 24,
+            "minutes": 1693,
+            "goals_p90": 0.159,
+            "assists_p90": 0.106,
+            "xg_p90": 0.294,
+            "pass_accuracy_pct": 74.4,
+            "duel_win_pct": 41.4,
+            "interceptions_p90": 1.648,
+            "progressive_runs_p90": 1.648
+          },
+          {
+            "competition": "Australia. Australia Cup",
+            "competition_type": "cup",
+            "matches": 5,
+            "minutes": 196,
+            "goals_p90": 0.459,
+            "assists_p90": 0.0,
+            "xg_p90": 0.096,
+            "pass_accuracy_pct": 83.6,
+            "duel_win_pct": 46.9,
+            "interceptions_p90": 5.51,
+            "progressive_runs_p90": 2.755
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 1889,
+        "total_matches": 29,
+        "date_range_from": "2025-01-12",
+        "date_range_to": "2026-03-14",
+        "competitions_included": [
+          "Australia. A-League",
+          "Australia. Australia Cup"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025/26"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats W. Dobson.xlsx",
+          "Player stats W. Dobson (1).xlsx",
+          "Player stats W. Dobson (2).xlsx",
+          "Player stats W. Dobson (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "dobson.json",
+        "processed_at": "2026-03-22T15:45:30.502809Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 86,
+        "tier": "high",
+        "components": {
+          "minutes_score": 20,
+          "completeness_score": 25,
+          "league_quality_score": 16,
+          "recency_score": 25
+        },
+        "flags": [
+          "WEAK_LEAGUE"
+        ]
+      },
+      "risk": {
+        "overall_score": 28,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 20,
+            "factors": [
+              "Lav duellvinnprosent: 42.0%"
+            ]
+          },
+          "economic": {
+            "score": 30,
+            "factors": [
+              "Kontrakt utløper < 6 mnd"
+            ]
+          },
+          "adaptation": {
+            "score": 55,
+            "factors": [
+              "Svært svak liga (koeff 0.65)",
+              "Svært ung (18 år)"
+            ]
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "PASS",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter kun 0/3 terskler eller for høy risiko (28)",
+        "computed_at": "2026-03-22T15:45:30.502794Z",
+        "threshold_version": "2.0.0"
+      }
+    },
+    {
+      "id": "fraulo",
+      "schema_version": "2.0.0",
+      "identity": {
+        "full_name": "Gustav Fraulo",
+        "short_name": "G. Fraulo",
+        "date_of_birth": "2005-01-01",
+        "age": 20,
+        "nationality": "Denmark",
+        "flag": "🇩🇰",
+        "height_cm": null,
+        "preferred_foot": null
+      },
+      "current_club": {
+        "name": "Lyngby BK",
+        "league": "Denmark. 1st Division",
+        "country": "Denmark"
+      },
+      "market": {
+        "market_value_eur": 550000,
+        "market_value_display": "€550k",
+        "contract_expires": "2028-06-30",
+        "contract_year": "2028",
+        "source": "transfermarkt",
+        "last_updated": "2026-03-22"
+      },
+      "scouting": {
+        "pos_group": "WING",
+        "position_detail": "RW",
+        "has_detailed_dashboard": false,
+        "bio": "20-årig dansk høyrekant i Lyngby. ShotAss 1.61/90 er høyest i WING-porteføljen. Kreativ profil med sterk assistpotensial."
+      },
+      "aggregates": {
+        "all": {
+          "minutes": 1801,
+          "matches": 22,
+          "goals_p90": 0.15,
+          "assists_p90": 0.2,
+          "xg_p90": 0.148,
+          "shots_p90": 1.449,
+          "shots_on_target_p90": 0.65,
+          "pass_accuracy_pct": 79.3,
+          "long_pass_accuracy_pct": 40.4,
+          "dribble_success_pct": 52.8,
+          "dribbles_p90": 1.799,
+          "duel_win_pct": 46.1,
+          "aerial_win_pct": 23.3,
+          "interceptions_p90": 3.048,
+          "recoveries_opp_half_p90": 3.598,
+          "shot_assists_p90": 1.699,
+          "touches_pen_area_p90": 2.099,
+          "progressive_runs_p90": 2.199
+        },
+        "by_competition": [
+          {
+            "competition": "Denmark. 1st Division",
+            "competition_type": "league",
+            "matches": 21,
+            "minutes": 1733,
+            "goals_p90": 0.156,
+            "assists_p90": 0.208,
+            "xg_p90": 0.153,
+            "pass_accuracy_pct": 79.2,
+            "duel_win_pct": 46.3,
+            "interceptions_p90": 3.116,
+            "progressive_runs_p90": 2.233
+          },
+          {
+            "competition": "Denmark. DBU Pokalen",
+            "competition_type": "cup",
+            "matches": 1,
+            "minutes": 68,
+            "goals_p90": 0.0,
+            "assists_p90": 0.0,
+            "xg_p90": 0.013,
+            "pass_accuracy_pct": 84.6,
+            "duel_win_pct": 40.0,
+            "interceptions_p90": 1.324,
+            "progressive_runs_p90": 1.324
+          }
+        ]
+      },
+      "sample": {
+        "total_minutes": 1801,
+        "total_matches": 22,
+        "date_range_from": "2025-07-20",
+        "date_range_to": "2026-03-13",
+        "competitions_included": [
+          "Denmark. 1st Division",
+          "Denmark. DBU Pokalen"
+        ],
+        "min_minutes_per_match_threshold": 20,
+        "season": "2025"
+      },
+      "provenance": {
+        "performance_source": "wyscout",
+        "performance_files": [
+          "Player stats G. Fraulo.xlsx",
+          "Player stats G. Fraulo (1).xlsx",
+          "Player stats G. Fraulo (2).xlsx",
+          "Player stats G. Fraulo (3).xlsx"
+        ],
+        "market_source": "transfermarkt",
+        "market_file": "fraulo.json",
+        "processed_at": "2026-03-22T15:45:30.554995Z",
+        "pipeline_version": "1.0.0",
+        "manual_overrides": []
+      },
+      "confidence": {
+        "score": 90,
+        "tier": "high",
+        "components": {
+          "minutes_score": 20,
+          "completeness_score": 25,
+          "league_quality_score": 20,
+          "recency_score": 25
+        },
+        "flags": []
+      },
+      "risk": {
+        "overall_score": 8,
+        "overall_tier": "low",
+        "components": {
+          "sporting": {
+            "score": 10,
+            "factors": []
+          },
+          "economic": {
+            "score": 0,
+            "factors": []
+          },
+          "adaptation": {
+            "score": 20,
+            "factors": [
+              "Ung (20 år)"
+            ]
+          },
+          "availability": {
+            "score": 0,
+            "factors": []
+          }
+        }
+      },
+      "verdict": {
+        "recommendation": "PASS",
+        "confidence_in_verdict": "high",
+        "key_reason": "Møter kun 0/3 terskler eller for høy risiko (8)",
+        "computed_at": "2026-03-22T15:45:30.554981Z",
+        "threshold_version": "2.0.0"
+      }
+    }
+  ]
+}
