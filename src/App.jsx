@@ -502,3 +502,7 @@ export default function App(){
     </div>
   );
 }
+
+// TEMP IMPORT (legg til manuelt hvis du allerede har imports)
+import MethodPage from "./MethodPage"
+// ADD ROUTE MANUALLY: <Route path="/method" element={<MethodPage />} />
