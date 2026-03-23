@@ -164,7 +164,13 @@
       "recoveriesOpp": 4.387,
       "touchesPenArea": 2.075,
       "progRuns": 1.368,
-      "shotAssists": 0.755
+      "shotAssists": 0.755,
+      "club": "Odense BK",
+      "league": "Denmark. Superliga",
+      "posGroup": "CM",
+      "position": "CM / RW",
+      "bio": "21-\u00e5rig dansk midtbanespiller i Odense BK med sv\u00e6rt h\u00f8y pasningsn\u00f8yaktighet (84.8%). Taktisk fleksibel profil.",
+      "assists": 0.142
     },
     {
       "id": "jorgensen",
@@ -352,7 +358,13 @@
       "recoveriesOpp": 3.721,
       "touchesPenArea": 1.79,
       "progRuns": 3.651,
-      "shotAssists": 1.439
+      "shotAssists": 1.439,
+      "club": "Viborg FF",
+      "league": "Denmark. Superliga",
+      "posGroup": "CM",
+      "position": "CM / AMF",
+      "bio": "20-\u00e5rig dansk CM/AMF i Viborg med imponerende allround-tall. 3.65 ProgRuns og 3.19 Int/90. Taktisk fleksibel. \u20ac4.0M markedsverdi.",
+      "assists": 0.211
     },
     {
       "id": "askou",
@@ -510,7 +522,13 @@
       "recoveriesOpp": 1.684,
       "touchesPenArea": 0.697,
       "progRuns": 0.406,
-      "shotAssists": 0.058
+      "shotAssists": 0.058,
+      "club": "Odense BK",
+      "league": "Denmark. Superliga",
+      "posGroup": "CB",
+      "position": "CB",
+      "bio": "19-\u00e5rig dansk CB i Odense BK med eksepsjonell pasningsn\u00f8yaktighet (89.6%). Den teknisk sterkeste CB-kandidaten i portef\u00f8ljen.",
+      "assists": 0.0
     },
     {
       "id": "graham",
@@ -696,7 +714,13 @@
       "recoveriesOpp": 1.722,
       "touchesPenArea": 0.765,
       "progRuns": 1.421,
-      "shotAssists": 0.219
+      "shotAssists": 0.219,
+      "club": "Dundee FC",
+      "league": "Scotland. Premiership",
+      "posGroup": "CB",
+      "position": "CB",
+      "bio": "22-\u00e5rig skotsk CB i Dundee FC. Imponerende volum (3293 min). ProgRuns 1.42 er best i CB-gruppen. Ball-fremf\u00f8rende type.",
+      "assists": 0.027
     },
     {
       "id": "mohammed",
@@ -868,7 +892,13 @@
       "recoveriesOpp": 1.904,
       "touchesPenArea": 0.773,
       "progRuns": 0.714,
-      "shotAssists": 0.297
+      "shotAssists": 0.297,
+      "club": "IF Elfsborg",
+      "league": "Sweden. Allsvenskan",
+      "posGroup": "CB",
+      "position": "CB",
+      "bio": "20-\u00e5rig ghanesisk CB i IF Elfsborg. Ekstraordin\u00e6r interception-rate (8.41/90). Aerialwin 69.9% er h\u00f8yest. Sterk Allsvenskan-kontekst.",
+      "assists": 0.0
     },
     {
       "id": "bagan",
@@ -1040,7 +1070,13 @@
       "recoveriesOpp": 2.628,
       "touchesPenArea": 1.147,
       "progRuns": 1.625,
-      "shotAssists": 1.195
+      "shotAssists": 1.195,
+      "club": "Cardiff City",
+      "league": "England. League One",
+      "posGroup": "BACK",
+      "position": "LB",
+      "bio": "24-\u00e5rig irsk venstreback i Cardiff. 42 kamper gir godt datagrunnlag. Pass% 81.1% er over Haugen-benchmark. Forventes \u00e5 \u00f8ke offensive bidrag i Viking.",
+      "assists": 0.096
     },
     {
       "id": "braude",
@@ -1214,7 +1250,13 @@
       "recoveriesOpp": 2.496,
       "touchesPenArea": 1.485,
       "progRuns": 1.074,
-      "shotAssists": 0.442
+      "shotAssists": 0.442,
+      "club": "SC Heerenveen",
+      "league": "Netherlands. Eredivisie",
+      "posGroup": "BACK",
+      "position": "RB",
+      "bio": "21-\u00e5rig norsk h\u00f8yreback i Eredivisie. Duelwin 53.1% og aerialwin 52.3% over Haugen-benchmark. Markedsverdi \u20ac4.5M reflekterer ligakvaliteten.",
+      "assists": 0.126
     },
     {
       "id": "kucys",
@@ -1417,7 +1459,13 @@
       "recoveriesOpp": 1.186,
       "touchesPenArea": 3.897,
       "progRuns": 0.565,
-      "shotAssists": 0.819
+      "shotAssists": 0.819,
+      "club": "NK Celje",
+      "league": "Slovenia. Prva Liga",
+      "posGroup": "CF",
+      "position": "CF",
+      "bio": "23-\u00e5rig litauisk spiss med h\u00f8yt scoringsvolum. N\u00e5 i slovenisk Prva Liga. Ligakoeff. 0.75 gir moderat skaleringsrisiko.",
+      "assists": 0.113
     },
     {
       "id": "ladefoged",
@@ -1578,7 +1626,13 @@
       "recoveriesOpp": 1.524,
       "touchesPenArea": 5.985,
       "progRuns": 0.218,
-      "shotAssists": 0.979
+      "shotAssists": 0.979,
+      "club": "V\u00e4ster\u00e5s SK",
+      "league": "Sweden. Allsvenskan",
+      "posGroup": "CF",
+      "position": "CF",
+      "bio": "22-\u00e5rig dansk spiss i V\u00e4ster\u00e5s SK. Begrenset spilletid \u2014 sample size er for lav for sikker vurdering.",
+      "assists": 0.109
     },
     {
       "id": "balov",
@@ -1742,7 +1796,13 @@
       "recoveriesOpp": 1.968,
       "touchesPenArea": 3.216,
       "progRuns": 3.792,
-      "shotAssists": 1.152
+      "shotAssists": 1.152,
+      "club": "Slavia Sofia",
+      "league": "Bulgaria. First League",
+      "posGroup": "WING",
+      "position": "LW",
+      "bio": "19-\u00e5rig bulgarsk venstrekant med h\u00f8yt driblingsvolum men svak ligakontekst. Duelwin 38.3% er kritisk lavt.",
+      "assists": 0.192
     },
     {
       "id": "tahaui",
@@ -1914,7 +1974,13 @@
       "recoveriesOpp": 3.967,
       "touchesPenArea": 2.252,
       "progRuns": 1.751,
-      "shotAssists": 1.501
+      "shotAssists": 1.501,
+      "club": "Vitesse Arnhem",
+      "league": "Netherlands. Eerste Divisie",
+      "posGroup": "CM",
+      "position": "AMF",
+      "bio": "20-\u00e5rig nederlandsk AMF med sterk teknisk profil. Dribble% 72.8% er eksepsjonelt. Vitesse i urolig periode.",
+      "assists": 0.322
     },
     {
       "id": "popoola",
@@ -2077,7 +2143,13 @@
       "recoveriesOpp": 5.238,
       "touchesPenArea": 0.252,
       "progRuns": 1.007,
-      "shotAssists": 0.554
+      "shotAssists": 0.554,
+      "club": "Kisv\u00e1rda FC",
+      "league": "Hungary. NB I",
+      "posGroup": "CM",
+      "position": "CM / DMF",
+      "bio": "19-\u00e5rig nigeriansk CM/DMF med ekstraordin\u00e6r defensiv profil. 5.19 Int/90. NB I er svak liga \u2014 stor skaleringsrisiko.",
+      "assists": 0.0
     },
     {
       "id": "diop",
@@ -2236,7 +2308,13 @@
       "recoveriesOpp": 1.213,
       "touchesPenArea": 0.657,
       "progRuns": 0.96,
-      "shotAssists": 0.051
+      "shotAssists": 0.051,
+      "club": "NK Lokomotiva Zagreb",
+      "league": "Croatia. SuperSport HNL",
+      "posGroup": "CB",
+      "position": "CB",
+      "bio": "20-\u00e5rig senegalesisk CB n\u00e5 i kroatisk HNL. Duelwin 60.2% og aerialwin 62% er solide. Interessant profil i sterkere liga enn Sogndal.",
+      "assists": 0.0
     },
     {
       "id": "markmann",
@@ -2394,7 +2472,13 @@
       "recoveriesOpp": 1.983,
       "touchesPenArea": 0.054,
       "progRuns": 2.787,
-      "shotAssists": 0.107
+      "shotAssists": 0.107,
+      "club": "FC Nordsj\u00e6lland",
+      "league": "Denmark. Superliga",
+      "posGroup": "CB",
+      "position": "CB",
+      "bio": "19-\u00e5rig dansk CB i FC Nordsj\u00e6lland. Pass% 92.7% er h\u00f8yest i datasettet. Int/90 5.50 er over benchmark. \u20ac2.5M markedsverdi.",
+      "assists": 0.0
     },
     {
       "id": "coulibaly",
@@ -2552,7 +2636,13 @@
       "recoveriesOpp": 1.22,
       "touchesPenArea": 0.122,
       "progRuns": 0.366,
-      "shotAssists": 0.0
+      "shotAssists": 0.0,
+      "club": "IFK V\u00e4rnamo",
+      "league": "Sweden. Superettan",
+      "posGroup": "CB",
+      "position": "CB",
+      "bio": "24-\u00e5rig ivorisk CB i IFK V\u00e4rnamo. Sterk aerialwin (70.5%) \u2014 h\u00f8yest i CB-portef\u00f8ljen. Superettan gir begrenset validitet.",
+      "assists": 0.0
     },
     {
       "id": "tape",
@@ -2710,7 +2800,13 @@
       "recoveriesOpp": 1.894,
       "touchesPenArea": 0.55,
       "progRuns": 1.161,
-      "shotAssists": 0.183
+      "shotAssists": 0.183,
+      "club": "AC Horsens",
+      "league": "Denmark. 1st Division",
+      "posGroup": "CB",
+      "position": "CB",
+      "bio": "20-\u00e5rig ivorisk CB i AC Horsens. Sterk aerialwin (72.1%) og pasning (84.7%). Begrenset datagrunnlag (1473 min).",
+      "assists": 0.0
     },
     {
       "id": "ballard",
@@ -2873,7 +2969,13 @@
       "recoveriesOpp": 1.478,
       "touchesPenArea": 3.449,
       "progRuns": 1.201,
-      "shotAssists": 0.523
+      "shotAssists": 0.523,
+      "club": "Leyton Orient",
+      "league": "England. League One",
+      "posGroup": "CF",
+      "position": "CF",
+      "bio": "20-\u00e5rig engelsk spiss fra Southampton-akademiet. 0.65 G/90 over 31 kamper er klart over Christiansen-benchmark. Duelwin 31.4% er svakt.",
+      "assists": 0.062
     },
     {
       "id": "fenger",
@@ -3046,7 +3148,13 @@
       "recoveriesOpp": 1.852,
       "touchesPenArea": 3.408,
       "progRuns": 0.988,
-      "shotAssists": 0.617
+      "shotAssists": 0.617,
+      "club": "IFK G\u00f6teborg",
+      "league": "Sweden. Allsvenskan",
+      "posGroup": "CF",
+      "position": "CF",
+      "bio": "24-\u00e5rig dansk spiss n\u00e5 i IFK G\u00f6teborg. Solid volumscorer. Aerialwin 57% er over benchmark.",
+      "assists": 0.074
     },
     {
       "id": "kilen",
@@ -3220,7 +3328,13 @@
       "recoveriesOpp": 1.026,
       "touchesPenArea": 2.887,
       "progRuns": 2.393,
-      "shotAssists": 0.684
+      "shotAssists": 0.684,
+      "club": "Kristiansund BK",
+      "league": "Norway. Eliteserien",
+      "posGroup": "WING",
+      "position": "LWF",
+      "bio": "20-\u00e5rig norsk venstrekant med ekstraordin\u00e6r dribling. Ligaleder i progressive runs og dribbles/90 i Eliteserien 2025. HIGH POTENTIAL-profil.",
+      "assists": 0.076
     },
     {
       "id": "bjerkebo",
@@ -3392,7 +3506,13 @@
       "recoveriesOpp": 2.29,
       "touchesPenArea": 5.946,
       "progRuns": 2.511,
-      "shotAssists": 1.81
+      "shotAssists": 1.81,
+      "club": "IK Sirius",
+      "league": "Sweden. Allsvenskan",
+      "posGroup": "WING",
+      "position": "LW",
+      "bio": "23-\u00e5rig svensk venstrekant med god toveis bidragsbalanse. Aktiv presser. Allsvenskan gir god ligavaliditet.",
+      "assists": 0.332
     },
     {
       "id": "heintz",
@@ -3564,7 +3684,13 @@
       "recoveriesOpp": 2.547,
       "touchesPenArea": 3.953,
       "progRuns": 1.565,
-      "shotAssists": 1.831
+      "shotAssists": 1.831,
+      "club": "IFK G\u00f6teborg",
+      "league": "Sweden. Allsvenskan",
+      "posGroup": "WING",
+      "position": "LWF",
+      "bio": "27-\u00e5rig norsk venstrekant n\u00e5 i IFK G\u00f6teborg. Allsvenskan gir best ligakontekst blant wing-kandidatene. Konservativ spiller.",
+      "assists": 0.212
     },
     {
       "id": "mccowatt",
@@ -3722,7 +3848,13 @@
       "recoveriesOpp": 1.727,
       "touchesPenArea": 3.502,
       "progRuns": 2.015,
-      "shotAssists": 0.959
+      "shotAssists": 0.959,
+      "club": "Silkeborg IF",
+      "league": "Denmark. Superliga",
+      "posGroup": "CM",
+      "position": "AMF",
+      "bio": "26-\u00e5rig newzealandsk AMF n\u00e5 i Silkeborg. Solid bidragsbalanse. Begrenset oppsidepotensial.",
+      "assists": 0.096
     },
     {
       "id": "amundsen",
@@ -3882,7 +4014,13 @@
       "recoveriesOpp": 2.376,
       "touchesPenArea": 0.76,
       "progRuns": 0.95,
-      "shotAssists": 0.19
+      "shotAssists": 0.19,
+      "club": "Hamarkameratene",
+      "league": "Norway. Eliteserien",
+      "posGroup": "CB",
+      "position": "CB",
+      "bio": "20-\u00e5rig norsk CB i Eliteserien. Stabil defensiv profil. LongPass% 47% er svak. Rom for utvikling.",
+      "assists": 0.0
     },
     {
       "id": "smajlovic",
@@ -4052,7 +4190,13 @@
       "recoveriesOpp": 2.272,
       "touchesPenArea": 0.826,
       "progRuns": 0.826,
-      "shotAssists": 0.172
+      "shotAssists": 0.172,
+      "club": "Sandefjord Fotball",
+      "league": "Norway. Eliteserien",
+      "posGroup": "CB",
+      "position": "CB",
+      "bio": "22-\u00e5rig svenske CB i Sandefjord. Allerede i Eliteserien \u2014 ingen skaleringsrisiko. Pass% 85.6% og Int/90 5.37 er over benchmark.",
+      "assists": 0.0
     },
     {
       "id": "stojakovic",
@@ -4214,7 +4358,13 @@
       "recoveriesOpp": 1.548,
       "touchesPenArea": 3.264,
       "progRuns": 1.13,
-      "shotAssists": 0.335
+      "shotAssists": 0.335,
+      "club": "NK Lokomotiva Zagreb",
+      "league": "Croatia. SuperSport HNL",
+      "posGroup": "CF",
+      "position": "CF",
+      "bio": "21-\u00e5rig slovensk spiss i Croatia HNL. TouchesPenArea 3.26 og shotsOT 0.84 er over benchmark. Lavpris-profil med potensial.",
+      "assists": 0.042
     },
     {
       "id": "moller",
@@ -4388,7 +4538,13 @@
       "recoveriesOpp": 1.791,
       "touchesPenArea": 2.18,
       "progRuns": 1.324,
-      "shotAssists": 1.09
+      "shotAssists": 1.09,
+      "club": "AaB",
+      "league": "Denmark. 1st Division",
+      "posGroup": "CM",
+      "position": "CM",
+      "bio": "18-\u00e5rig dansk CM i AaB. Pass% 81.2% over benchmark. Begrenset spilletid (1091 min). HIGH POTENTIAL med stor nedsiderisiko.",
+      "assists": 0.234
     },
     {
       "id": "gonstad",
@@ -4551,7 +4707,13 @@
       "recoveriesOpp": 1.596,
       "touchesPenArea": 3.193,
       "progRuns": 1.292,
-      "shotAssists": 0.456
+      "shotAssists": 0.456,
+      "club": "Hamarkameratene",
+      "league": "Norway. Eliteserien",
+      "posGroup": "CF",
+      "position": "CF",
+      "bio": "19-\u00e5rig norsk spiss i Eliteserien. Begrenset data \u2014 MONITOR inntil mer spilletid foreligger.",
+      "assists": 0.152
     },
     {
       "id": "yapi",
@@ -4716,7 +4878,13 @@
       "recoveriesOpp": 1.974,
       "touchesPenArea": 2.474,
       "progRuns": 1.118,
-      "shotAssists": 0.595
+      "shotAssists": 0.595,
+      "club": "Colorado Rapids",
+      "league": "United States. MLS",
+      "posGroup": "WING",
+      "position": "LWF",
+      "bio": "21-\u00e5rig amerikansk-ivorisk venstrekant med h\u00f8yt scoringsvolum i MLS. Ligakoeff. 0.65 gir betydelig skaleringsrisiko.",
+      "assists": 0.095
     },
     {
       "id": "dobson",
@@ -4895,7 +5063,13 @@
       "recoveriesOpp": 2.287,
       "touchesPenArea": 3.383,
       "progRuns": 1.763,
-      "shotAssists": 1.001
+      "shotAssists": 1.001,
+      "club": "Newcastle Jets",
+      "league": "Australia. A-League",
+      "posGroup": "CM",
+      "position": "CM",
+      "bio": "18-\u00e5rig australsk CM \u2014 ekstraordin\u00e6rt ung for A-League-niv\u00e5. HIGH POTENTIAL med stor usikkerhet. A-League koeff. 0.65.",
+      "assists": 0.095
     },
     {
       "id": "fraulo",
@@ -5067,7 +5241,13 @@
       "recoveriesOpp": 3.598,
       "touchesPenArea": 2.099,
       "progRuns": 2.199,
-      "shotAssists": 1.699
+      "shotAssists": 1.699,
+      "club": "Lyngby BK",
+      "league": "Denmark. 1st Division",
+      "posGroup": "WING",
+      "position": "RW",
+      "bio": "20-\u00e5rig dansk h\u00f8yrekant i Lyngby. ShotAss 1.61/90 er h\u00f8yest i WING-portef\u00f8ljen. Kreativ profil med sterk assistpotensial.",
+      "assists": 0.2
     }
   ]
 }
