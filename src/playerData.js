@@ -1,5 +1,6 @@
 // playerData.js — Viking FK Scouting Platform
 // Architecture: 5 position groups, each with own metrics + benchmark
+// V2: Laster data dynamisk fra /data/players.json (bygget av build.py)
 
 // ─── BENCHMARKS ──────────────────────────────────────────────────────────────
 export const benchmarks = {
@@ -61,7 +62,6 @@ export function getBenchmarkKey(posGroup) {
 }
 
 // ─── POSITION GROUP (canonical) ──────────────────────────────────────────────
-// Each player has a posGroup field set explicitly — no regex guessing
 export const posGroupLabels = {
   CF:   "CF / Spiss",
   WING: "Wing / Kant",
@@ -71,8 +71,6 @@ export const posGroupLabels = {
 };
 
 // ─── POSITION-SPECIFIC METRICS ───────────────────────────────────────────────
-// These define what matters for each position group
-
 export const posMetrics = {
   CF: {
     table:   ["goals", "xG", "shotsOT", "touchesPenArea", "duelWin", "aerialWin"],
@@ -132,17 +130,77 @@ export function getOverallRating(player) {
   return "similar";
 }
 
-// ─── PLAYERS ─────────────────────────────────────────────────────────────────
-export const players = [
+// ─── MAPPING: players.json → app format ──────────────────────────────────────
+function mapPlayer(p) {
+  const agg = p.aggregates?.all ?? {};
+  const mv = p.market?.market_value_eur;
+  const mvDisplay = p.market?.market_value_display ??
+    (mv >= 1_000_000 ? `€${(mv/1e6).toFixed(1)}M` : mv ? `€${Math.round(mv/1000)}k` : null);
 
-  // ── CF / Spiss ──────────────────────────────────────────────────────────────
+  return {
+    id:                   p.id,
+    name:                 p.identity?.short_name ?? p.identity?.full_name ?? p.id,
+    fullName:             p.identity?.full_name ?? p.id,
+    age:                  p.identity?.age,
+    nationality:          p.identity?.nationality,
+    flag:                 p.identity?.flag,
+    posGroup:             p.scouting?.pos_group,
+    position:             p.scouting?.position_detail,
+    club:                 p.current_club?.name,
+    league:               p.current_club?.league,
+    marketValue:          mvDisplay,
+    contract:             p.market?.contract_year,
+    hasDetailedDashboard: p.scouting?.has_detailed_dashboard ?? false,
+    dashboardComponent:   p.scouting?.has_detailed_dashboard
+                            ? p.id.charAt(0).toUpperCase() + p.id.slice(1) + "Dashboard"
+                            : null,
+    bio:                  p.scouting?.bio,
+    verdict:              p.verdict?.recommendation,
+    confidence:           p.confidence?.score ?? null,
+    confidenceTier:       p.confidence?.tier ?? null,
+    risk:                 p.risk?.overall_score ?? null,
+    riskTier:             p.risk?.overall_tier ?? null,
+    riskFactors:          p.risk?.components ?? null,
+    _source:              "pipeline",
+    stats: {
+      goals:          agg.goals_p90          ?? 0,
+      assists:        agg.assists_p90        ?? 0,
+      xG:             agg.xg_p90             ?? 0,
+      shots:          agg.shots_p90          ?? 0,
+      shotsOT:        agg.shots_on_target_p90 ?? 0,
+      passAcc:        agg.pass_accuracy_pct  ?? 0,
+      longPassAcc:    agg.long_pass_accuracy_pct ?? 0,
+      dribbleSucc:    agg.dribble_success_pct ?? 0,
+      dribbles:       agg.dribbles_p90       ?? 0,
+      duelWin:        agg.duel_win_pct       ?? 0,
+      aerialWin:      agg.aerial_win_pct     ?? 0,
+      interceptions:  agg.interceptions_p90  ?? 0,
+      recoveriesOpp:  agg.recoveries_opp_half_p90 ?? 0,
+      touchesPenArea: agg.touches_pen_area_p90 ?? 0,
+      progRuns:       agg.progressive_runs_p90 ?? 0,
+      shotAssists:    agg.shot_assists_p90   ?? 0,
+      minutes:        agg.minutes            ?? 0,
+      matches:        agg.matches            ?? 0,
+    },
+  };
+}
+
+// ─── HARDKODEDE FALLBACK-SPILLERE (paananen + diarra — mangler Wyscout-filer) ─
+const fallbackPlayers = [
   {
     id:"paananen", name:"K. Paananen", fullName:"Kasper Paananen",
     age:23, nationality:"Finland", flag:"🇫🇮",
-    posGroup:"CF", position:"CF / AMF",
+    posGroup:"CF", position:"CF",
     club:"SJK Seinäjoki", league:"Finland. Veikkausliiga",
     marketValue:"€600k", contract:"2027", hasDetailedDashboard:true, dashboardComponent:"PaananenDashboard",
     bio:"Eksplosiv finsk angripende midtbanespiller med naturlig posisjonsforståelse i halvrom. Scoret 18 mål i Veikkausliiga 2025 med 0.55/90 — imponerende for en 22-åring. G–xG +5.19 er en betydelig risikovariabel, men skyldes delvis høy skuddholdbarhet og god bevegelse uten ball. Sterk på kort avstand, svak i luftdueller. Bologna-akademi-bakgrunn gir teknisk ballbehandling. Passer Vikings halvromsstil.",
+    verdict: null,
+    confidence: null,
+    confidenceTier: null,
+    risk: null,
+    riskTier: null,
+    riskFactors: null,
+    _source: "fallback",
     stats:{ goals:0.55, assists:0.14, xG:0.44, shots:3.1, shotsOT:1.3,
       passAcc:78.4, longPassAcc:41.0, dribbleSucc:54.0, dribbles:2.1,
       duelWin:50.2, aerialWin:42.0, interceptions:1.4, recoveriesOpp:3.5,
@@ -155,298 +213,74 @@ export const players = [
     club:"FK Haugesund", league:"Norway. 1. divisjon",
     marketValue:"€450k", contract:"2026", hasDetailedDashboard:true, dashboardComponent:"DiarraDashboard",
     bio:"Malisk spiss med fysisk dominans og sterk heading-profil. 25 år med bred europeisk erfaring via România og Norge. Scorer konsekvent på xG-nivå over tre sesonger — solid konverteringsrate uten vesentlig overperformance. Sterk i bakrom og holdUp-spill. Svak i dribbling og direkte 1v1. Haugesund er nedrykkstruet — lav lagkvalitet påvirker kontekst. Passer Vikings direkte spill mot høy forsvarslinje.",
+    verdict: null,
+    confidence: null,
+    confidenceTier: null,
+    risk: null,
+    riskTier: null,
+    riskFactors: null,
+    _source: "fallback",
     stats:{ goals:0.45, assists:0.12, xG:0.38, shots:2.8, shotsOT:1.1,
       passAcc:74.5, longPassAcc:38.0, dribbleSucc:58.0, dribbles:2.3,
       duelWin:48.5, aerialWin:55.0, interceptions:1.2, recoveriesOpp:3.0,
       touchesPenArea:4.1, progRuns:2.7, shotAssists:0.7, minutes:1890, matches:21 },
   },
-  {
-    id:"kucys", name:"A. Kučys", fullName:"Armandas Kučys",
-    age:23, nationality:"Lithuania", flag:"🇱🇹",
-    posGroup:"CF", position:"CF",
-    club:"NK Celje", league:"Slovenia. Prva Liga",
-    marketValue:"€700k", contract:"2028", hasDetailedDashboard:false,
-    bio:"Litauisk spiss med høyt scoringsvolum i A Lyga. Imponerende 0.72 G/90 over 36 kamper gir statistisk robusthet. Ligaen er svak — skaleringskoeff. 0.68 gir betydelig nedjustering. 22 år med rom for utvikling. God i luftdueller (58%), under benchmark på pasning og dribling. Ukjent om han kan håndtere press fra Eliteserien-forsvarere.",
-    stats:{ goals:0.72, assists:0.10, xG:0.57, shots:3.8, shotsOT:1.7,
-      passAcc:73.0, longPassAcc:37.0, dribbleSucc:56.0, dribbles:2.0,
-      duelWin:50.0, aerialWin:58.0, interceptions:1.0, recoveriesOpp:2.8,
-      touchesPenArea:5.5, progRuns:2.5, shotAssists:0.6, minutes:3240, matches:36 },
-  },
-  {
-    id:"gonstad", name:"J. Gonstad", fullName:"Julian Gonstad",
-    age:19, nationality:"Norway", flag:"🇳🇴",
-    posGroup:"CF", position:"CF",
-    club:"Hamarkameratene", league:"Norway. Eliteserien",
-    marketValue:"€700k", contract:"2028", hasDetailedDashboard:false,
-    bio:"Norsk spiss i 1. divisjon med begrenset spilletid (15 kamper). Tallgrunnlaget er for tynt for pålitelige estimater. G/90 på 0.27 er under benchmark — men Sogndal spiller defensivt. Teknisk spiller med god bevegelse, men mangler fysisk dominans. Potensial-kandidat som bør observeres videre. MONITOR er riktig verdict på dette datagrunnlaget.",
-    stats:{ goals:0.27, assists:0.09, xG:0.22, shots:2.0, shotsOT:0.8,
-      passAcc:74.0, longPassAcc:38.0, dribbleSucc:50.0, dribbles:1.6,
-      duelWin:49.0, aerialWin:52.0, interceptions:1.0, recoveriesOpp:2.5,
-      touchesPenArea:3.2, progRuns:2.0, shotAssists:0.5, minutes:1350, matches:15 },
-  },
-  {
-    id:"fenger", name:"M. Fenger", fullName:"Max Fenger",
-    age:24, nationality:"Denmark", flag:"🇩🇰",
-    posGroup:"CF", position:"CF",
-    club:"IFK Göteborg", league:"Sweden. Allsvenskan",
-    marketValue:"€2.2M", contract:"2027", hasDetailedDashboard:false,
-    bio:"Dansk spiss i Superliga med solid volum (40 kamper, 3600 min). Scorer stabilt på xG-nivå over sesongen — pålitelig konvertering uten stor overperformance. Aerialwin 57% er over CF-benchmark. Begrenset i progressive runs og dribling. Mer holdup-spiss enn dynamisk angripende type. Passer et lag som søker fysisk referansepunkt.",
-    stats:{ goals:0.40, assists:0.10, xG:0.38, shots:3.0, shotsOT:1.2,
-      passAcc:75.0, longPassAcc:39.0, dribbleSucc:52.0, dribbles:1.8,
-      duelWin:51.0, aerialWin:57.0, interceptions:1.1, recoveriesOpp:2.9,
-      touchesPenArea:4.5, progRuns:2.4, shotAssists:0.7, minutes:3600, matches:40 },
-  },
-  {
-    id:"ladefoged", name:"M. Ladefoged", fullName:"Mikkel Ladefoged",
-    age:22, nationality:"Denmark", flag:"🇩🇰",
-    posGroup:"CF", position:"CF",
-    club:"Västerås SK", league:"Sweden. Allsvenskan",
-    marketValue:"€500k", contract:"2028", hasDetailedDashboard:false,
-    bio:"10 kamper er for lite til pålitelig analyse. 1.05 G/90 er ekstraordinært, men basert på 864 minutter i dansk 1. divisjon. Høy overperformance vs xG (0.71). Potensielt interessant på sikt, men PASS inntil mer data foreligger.",
-    stats:{ goals:1.05, assists:0.15, xG:0.71, shots:4.2, shotsOT:1.8,
-      passAcc:72.0, longPassAcc:35.0, dribbleSucc:54.0, dribbles:2.0,
-      duelWin:50.0, aerialWin:60.0, interceptions:0.9, recoveriesOpp:2.5,
-      touchesPenArea:6.0, progRuns:2.2, shotAssists:0.6, minutes:864, matches:10 },
-  },
-
-  // ── Wing / Kant ─────────────────────────────────────────────────────────────
-  {
-    id:"kilen", name:"S. Kilen", fullName:"Sander Kilen",
-    age:20, nationality:"Norway", flag:"🇳🇴",
-    posGroup:"WING", position:"LWF",
-    club:"Kristiansund BK", league:"Norway. Eliteserien",
-    marketValue:"€1.5M", contract:"2028", hasDetailedDashboard:true, dashboardComponent:"KilenDashboard",
-    bio:"20-åring med ekstraordinær dribling og progressiv carrying. Ligaleder i ProgRuns og dribbles per 90 i Eliteserien 2025. G–xG –0.57 viser at output henger etter involvering — forventes å normaliseres med bedre støttestrukturer. Kom fra Aalesund (1. divisjon) og tok umiddelbart steget. Begrensede defensive bidrag. HIGH POTENTIAL-profil som passer Vikings offensive bredde.",
-    stats:{ goals:0.38, assists:0.24, xG:0.29, shots:2.4, shotsOT:0.9,
-      passAcc:78.2, longPassAcc:40.0, dribbleSucc:61.0, dribbles:3.8,
-      duelWin:49.0, aerialWin:35.0, interceptions:1.6, recoveriesOpp:4.1,
-      touchesPenArea:3.2, progRuns:5.2, shotAssists:1.2, minutes:1890, matches:21 },
-  },
-  {
-    id:"bjerkebo", name:"I. Bjerkebø", fullName:"Isak Bjerkebø",
-    age:23, nationality:"Sweden", flag:"🇸🇪",
-    posGroup:"WING", position:"LW",
-    club:"IK Sirius", league:"Sweden. Allsvenskan",
-    marketValue:"€700k", contract:"2029", hasDetailedDashboard:false,
-    bio:"Norsk venstrekant med god toveis bidragsbalanse (0.37 G + 0.37 A/90). Aktiv presser med 2.1 int/90 — sjelden kombinasjon. Solid Eliteserien-grunnlag over 24 kamper. Dribble% på 55% er under Austbø-benchmark. Passer Vikings intensive pressingstil. Begrenset europeisk eksponering.",
-    stats:{ goals:0.37, assists:0.37, xG:0.28, shots:2.5, shotsOT:1.0,
-      passAcc:78.0, longPassAcc:42.0, dribbleSucc:55.0, dribbles:3.1,
-      duelWin:48.0, aerialWin:36.0, interceptions:2.1, recoveriesOpp:4.0,
-      touchesPenArea:3.4, progRuns:4.2, shotAssists:1.5, minutes:2196, matches:24 },
-  },
-  {
-    id:"ejdum", name:"M. Ejdum", fullName:"Max Ejdum",
-    age:21, nationality:"Denmark", flag:"🇩🇰",
-    posGroup:"CM", position:"CM / RW",
-    club:"Odense BK", league:"Denmark. Superliga",
-    marketValue:"€1.7M", contract:"2028", hasDetailedDashboard:false,
-    bio:"Dansk høyrekant i Superliga med svært høy pasningsnøyaktighet (84.8%) for posisjonen — uvanlig kombinasjon med kantspill. Scorer moderat (0.28/90) men bidrar jevnt i assister. Dribble% 60% er solid. Viborg er i nedre del av Superliga — moderat lagkvalitet. Teknisk pålitelig profil med begrenset eksplosivitet.",
-    stats:{ goals:0.28, assists:0.21, xG:0.22, shots:2.3, shotsOT:0.9,
-      passAcc:84.8, longPassAcc:48.0, dribbleSucc:60.0, dribbles:2.8,
-      duelWin:50.0, aerialWin:35.0, interceptions:2.0, recoveriesOpp:3.5,
-      touchesPenArea:2.8, progRuns:3.8, shotAssists:1.1, minutes:1890, matches:21 },
-  },
-  {
-    id:"heintz", name:"T. Heintz", fullName:"Tobias Heintz",
-    age:27, nationality:"Norway", flag:"🇳🇴",
-    posGroup:"WING", position:"LWF",
-    club:"IFK Göteborg", league:"Sweden. Allsvenskan",
-    marketValue:"€2.2M", contract:"2027", hasDetailedDashboard:false,
-    bio:"Dansk venstrekant i FC Midtjylland — den beste ligakonteksten blant wing-kandidatene (koeff. 0.90). 0.44 G/90 med god assist-rate i et sterkt lag. Dribblesuksess 48% er under benchmark — bekymringsfullt for en kant. 27 kamper gir solid datagrunnlag. Relativt konservativ spiller; passer bedre i et system med faste mønstre enn i Vikings mer åpne stil.",
-    stats:{ goals:0.44, assists:0.29, xG:0.33, shots:2.8, shotsOT:1.1,
-      passAcc:77.0, longPassAcc:41.0, dribbleSucc:48.0, dribbles:3.4,
-      duelWin:48.0, aerialWin:36.0, interceptions:1.7, recoveriesOpp:3.6,
-      touchesPenArea:3.5, progRuns:4.5, shotAssists:1.3, minutes:2448, matches:27 },
-  },
-  {
-    id:"balov", name:"K. Balov", fullName:"Kristiyan Balov",
-    age:19, nationality:"Bulgaria", flag:"🇧🇬",
-    posGroup:"WING", position:"LW",
-    club:"Slavia Sofia", league:"Bulgaria. First League",
-    marketValue:"€500k", contract:"2027", hasDetailedDashboard:false,
-    bio:"Bulgarsk venstrekant med høyt driblingsvolum men svak ligakontekst (First League, koeff. 0.72). Duelwin 38.3% og aerialwin 9.5% er kritisk lavt. Pasningsnøyaktighet 64% er ikke akseptabelt for Eliteserien. Høyt potensial på paperet men betydelig skaleringsrisiko. Trenger observasjon i sterkere liga.",
-    stats:{ goals:0.19, assists:0.19, xG:0.18, shots:1.47, shotsOT:0.57,
-      passAcc:64.0, longPassAcc:36.5, dribbleSucc:56.8, dribbles:3.59,
-      duelWin:38.3, aerialWin:9.5, interceptions:2.86, recoveriesOpp:2.00,
-      touchesPenArea:2.40, progRuns:2.74, shotAssists:0.66, minutes:1889, matches:26 },
-  },
-
-  // ── CM / AMF ────────────────────────────────────────────────────────────────
-  {
-    id:"mccowatt", name:"C. McCowatt", fullName:"Callum McCowatt",
-    age:26, nationality:"New Zealand", flag:"🇳🇿",
-    posGroup:"CM", position:"AMF",
-    club:"Silkeborg IF", league:"Denmark. Superliga",
-    marketValue:"€2.0M", contract:"2027", hasDetailedDashboard:false,
-    bio:"Newzealandsk AMF med solid bidragsbalanse i Eliteserien. 0.32 G + 0.24 A/90 i HamKam gir bra kontekstuell profil. Duelwin 46% er under Askildsen-benchmark. God passingsflyt (79%) men begrenset pressing-intensitet (2.2 int/90 vs 3.18 benchmark). Erfaren profil (25 år) som forstår norsk fotball. Begrenset oppsidepotensial.",
-    stats:{ goals:0.32, assists:0.24, xG:0.24, shots:2.2, shotsOT:0.9,
-      passAcc:79.0, longPassAcc:45.0, dribbleSucc:58.0, dribbles:1.9,
-      duelWin:46.0, aerialWin:38.0, interceptions:2.2, recoveriesOpp:3.4,
-      touchesPenArea:2.8, progRuns:2.3, shotAssists:1.1, minutes:2250, matches:25 },
-  },
-  {
-    id:"tahaui", name:"A. Tahaui", fullName:"Adam Tahaui",
-    age:20, nationality:"Netherlands", flag:"🇳🇱",
-    posGroup:"CM", position:"AMF",
-    club:"Vitesse Arnhem", league:"Netherlands. Eerste Divisie",
-    marketValue:"€400k", contract:"2027", hasDetailedDashboard:false,
-    bio:"21 år med sterk teknisk profil fra Vitesse i Eerste Divisie. Dribble% 72.8% er eksepsjonelt høyt. Pasning 79.6% og assister 0.32/90 viser kreativt bidrag. Interceptions 2.64/90 er nær benchmark. Vitesse er i en urolig periode — kontekstuell usikkerhet. Ligakoeff. 0.82 gir moderat skaleringsrisiko. Teknisk intelligens som matcher Vikings kombinasjonsspill.",
-    stats:{ goals:0.11, assists:0.32, xG:0.16, shots:1.79, shotsOT:0.61,
-      passAcc:79.6, longPassAcc:49.4, dribbleSucc:72.8, dribbles:2.56,
-      duelWin:49.4, aerialWin:36.9, interceptions:2.64, recoveriesOpp:2.47,
-      touchesPenArea:1.76, progRuns:1.53, shotAssists:0.80, minutes:2518, matches:32 },
-  },
-  {
-    id:"jorgensen", name:"T. Jørgensen", fullName:"Thomas Jørgensen",
-    age:20, nationality:"Denmark", flag:"🇩🇰",
-    posGroup:"CM", position:"CM / AMF",
-    club:"Viborg FF", league:"Denmark. Superliga",
-    marketValue:"€4.0M", contract:"2028", hasDetailedDashboard:false,
-    bio:"Dansk CM/AMF i Viborg med imponerende allround-tall: 3.65 ProgRuns, 3.19 Int/90 og 3.72 Rec.opp/90. Møter Askildsen-benchmark på de fleste nøkkeltall. 31 kamper i Superliga gir solid grunnlag. Dobbel posisjon (CM/RWF) viser taktisk fleksibilitet. Passer Vikings toveis midtbanekrav.",
-    stats:{ goals:0.14, assists:0.21, xG:0.17, shots:2.04, shotsOT:0.77,
-      passAcc:79.7, longPassAcc:59.7, dribbleSucc:55.6, dribbles:2.53,
-      duelWin:49.8, aerialWin:47.7, interceptions:3.19, recoveriesOpp:3.72,
-      touchesPenArea:1.79, progRuns:3.65, shotAssists:1.44, minutes:2564, matches:31 },
-  },
-  {
-    id:"popoola", name:"R. Popoola", fullName:"Ridwan Popoola",
-    age:19, nationality:"Nigeria", flag:"🇳🇬",
-    posGroup:"CM", position:"CM / DMF",
-    club:"Kisvárda FC", league:"Hungary. NB I",
-    marketValue:"€500k", contract:"2026", hasDetailedDashboard:false,
-    bio:"Nigeriansk CM/DMF i Újpest med ekstraordinær defensiv profil: 5.19 Int/90 og 5.24 Rec.opp/90 — langt over benchmark. Pasning 86.9% er best blant CM-kandidatene. Mål og bidrag (0.05 G/90) er marginale. Klar defensiv midtbane-profil — passer som sekserkant. NB I er svak liga (koeff. 0.70). Sample size OK (1787 min).",
-    stats:{ goals:0.05, assists:0.0, xG:0.02, shots:0.91, shotsOT:0.10,
-      passAcc:86.9, longPassAcc:50.6, dribbleSucc:57.9, dribbles:0.96,
-      duelWin:53.3, aerialWin:55.8, interceptions:5.19, recoveriesOpp:5.24,
-      touchesPenArea:0.25, progRuns:1.01, shotAssists:0.55, minutes:1787, matches:22 },
-  },
-
-  // ── CB / Midtstopper ────────────────────────────────────────────────────────
-  {
-    id:"diop", name:"C. Diop", fullName:"Cheikh Mbacke Diop",
-    age:20, nationality:"Senegal", flag:"🇸🇳",
-    posGroup:"CB", position:"CB",
-    club:"NK Lokomotiva Zagreb", league:"Croatia. SuperSport HNL",
-    marketValue:"€1.0M", contract:"2029", hasDetailedDashboard:false,
-    bio:"23-årig senegalesisk CB i Sogndal 1. divisjon. Duelwin 60.2% og aerialwin 62% er solide for nivået. Pasning 84.3% er over benchmark. ProgRuns 0.70 er under — begrenset ballframføring. 1. divisjon gir lav ligakontekst. Interessant råmateriale men trenger Eliteserien-verifisering.",
-    stats:{ goals:0.05, assists:0.02, xG:0.04, shots:0.4, shotsOT:0.1,
-      passAcc:84.3, longPassAcc:50.0, dribbleSucc:70.0, dribbles:0.4,
-      duelWin:60.2, aerialWin:62.0, interceptions:4.2, recoveriesOpp:2.0,
-      touchesPenArea:0.5, progRuns:0.7, shotAssists:0.1, minutes:1800, matches:20 },
-  },
-  {
-    id:"amundsen", name:"E. Amundsen-Day", fullName:"Ethan Amundsen-Day",
-    age:20, nationality:"Norway", flag:"🇳🇴",
-    posGroup:"CB", position:"CB",
-    club:"Hamarkameratene", league:"Norway. Eliteserien",
-    marketValue:"€900k", contract:"2029", hasDetailedDashboard:false,
-    bio:"Norsk CB i Sandnes Ulf med begrensede offensive bidrag men stabil defensiv profil. Int/90 3.80 er noe under Falchener-benchmark (4.80). Pasning 82% er solid. 21 år — rom for utvikling. LongPass% 47% er svak. 1. divisjon gir begrenset kontekst.",
-    stats:{ goals:0.03, assists:0.03, xG:0.03, shots:0.35, shotsOT:0.08,
-      passAcc:82.0, longPassAcc:47.0, dribbleSucc:66.0, dribbles:0.45,
-      duelWin:59.0, aerialWin:60.0, interceptions:3.8, recoveriesOpp:1.9,
-      touchesPenArea:0.4, progRuns:0.7, shotAssists:0.1, minutes:1620, matches:18 },
-  },
-  {
-    id:"askou", name:"J. Askou", fullName:"Julius Berthel Askou",
-    age:19, nationality:"Denmark", flag:"🇩🇰",
-    posGroup:"CB", position:"CB",
-    club:"Odense BK", league:"Denmark. Superliga",
-    marketValue:"€1.0M", contract:"2027", hasDetailedDashboard:false,
-    bio:"24-årig dansk CB med eksepsjonell pasningsnøyaktighet (89.6%) og sterk luftkamprate (66%). Int/90 5.20 er over benchmark. Viborg Superliga gir god kontekstuell validitet. LongPass% 56% er solidt. Den teknisk sterkeste CB-kandidaten i porteføljen. Begrenset i ProgRuns (0.90) — ikke ball-fremførende type.",
-    stats:{ goals:0.04, assists:0.04, xG:0.05, shots:0.5, shotsOT:0.1,
-      passAcc:89.6, longPassAcc:56.0, dribbleSucc:75.0, dribbles:0.4,
-      duelWin:63.1, aerialWin:66.0, interceptions:5.2, recoveriesOpp:2.5,
-      touchesPenArea:0.5, progRuns:0.9, shotAssists:0.1, minutes:2070, matches:23 },
-  },
-  {
-    id:"markmann", name:"N. Markmann", fullName:"Noah Markmann",
-    age:19, nationality:"Denmark", flag:"🇩🇰",
-    posGroup:"CB", position:"CB",
-    club:"FC Nordsjælland", league:"Denmark. Superliga",
-    marketValue:"€2.5M", contract:"2027", hasDetailedDashboard:false,
-    bio:"Dansk CB i Viborg med den høyeste pasningsnøyaktigheten i datasettet (92.7%). Aerialwin 65% og Int/90 5.50 er over Falchener-benchmark. LongPass% 62% er solid. Begrenset i ProgRuns (1.10). Pålitelig defensiv profil med god distribusjonsevne. Superliga-kontekst gir troverdighet.",
-    stats:{ goals:0.04, assists:0.04, xG:0.04, shots:0.45, shotsOT:0.1,
-      passAcc:92.7, longPassAcc:62.0, dribbleSucc:78.0, dribbles:0.35,
-      duelWin:61.8, aerialWin:65.0, interceptions:5.5, recoveriesOpp:2.8,
-      touchesPenArea:0.45, progRuns:1.1, shotAssists:0.1, minutes:2430, matches:27 },
-  },
-  {
-    id:"coulibaly", name:"S. Coulibaly", fullName:"Souleymane Coulibaly",
-    age:24, nationality:"Ivory Coast", flag:"🇨🇮",
-    posGroup:"CB", position:"CB",
-    club:"IFK Värnamo", league:"Sweden. Superettan",
-    marketValue:"€150k", contract:"2027", hasDetailedDashboard:false,
-    bio:"Ivoriansk CB i Sogndal med sterk aerialwin (70.5%) — den beste i CB-porteføljen. Duelwin 63.5% er over benchmark. Pasning 83% er OK. Int/90 4.50 er nær benchmark. 1. divisjon gir lavere kontekstuell validitet. Fysisk dominant profil — passer i et lag som vil vinne luftdueller.",
-    stats:{ goals:0.04, assists:0.04, xG:0.04, shots:0.4, shotsOT:0.1,
-      passAcc:83.0, longPassAcc:48.0, dribbleSucc:72.0, dribbles:0.4,
-      duelWin:63.5, aerialWin:70.5, interceptions:4.5, recoveriesOpp:2.1,
-      touchesPenArea:0.5, progRuns:0.8, shotAssists:0.1, minutes:1980, matches:22 },
-  },
-  {
-    id:"graham", name:"L. Graham", fullName:"Luke Graham",
-    age:22, nationality:"Scotland", flag:"🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-    posGroup:"CB", position:"CB",
-    club:"Dundee FC", league:"Scotland. Premiership",
-    marketValue:"€1.2M", contract:"2026", hasDetailedDashboard:false,
-    bio:"22-årig skotsk CB i Dundee United med imponerende volum (3293 min, 35 kamper). Duelwin 62.8% og aerialwin 66.7% er sterkt. Scotland Premiership (koeff. 0.88) er nest sterkeste liga blant CB-kandidatene. LongPass% 39.6% er svak. ProgRuns 1.42 er den beste i CB-gruppen — ball-fremførende type som passer Vikings moderne forsvarsspill.",
-    stats:{ goals:0.08, assists:0.03, xG:0.09, shots:0.49, shotsOT:0.08,
-      passAcc:82.8, longPassAcc:39.6, dribbleSucc:80.6, dribbles:0.85,
-      duelWin:62.8, aerialWin:66.7, interceptions:4.45, recoveriesOpp:1.72,
-      touchesPenArea:0.77, progRuns:1.42, shotAssists:0.22, minutes:3293, matches:35 },
-  },
-  {
-    id:"mohammed", name:"R. Mohammed", fullName:"Rufai Mohammed",
-    age:20, nationality:"Ghana", flag:"🇬🇭",
-    posGroup:"CB", position:"CB",
-    club:"IF Elfsborg", league:"Sweden. Allsvenskan",
-    marketValue:"€250k", contract:"2029", hasDetailedDashboard:false,
-    bio:"Svenske CB i IK Sirius (Allsvenskan, koeff. 0.95) med ekstraordinær interception-rate (8.41/90) — klart over alle. Aerialwin 69.9% er høyest i porteføljen. Pasning 81.5% er moderat. Begrenset i ProgRuns (0.71). Defensivt dominerende profil med sterk ligakontekst.",
-    stats:{ goals:0.18, assists:0.0, xG:0.13, shots:0.65, shotsOT:0.30,
-      passAcc:81.5, longPassAcc:44.7, dribbleSucc:75.0, dribbles:0.24,
-      duelWin:60.6, aerialWin:69.9, interceptions:8.41, recoveriesOpp:1.89,
-      touchesPenArea:0.77, progRuns:0.71, shotAssists:0.30, minutes:1520, matches:18 },
-  },
-  {
-    id:"smajlovic", name:"Z. Smajlović", fullName:"Zinedin Smajlović",
-    age:22, nationality:"Sweden", flag:"🇸🇪",
-    posGroup:"CB", position:"CB",
-    club:"Sandefjord Fotball", league:"Norway. Eliteserien",
-    marketValue:"€1.5M", contract:"2028", hasDetailedDashboard:false,
-    bio:"Bosnisk CB i Sandefjord med solid Eliteserien-grunnlag (2615 min). Pasningsnøyaktighet 85.6% og duelwin 59.5% er nær benchmark. Int/90 5.37 er over. Aerialwin 56.2% er svakeste i CB-porteføljen. Allerede i Eliteserien — ingen skaleringsrisiko. Sterk pasningsspiller som passer ball-basert forsvar.",
-    stats:{ goals:0.07, assists:0.0, xG:0.09, shots:0.86, shotsOT:0.24,
-      passAcc:85.6, longPassAcc:50.6, dribbleSucc:75.8, dribbles:1.14,
-      duelWin:59.5, aerialWin:56.2, interceptions:5.37, recoveriesOpp:2.27,
-      touchesPenArea:0.83, progRuns:0.83, shotAssists:0.17, minutes:2615, matches:27 },
-  },
-  {
-    id:"tape", name:"C. Tapé", fullName:"Christ Tapé",
-    age:20, nationality:"Ivory Coast", flag:"🇨🇮",
-    posGroup:"CB", position:"CB",
-    club:"AC Horsens", league:"Denmark. 1st Division",
-    marketValue:"€600k", contract:"2028", hasDetailedDashboard:false,
-    bio:"Dansk CB med sterk aerialwin (72.1%) og pasning (84.7%) i 1st Division. Int/90 4.64 er nær Falchener-benchmark. LongPass% 55.6% er solid. Relativt lav spilletid (1473 min). Pålitelig defensiv profil men begrenset datagrunnlag fra svakere liga.",
-    stats:{ goals:0.06, assists:0.0, xG:0.04, shots:0.37, shotsOT:0.12,
-      passAcc:84.7, longPassAcc:55.6, dribbleSucc:77.8, dribbles:0.55,
-      duelWin:60.3, aerialWin:72.1, interceptions:4.64, recoveriesOpp:2.50,
-      touchesPenArea:0.60, progRuns:0.67, shotAssists:0.18, minutes:1473, matches:17 },
-  },
-
-  // ── Back / WB ───────────────────────────────────────────────────────────────
-  {
-    id:"bagan", name:"J. Bagan", fullName:"Joel Bagan",
-    age:24, nationality:"Ireland", flag:"🇮🇪",
-    posGroup:"BACK", position:"LB",
-    club:"Cardiff City", league:"England. League One",
-    marketValue:"€650k", contract:"2026", hasDetailedDashboard:false,
-    bio:"24-årig irsk venstreback med solid Eliteserien-relevant profil. 42 kamper (3767 min) i League One gir godt datagrunnlag. Pasning 81.1% er over Haugen-benchmark. Duelwin 51.8% er noe under. ProgRuns 0.96 og ShotAss 0.61 er under Haugen — begrenset overlappende spill i Cardiff-systemet. Forventes å øke offensive bidrag betraktelig i Vikings overlappende struktur. God grunnlinje for en back.",
-    stats:{ goals:0.02, assists:0.10, xG:0.05, shots:0.26, shotsOT:0.07,
-      passAcc:81.1, longPassAcc:46.5, dribbleSucc:63.6, dribbles:0.61,
-      duelWin:51.8, aerialWin:46.7, interceptions:3.44, recoveriesOpp:2.26,
-      touchesPenArea:0.77, progRuns:0.96, shotAssists:0.61, minutes:3767, matches:42 },
-  },
 ];
 
-// ─── STAT CONFIG (all possible stats with labels/units) ───────────────────────
+// ─── LAST INN SPILLERE FRA players.json ──────────────────────────────────────
+let _players = null;
+
+async function loadPlayers() {
+  try {
+    const res = await fetch("/data/players.json");
+    if (!res.ok) throw new Error("Kunne ikke laste players.json");
+    const json = await res.json();
+    const mapped = json.players.map(mapPlayer);
+
+    // Legg til fallback-spillere som mangler i JSON
+    const ids = new Set(mapped.map(p => p.id));
+    for (const fb of fallbackPlayers) {
+      if (!ids.has(fb.id)) mapped.push(fb);
+    }
+
+    // Sorter etter verdict
+    const order = { "STRONG BUY":0, "BUY":1, "MONITOR":2, "PASS":3 };
+    mapped.sort((a, b) => (order[a.verdict] ?? 4) - (order[b.verdict] ?? 4));
+
+    _players = mapped;
+    return mapped;
+  } catch (e) {
+    console.warn("Fallback til hardkodede spillere:", e);
+    return fallbackPlayers;
+  }
+}
+
+// Synkron eksport for bakoverkompatibilitet — erstattes av usePlayersData hook
+// Første render vil bruke tom array, deretter fyller React med data
+export let players = [];
+
+// ─── REACT HOOK: usePlayersData ───────────────────────────────────────────────
+// Bruk denne i App.jsx i stedet for å importere players direkte:
+//   const { players, loading } = usePlayersData();
+import { useState as _useState, useEffect as _useEffect } from "react";
+
+export function usePlayersData() {
+  const [data, setData] = _useState(_players ?? []);
+  const [loading, setLoading] = _useState(!_players);
+
+  _useEffect(() => {
+    if (_players) { setData(_players); return; }
+    loadPlayers().then(p => {
+      players = p; // oppdater synkron eksport også
+      setData(p);
+      setLoading(false);
+    });
+  }, []);
+
+  return { players: data, loading, source: _players ? "cache" : "fetch" };
+}
+
+// ─── STAT CONFIG ─────────────────────────────────────────────────────────────
 export const statConfig = [
   { key:"goals",          label:"Goals",            unit:"/90" },
   { key:"assists",        label:"Assists",           unit:"/90" },
