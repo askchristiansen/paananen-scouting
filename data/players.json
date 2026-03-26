@@ -1,0 +1,873 @@
+{
+  "player_count": 17,
+  "generated": "2026-03-26",
+  "players": [
+    {
+      "id": "paananen",
+      "identity": {
+        "full_name": "Kasper Paananen",
+        "short_name": "K. Paananen",
+        "age": 23,
+        "nationality": "Finland",
+        "flag": "🇫🇮"
+      },
+      "scouting": {
+        "pos_group": "CF",
+        "position_detail": "CF",
+        "bio": "Eksplosiv finsk angripende midtbanespiller med naturlig posisjonsforståelse i halvrom. Bologna-akademi-bakgrunn. Passer Vikings halvromsstil.",
+        "has_detailed_dashboard": true
+      },
+      "current_club": {
+        "name": "SJK Seinäjoki",
+        "league": "Finland. Veikkausliiga"
+      },
+      "market": {
+        "market_value_display": "€600k",
+        "contract_year": "2027"
+      },
+      "verdict": {
+        "recommendation": "MONITOR"
+      },
+      "confidence": null,
+      "risk": null,
+      "aggregates": {
+        "all": {
+          "goals_p90": 0.55,
+          "assists_p90": 0.14,
+          "xg_p90": 0.44,
+          "shots_p90": 3.1,
+          "shots_on_target_p90": 1.3,
+          "pass_accuracy_pct": 78.4,
+          "long_pass_accuracy_pct": 41.0,
+          "dribble_success_pct": 54.0,
+          "dribbles_p90": 2.1,
+          "duel_win_pct": 50.2,
+          "aerial_win_pct": 42.0,
+          "interceptions_p90": 1.4,
+          "recoveries_opp_half_p90": 3.5,
+          "touches_pen_area_p90": 5.2,
+          "progressive_runs_p90": 3.1,
+          "shot_assists_p90": 0.9,
+          "minutes": 2088,
+          "matches": 24
+        }
+      }
+    },
+    {
+      "id": "diarra",
+      "identity": {
+        "full_name": "Sory Diarra",
+        "short_name": "S. Diarra",
+        "age": 26,
+        "nationality": "Mali",
+        "flag": "🇲🇱"
+      },
+      "scouting": {
+        "pos_group": "CF",
+        "position_detail": "CF",
+        "bio": "Malisk spiss med fysisk dominans og sterk heading-profil. Scorer konsekvent på xG-nivå.",
+        "has_detailed_dashboard": true
+      },
+      "current_club": {
+        "name": "FK Haugesund",
+        "league": "Norway. 1. divisjon"
+      },
+      "market": {
+        "market_value_display": "€450k",
+        "contract_year": "2026"
+      },
+      "verdict": {
+        "recommendation": "MONITOR"
+      },
+      "confidence": null,
+      "risk": null,
+      "aggregates": {
+        "all": {
+          "goals_p90": 0.45,
+          "assists_p90": 0.12,
+          "xg_p90": 0.38,
+          "shots_p90": 2.8,
+          "shots_on_target_p90": 1.1,
+          "pass_accuracy_pct": 74.5,
+          "long_pass_accuracy_pct": 38.0,
+          "dribble_success_pct": 58.0,
+          "dribbles_p90": 2.3,
+          "duel_win_pct": 48.5,
+          "aerial_win_pct": 55.0,
+          "interceptions_p90": 1.2,
+          "recoveries_opp_half_p90": 3.0,
+          "touches_pen_area_p90": 4.1,
+          "progressive_runs_p90": 2.7,
+          "shot_assists_p90": 0.7,
+          "minutes": 1890,
+          "matches": 21
+        }
+      }
+    },
+    {
+      "id": "kilen_s",
+      "identity": {
+        "full_name": "Sander H. Kilen",
+        "short_name": "S. Kilen",
+        "age": 22,
+        "nationality": "Norway",
+        "flag": "🇳🇴"
+      },
+      "scouting": {
+        "pos_group": "WING",
+        "position_detail": "LWF",
+        "bio": "Norsk venstreback/kant med høyt progresjonvolum. 3.46 progressive runs/90 — topp i Eliteserien.",
+        "has_detailed_dashboard": true
+      },
+      "current_club": {
+        "name": "Kristiansund BK",
+        "league": "Norway. Eliteserien"
+      },
+      "market": {
+        "market_value_display": "€800k",
+        "contract_year": "2026"
+      },
+      "verdict": {
+        "recommendation": "BUY"
+      },
+      "confidence": null,
+      "risk": null,
+      "aggregates": {
+        "all": {
+          "goals_p90": 0.3,
+          "assists_p90": 0.08,
+          "xg_p90": 0.29,
+          "shots_p90": 2.1,
+          "shots_on_target_p90": 0.8,
+          "pass_accuracy_pct": 72.1,
+          "long_pass_accuracy_pct": 38.0,
+          "dribble_success_pct": 48.7,
+          "dribbles_p90": 3.5,
+          "duel_win_pct": 37.2,
+          "aerial_win_pct": 28.0,
+          "interceptions_p90": 1.63,
+          "recoveries_opp_half_p90": 3.2,
+          "touches_pen_area_p90": 2.89,
+          "progressive_runs_p90": 3.46,
+          "shot_assists_p90": 0.68,
+          "minutes": 2369,
+          "matches": 28
+        }
+      }
+    },
+    {
+      "id": "kucys",
+      "identity": {
+        "full_name": "Arvydas Kučys",
+        "short_name": "A. Kučys",
+        "age": 25,
+        "nationality": "Lithuania",
+        "flag": "🇱🇹"
+      },
+      "scouting": {
+        "pos_group": "CF",
+        "position_detail": "CF",
+        "bio": "Litauisk spiss med imponerende målrate. 0.72 G/90 over 3228 min.",
+        "has_detailed_dashboard": false
+      },
+      "current_club": {
+        "name": "Free agent",
+        "league": "Lithuania. A Lyga"
+      },
+      "market": {
+        "market_value_display": "€300k",
+        "contract_year": null
+      },
+      "verdict": {
+        "recommendation": "MONITOR"
+      },
+      "confidence": null,
+      "risk": null,
+      "aggregates": {
+        "all": {
+          "goals_p90": 0.72,
+          "assists_p90": 0.11,
+          "xg_p90": 0.56,
+          "shots_p90": 3.2,
+          "shots_on_target_p90": 1.4,
+          "pass_accuracy_pct": 75.2,
+          "long_pass_accuracy_pct": 40.0,
+          "dribble_success_pct": 44.4,
+          "dribbles_p90": 1.5,
+          "duel_win_pct": 41.4,
+          "aerial_win_pct": 48.0,
+          "interceptions_p90": 1.9,
+          "recoveries_opp_half_p90": 3.1,
+          "touches_pen_area_p90": 3.88,
+          "progressive_runs_p90": 0.56,
+          "shot_assists_p90": 0.81,
+          "minutes": 3228,
+          "matches": 36
+        }
+      }
+    },
+    {
+      "id": "mccowatt",
+      "identity": {
+        "full_name": "Connor McCowatt",
+        "short_name": "C. McCowatt",
+        "age": 24,
+        "nationality": "Scotland",
+        "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+      },
+      "scouting": {
+        "pos_group": "CM",
+        "position_detail": "AMF",
+        "bio": "Skotsk AMF med god pasningsprofil og offensiv output.",
+        "has_detailed_dashboard": false
+      },
+      "current_club": {
+        "name": "Free agent",
+        "league": "Denmark. Superliga"
+      },
+      "market": {
+        "market_value_display": "€500k",
+        "contract_year": null
+      },
+      "verdict": {
+        "recommendation": "MONITOR"
+      },
+      "confidence": null,
+      "risk": null,
+      "aggregates": {
+        "all": {
+          "goals_p90": 0.38,
+          "assists_p90": 0.1,
+          "xg_p90": 0.29,
+          "shots_p90": 1.8,
+          "shots_on_target_p90": 0.7,
+          "pass_accuracy_pct": 81.2,
+          "long_pass_accuracy_pct": 52.0,
+          "dribble_success_pct": 54.1,
+          "dribbles_p90": 1.2,
+          "duel_win_pct": 44.3,
+          "aerial_win_pct": 35.0,
+          "interceptions_p90": 1.58,
+          "recoveries_opp_half_p90": 2.8,
+          "touches_pen_area_p90": 3.5,
+          "progressive_runs_p90": 2.01,
+          "shot_assists_p90": 0.96,
+          "minutes": 1876,
+          "matches": 22
+        }
+      }
+    },
+    {
+      "id": "mbacke_diop",
+      "identity": {
+        "full_name": "Cheikh Mbacke Diop",
+        "short_name": "C. M. Diop",
+        "age": 24,
+        "nationality": "Senegal",
+        "flag": "🇸🇳"
+      },
+      "scouting": {
+        "pos_group": "CB",
+        "position_detail": "CB",
+        "bio": "Senegalesisk CB med svært høy interceptionsrate. 6.26/90.",
+        "has_detailed_dashboard": false
+      },
+      "current_club": {
+        "name": "Free agent",
+        "league": "Croatia. Superliga"
+      },
+      "market": {
+        "market_value_display": "€400k",
+        "contract_year": null
+      },
+      "verdict": {
+        "recommendation": "MONITOR"
+      },
+      "confidence": null,
+      "risk": null,
+      "aggregates": {
+        "all": {
+          "goals_p90": 0.05,
+          "assists_p90": 0.0,
+          "xg_p90": 0.05,
+          "shots_p90": 0.4,
+          "shots_on_target_p90": 0.1,
+          "pass_accuracy_pct": 84.3,
+          "long_pass_accuracy_pct": 55.0,
+          "dribble_success_pct": 80.0,
+          "dribbles_p90": 0.3,
+          "duel_win_pct": 60.2,
+          "aerial_win_pct": 62.0,
+          "interceptions_p90": 6.26,
+          "recoveries_opp_half_p90": 2.1,
+          "touches_pen_area_p90": 0.65,
+          "progressive_runs_p90": 0.95,
+          "shot_assists_p90": 0.05,
+          "minutes": 1797,
+          "matches": 21
+        }
+      }
+    },
+    {
+      "id": "amundsen_day",
+      "identity": {
+        "full_name": "Emil Amundsen-Day",
+        "short_name": "E. Amundsen-Day",
+        "age": 21,
+        "nationality": "Norway",
+        "flag": "🇳🇴"
+      },
+      "scouting": {
+        "pos_group": "CB",
+        "position_detail": "CB",
+        "bio": "Ung norsk CB med solid pasningsprosent.",
+        "has_detailed_dashboard": false
+      },
+      "current_club": {
+        "name": "Free agent",
+        "league": "Norway. Eliteserien"
+      },
+      "market": {
+        "market_value_display": "€200k",
+        "contract_year": null
+      },
+      "verdict": {
+        "recommendation": "MONITOR"
+      },
+      "confidence": null,
+      "risk": null,
+      "aggregates": {
+        "all": {
+          "goals_p90": 0.09,
+          "assists_p90": 0.0,
+          "xg_p90": 0.05,
+          "shots_p90": 0.5,
+          "shots_on_target_p90": 0.1,
+          "pass_accuracy_pct": 85.7,
+          "long_pass_accuracy_pct": 54.0,
+          "dribble_success_pct": 0.0,
+          "dribbles_p90": 0.2,
+          "duel_win_pct": 59.0,
+          "aerial_win_pct": 58.0,
+          "interceptions_p90": 3.79,
+          "recoveries_opp_half_p90": 1.8,
+          "touches_pen_area_p90": 0.74,
+          "progressive_runs_p90": 0.92,
+          "shot_assists_p90": 0.18,
+          "minutes": 974,
+          "matches": 12
+        }
+      }
+    },
+    {
+      "id": "bjerkebo",
+      "identity": {
+        "full_name": "Isak Bjerkebø",
+        "short_name": "I. Bjerkebø",
+        "age": 22,
+        "nationality": "Norway",
+        "flag": "🇳🇴"
+      },
+      "scouting": {
+        "pos_group": "WING",
+        "position_detail": "LAMF",
+        "bio": "Norsk venstreving med høy G+A-output og mange touches i felt.",
+        "has_detailed_dashboard": false
+      },
+      "current_club": {
+        "name": "Free agent",
+        "league": "Sweden. Allsvenskan"
+      },
+      "market": {
+        "market_value_display": "€600k",
+        "contract_year": null
+      },
+      "verdict": {
+        "recommendation": "BUY"
+      },
+      "confidence": null,
+      "risk": null,
+      "aggregates": {
+        "all": {
+          "goals_p90": 0.33,
+          "assists_p90": 0.33,
+          "xg_p90": 0.31,
+          "shots_p90": 2.2,
+          "shots_on_target_p90": 0.9,
+          "pass_accuracy_pct": 77.7,
+          "long_pass_accuracy_pct": 42.0,
+          "dribble_success_pct": 54.5,
+          "dribbles_p90": 2.8,
+          "duel_win_pct": 40.8,
+          "aerial_win_pct": 32.0,
+          "interceptions_p90": 1.47,
+          "recoveries_opp_half_p90": 2.9,
+          "touches_pen_area_p90": 5.98,
+          "progressive_runs_p90": 2.57,
+          "shot_assists_p90": 1.83,
+          "minutes": 2454,
+          "matches": 28
+        }
+      }
+    },
+    {
+      "id": "askou",
+      "identity": {
+        "full_name": "Jonas Askou",
+        "short_name": "J. Askou",
+        "age": 25,
+        "nationality": "Denmark",
+        "flag": "🇩🇰"
+      },
+      "scouting": {
+        "pos_group": "CB",
+        "position_detail": "CB",
+        "bio": "Dansk CB med høy pasningsnøyaktighet. 89.6%.",
+        "has_detailed_dashboard": false
+      },
+      "current_club": {
+        "name": "Free agent",
+        "league": "Denmark. Superliga"
+      },
+      "market": {
+        "market_value_display": "€350k",
+        "contract_year": null
+      },
+      "verdict": {
+        "recommendation": "MONITOR"
+      },
+      "confidence": null,
+      "risk": null,
+      "aggregates": {
+        "all": {
+          "goals_p90": 0.06,
+          "assists_p90": 0.0,
+          "xg_p90": 0.03,
+          "shots_p90": 0.4,
+          "shots_on_target_p90": 0.1,
+          "pass_accuracy_pct": 89.6,
+          "long_pass_accuracy_pct": 58.0,
+          "dribble_success_pct": 100.0,
+          "dribbles_p90": 0.2,
+          "duel_win_pct": 63.1,
+          "aerial_win_pct": 61.0,
+          "interceptions_p90": 5.1,
+          "recoveries_opp_half_p90": 2.0,
+          "touches_pen_area_p90": 0.69,
+          "progressive_runs_p90": 0.41,
+          "shot_assists_p90": 0.06,
+          "minutes": 1554,
+          "matches": 18
+        }
+      }
+    },
+    {
+      "id": "gonstad",
+      "identity": {
+        "full_name": "Jonas Gonstad",
+        "short_name": "J. Gonstad",
+        "age": 23,
+        "nationality": "Norway",
+        "flag": "🇳🇴"
+      },
+      "scouting": {
+        "pos_group": "CF",
+        "position_detail": "CF",
+        "bio": "Norsk spiss med balansert profil.",
+        "has_detailed_dashboard": false
+      },
+      "current_club": {
+        "name": "Free agent",
+        "league": "Norway. Eliteserien"
+      },
+      "market": {
+        "market_value_display": "€250k",
+        "contract_year": null
+      },
+      "verdict": {
+        "recommendation": "MONITOR"
+      },
+      "confidence": null,
+      "risk": null,
+      "aggregates": {
+        "all": {
+          "goals_p90": 0.27,
+          "assists_p90": 0.14,
+          "xg_p90": 0.23,
+          "shots_p90": 2.1,
+          "shots_on_target_p90": 0.8,
+          "pass_accuracy_pct": 70.4,
+          "long_pass_accuracy_pct": 36.0,
+          "dribble_success_pct": 43.8,
+          "dribbles_p90": 1.8,
+          "duel_win_pct": 38.1,
+          "aerial_win_pct": 44.0,
+          "interceptions_p90": 1.36,
+          "recoveries_opp_half_p90": 2.8,
+          "touches_pen_area_p90": 2.92,
+          "progressive_runs_p90": 1.42,
+          "shot_assists_p90": 0.41,
+          "minutes": 1327,
+          "matches": 16
+        }
+      }
+    },
+    {
+      "id": "ejdum",
+      "identity": {
+        "full_name": "Marcus Ejdum",
+        "short_name": "M. Ejdum",
+        "age": 24,
+        "nationality": "Denmark",
+        "flag": "🇩🇰"
+      },
+      "scouting": {
+        "pos_group": "WING",
+        "position_detail": "RW",
+        "bio": "Dansk høyreback/kant med solid defensiv profil.",
+        "has_detailed_dashboard": false
+      },
+      "current_club": {
+        "name": "Free agent",
+        "league": "Denmark. Superliga"
+      },
+      "market": {
+        "market_value_display": "€400k",
+        "contract_year": null
+      },
+      "verdict": {
+        "recommendation": "MONITOR"
+      },
+      "confidence": null,
+      "risk": null,
+      "aggregates": {
+        "all": {
+          "goals_p90": 0.09,
+          "assists_p90": 0.14,
+          "xg_p90": 0.07,
+          "shots_p90": 1.1,
+          "shots_on_target_p90": 0.4,
+          "pass_accuracy_pct": 84.8,
+          "long_pass_accuracy_pct": 50.0,
+          "dribble_success_pct": 60.0,
+          "dribbles_p90": 1.5,
+          "duel_win_pct": 51.2,
+          "aerial_win_pct": 40.0,
+          "interceptions_p90": 3.51,
+          "recoveries_opp_half_p90": 2.5,
+          "touches_pen_area_p90": 2.03,
+          "progressive_runs_p90": 1.38,
+          "shot_assists_p90": 0.74,
+          "minutes": 1951,
+          "matches": 23
+        }
+      }
+    },
+    {
+      "id": "fenger",
+      "identity": {
+        "full_name": "Marcus Fenger",
+        "short_name": "M. Fenger",
+        "age": 25,
+        "nationality": "Denmark",
+        "flag": "🇩🇰"
+      },
+      "scouting": {
+        "pos_group": "CF",
+        "position_detail": "CF",
+        "bio": "Dansk spiss med konsistent output over mange minutter.",
+        "has_detailed_dashboard": false
+      },
+      "current_club": {
+        "name": "Free agent",
+        "league": "Sweden. Allsvenskan"
+      },
+      "market": {
+        "market_value_display": "€500k",
+        "contract_year": null
+      },
+      "verdict": {
+        "recommendation": "MONITOR"
+      },
+      "confidence": null,
+      "risk": null,
+      "aggregates": {
+        "all": {
+          "goals_p90": 0.4,
+          "assists_p90": 0.08,
+          "xg_p90": 0.38,
+          "shots_p90": 2.6,
+          "shots_on_target_p90": 1.0,
+          "pass_accuracy_pct": 77.5,
+          "long_pass_accuracy_pct": 42.0,
+          "dribble_success_pct": 38.9,
+          "dribbles_p90": 1.4,
+          "duel_win_pct": 37.1,
+          "aerial_win_pct": 45.0,
+          "interceptions_p90": 1.7,
+          "recoveries_opp_half_p90": 2.9,
+          "touches_pen_area_p90": 3.41,
+          "progressive_runs_p90": 0.99,
+          "shot_assists_p90": 0.62,
+          "minutes": 3644,
+          "matches": 40
+        }
+      }
+    },
+    {
+      "id": "ladefoged",
+      "identity": {
+        "full_name": "Mathias Ladefoged",
+        "short_name": "M. Ladefoged",
+        "age": 21,
+        "nationality": "Denmark",
+        "flag": "🇩🇰"
+      },
+      "scouting": {
+        "pos_group": "CF",
+        "position_detail": "CF",
+        "bio": "Ung dansk spiss med eksplosiv målrate. 1.05 G/90 over 854 min — lite datagrunnlag men svært lovende.",
+        "has_detailed_dashboard": false
+      },
+      "current_club": {
+        "name": "Free agent",
+        "league": "Sweden. Superettan"
+      },
+      "market": {
+        "market_value_display": "€300k",
+        "contract_year": null
+      },
+      "verdict": {
+        "recommendation": "BUY"
+      },
+      "confidence": null,
+      "risk": null,
+      "aggregates": {
+        "all": {
+          "goals_p90": 1.05,
+          "assists_p90": 0.11,
+          "xg_p90": 0.71,
+          "shots_p90": 3.8,
+          "shots_on_target_p90": 1.6,
+          "pass_accuracy_pct": 77.1,
+          "long_pass_accuracy_pct": 40.0,
+          "dribble_success_pct": 62.5,
+          "dribbles_p90": 2.2,
+          "duel_win_pct": 32.4,
+          "aerial_win_pct": 38.0,
+          "interceptions_p90": 2.21,
+          "recoveries_opp_half_p90": 3.1,
+          "touches_pen_area_p90": 5.9,
+          "progressive_runs_p90": 0.21,
+          "shot_assists_p90": 0.95,
+          "minutes": 854,
+          "matches": 11
+        }
+      }
+    },
+    {
+      "id": "markmann",
+      "identity": {
+        "full_name": "Nicolaj Markmann",
+        "short_name": "N. Markmann",
+        "age": 26,
+        "nationality": "Denmark",
+        "flag": "🇩🇰"
+      },
+      "scouting": {
+        "pos_group": "CB",
+        "position_detail": "CB",
+        "bio": "Dansk CB med ekstremt høy pasningsnøyaktighet. 92.7%.",
+        "has_detailed_dashboard": false
+      },
+      "current_club": {
+        "name": "Free agent",
+        "league": "Denmark. Superliga"
+      },
+      "market": {
+        "market_value_display": "€400k",
+        "contract_year": null
+      },
+      "verdict": {
+        "recommendation": "MONITOR"
+      },
+      "confidence": null,
+      "risk": null,
+      "aggregates": {
+        "all": {
+          "goals_p90": 0.0,
+          "assists_p90": 0.0,
+          "xg_p90": 0.01,
+          "shots_p90": 0.3,
+          "shots_on_target_p90": 0.0,
+          "pass_accuracy_pct": 92.7,
+          "long_pass_accuracy_pct": 62.0,
+          "dribble_success_pct": 50.0,
+          "dribbles_p90": 0.2,
+          "duel_win_pct": 61.8,
+          "aerial_win_pct": 60.0,
+          "interceptions_p90": 4.23,
+          "recoveries_opp_half_p90": 1.8,
+          "touches_pen_area_p90": 0.05,
+          "progressive_runs_p90": 2.79,
+          "shot_assists_p90": 0.11,
+          "minutes": 1679,
+          "matches": 20
+        }
+      }
+    },
+    {
+      "id": "p_christiansen",
+      "identity": {
+        "full_name": "Peter Christiansen",
+        "short_name": "P. Christiansen",
+        "age": 28,
+        "nationality": "Norway",
+        "flag": "🇳🇴"
+      },
+      "scouting": {
+        "pos_group": "CF",
+        "position_detail": "CF",
+        "bio": "Benchmark CF. Viking FK-kader.",
+        "has_detailed_dashboard": false
+      },
+      "current_club": {
+        "name": "Viking FK",
+        "league": "Norway. Eliteserien"
+      },
+      "market": {
+        "market_value_display": "€800k",
+        "contract_year": "2026"
+      },
+      "verdict": {
+        "recommendation": "MONITOR"
+      },
+      "confidence": null,
+      "risk": null,
+      "aggregates": {
+        "all": {
+          "goals_p90": 0.54,
+          "assists_p90": 0.11,
+          "xg_p90": 0.45,
+          "shots_p90": 3.2,
+          "shots_on_target_p90": 1.4,
+          "pass_accuracy_pct": 76.2,
+          "long_pass_accuracy_pct": 42.0,
+          "dribble_success_pct": 52.0,
+          "dribbles_p90": 1.8,
+          "duel_win_pct": 52.3,
+          "aerial_win_pct": 55.0,
+          "interceptions_p90": 1.2,
+          "recoveries_opp_half_p90": 3.1,
+          "touches_pen_area_p90": 4.8,
+          "progressive_runs_p90": 2.9,
+          "shot_assists_p90": 0.8,
+          "minutes": 2515,
+          "matches": 28
+        }
+      }
+    },
+    {
+      "id": "coulibaly",
+      "identity": {
+        "full_name": "Soufiane Coulibaly",
+        "short_name": "S. Coulibaly",
+        "age": 23,
+        "nationality": "Mali",
+        "flag": "🇲🇱"
+      },
+      "scouting": {
+        "pos_group": "CB",
+        "position_detail": "CB",
+        "bio": "Ung malisk CB med høy duell- og interceptionsrate.",
+        "has_detailed_dashboard": false
+      },
+      "current_club": {
+        "name": "Free agent",
+        "league": "Sweden. Allsvenskan"
+      },
+      "market": {
+        "market_value_display": "€300k",
+        "contract_year": null
+      },
+      "verdict": {
+        "recommendation": "MONITOR"
+      },
+      "confidence": null,
+      "risk": null,
+      "aggregates": {
+        "all": {
+          "goals_p90": 0.0,
+          "assists_p90": 0.0,
+          "xg_p90": 0.03,
+          "shots_p90": 0.3,
+          "shots_on_target_p90": 0.0,
+          "pass_accuracy_pct": 89.0,
+          "long_pass_accuracy_pct": 56.0,
+          "dribble_success_pct": 0.0,
+          "dribbles_p90": 0.1,
+          "duel_win_pct": 63.5,
+          "aerial_win_pct": 60.0,
+          "interceptions_p90": 6.63,
+          "recoveries_opp_half_p90": 2.0,
+          "touches_pen_area_p90": 0.23,
+          "progressive_runs_p90": 0.47,
+          "shot_assists_p90": 0.0,
+          "minutes": 774,
+          "matches": 9
+        }
+      }
+    },
+    {
+      "id": "heintz",
+      "identity": {
+        "full_name": "Tobias Heintz",
+        "short_name": "T. Heintz",
+        "age": 24,
+        "nationality": "Sweden",
+        "flag": "🇸🇪"
+      },
+      "scouting": {
+        "pos_group": "WING",
+        "position_detail": "LWF",
+        "bio": "Svensk venstreving med høy G+A kombinert over mange minutter.",
+        "has_detailed_dashboard": false
+      },
+      "current_club": {
+        "name": "Free agent",
+        "league": "Sweden. Allsvenskan"
+      },
+      "market": {
+        "market_value_display": "€600k",
+        "contract_year": null
+      },
+      "verdict": {
+        "recommendation": "MONITOR"
+      },
+      "confidence": null,
+      "risk": null,
+      "aggregates": {
+        "all": {
+          "goals_p90": 0.32,
+          "assists_p90": 0.24,
+          "xg_p90": 0.24,
+          "shots_p90": 2.1,
+          "shots_on_target_p90": 0.8,
+          "pass_accuracy_pct": 70.9,
+          "long_pass_accuracy_pct": 38.0,
+          "dribble_success_pct": 48.2,
+          "dribbles_p90": 2.9,
+          "duel_win_pct": 45.1,
+          "aerial_win_pct": 35.0,
+          "interceptions_p90": 1.7,
+          "recoveries_opp_half_p90": 2.8,
+          "touches_pen_area_p90": 3.95,
+          "progressive_runs_p90": 1.57,
+          "shot_assists_p90": 1.83,
+          "minutes": 3392,
+          "matches": 38
+        }
+      }
+    }
+  ]
+}
